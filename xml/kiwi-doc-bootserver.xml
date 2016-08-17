@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE appendix PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN"
-                      "novdocx.dtd">
+<!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+                         "http://www.docbook.org/xml/4.5/docbookx.dtd">                      
 <appendix id="app.bootserver">
  <title>Setting Up a Network Boot Server</title>
  <para>

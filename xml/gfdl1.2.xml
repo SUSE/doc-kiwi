@@ -1,5 +1,9 @@
-<!DOCTYPE appendix PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN"
-                      "novdocx.dtd">
+<!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+"http://www.docbook.org/xml/4.5/docbookx.dtd"
+[
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+    %entities;
+]>
 <appendix role="legal">
  <title>GNU Licenses</title>
  <para>
