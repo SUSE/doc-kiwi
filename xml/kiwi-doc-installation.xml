@@ -47,6 +47,20 @@
     url="http://download.opensuse.org/repositories/Virtualization:/Appliances/"/>.
    </para>
   </sect2>
+
+  <sect2 id="sec.installation.tmpfs">
+   <title>Notes for /tmp living in a tmpfs</title>
+   <para>
+    On systems with <filename class="directory">/tmp</filename> living in a
+    tmpfs, users will run into problems when the image build process installs
+    the grub2 bootloader to the image. grub2 the way it is called by KIWI
+    will perform a path lookup for potential storage targets on the build
+    system and cannot resolve the canonical path of a tmpfs. In order to
+    avoid this issue we recommend to use an alternative location for
+    tmpfiles prior to the image build process:
+    <screen>export TMPDIR=/directory/on/real/disk</screen>
+   </para>
+  </sect2>
  </sect1>
 
  <sect1 id="sec.installation.fromsource">
