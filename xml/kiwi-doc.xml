@@ -5,6 +5,10 @@
  <title>openSUSE-KIWI Image System</title>
  <subtitle>Cookbook</subtitle>
  <bookinfo>
+  <title>openSUSE-KIWI Image System</title>
+  <productname>KIWI</productname>
+  <productnumber>7</productnumber>
+  <date>2016-08-18</date>
   <releaseinfo>KIWI Version <xi:include href="Revision.txt" parse="text" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   </releaseinfo>
   <authorgroup>
