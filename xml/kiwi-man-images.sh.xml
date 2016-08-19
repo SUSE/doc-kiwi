@@ -31,7 +31,8 @@
   </para>
   <example>
    <title>Template for images.sh</title>
-<programlisting>#======================================
+<screen>
+#======================================
 # Functions...
 #--------------------------------------
 test -f /.kconfig &amp;&amp; . /.kconfig
@@ -50,7 +51,8 @@ echo "Configure image: [$kiwi_iname]..."
 #======================================
 # Exit safely
 #--------------------------------------
-exit</programlisting>
+exit
+</screen>
   </example>
  </refsect1>
  <refsect1 id="kiwi.image.functions">
