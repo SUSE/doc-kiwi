@@ -56,8 +56,8 @@
     system and cannot resolve the canonical path of a tmpfs. In order to
     avoid this issue we recommend to use an alternative location for
     tmpfiles prior to the image build process:
-    <screen>export TMPDIR=/directory/on/real/disk</screen>
    </para>
+   <screen>export TMPDIR=/directory/on/real/disk</screen>
   </sect2>
  </sect1>
 

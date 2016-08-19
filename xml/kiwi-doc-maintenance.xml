@@ -100,7 +100,7 @@
    </para>
   </warning>
 
-  <important>
+  <note>
    <title>Configuration Changes</title>
    <para>
     Running KIWI with the <option>--upgrade</option> option does not rebuild
@@ -114,7 +114,7 @@
     In case of un-applied configuration changes, rebuild the unpacked root
     tree from scratch with <command>kiwi --prepare</command>.
    </para>
-  </important>
+  </note>
 
  </sect1>
 
@@ -141,35 +141,33 @@
      Change the image description as needed. Stick to the following general
      rules:
     </para>
-    <substeps>
-     <step>
-      <para>
-       To add packages or patterns, modify the respective entries in
-       <filename>configuration.xml</filename>. See <xref
-       linkend="sec.description.packages"/> for details.
-      </para>
-     </step>
-     <step>
-      <para>
-       To change the list of repositories, modify the respective entries in
-       <filename>configuration.xml</filename>. See <xref
-       linkend="sec.description.repository"/> for details.
-      </para>
-     </step>
-     <step>
-      <para>
-       To change the configuration of your appliance, modify the respective
-       files in the overlay tree or provide an updated archive.
-      </para>
-     </step>
-     <step>
-      <para>
-       To change the user-defined tasks that will be carried out after the
-       installation (for example activating services), adjust the
-       <filename>configuration.sh</filename> script.
-      </para>
-     </step>
-    </substeps>
+   </step>
+   <step>
+    <para>
+     To add packages or patterns, modify the respective entries in
+     <filename>configuration.xml</filename>. See <xref
+     linkend="sec.description.packages"/> for details.
+    </para>
+   </step>
+   <step>
+    <para>
+     To change the list of repositories, modify the respective entries in
+     <filename>configuration.xml</filename>. See <xref
+     linkend="sec.description.repository"/> for details.
+    </para>
+   </step>
+   <step>
+    <para>
+     To change the configuration of your appliance, modify the respective
+     files in the overlay tree or provide an updated archive.
+    </para>
+   </step>
+   <step>
+    <para>
+     To change the user-defined tasks that will be carried out after the
+     installation (for example activating services), adjust the
+     <filename>configuration.sh</filename> script.
+    </para>
    </step>
    <step>
     <para>
@@ -197,7 +195,7 @@
    </step>
   </procedure>
 
-  <important>
+  <note>
    <title>Do not Manipulate the Unpacked Root Image</title>
    <para>
     The unpacked image directory is a directory, as far as the build system is
@@ -215,6 +213,6 @@
     recommended way to apply changes to the unpacked image directory is to
     change the configuration and re-run the prepare step as described above.
    </para>
-  </important>
+  </note>
  </sect1>
 </chapter>

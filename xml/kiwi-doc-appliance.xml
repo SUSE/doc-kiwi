@@ -93,6 +93,7 @@
      containing the appliance.
     </para>
    </step>
+
    <step>
     <para>
      After your test system has successfully booted the image, log in to your
@@ -100,45 +101,38 @@
      includes all actions required to configure the appliance as
      needed. Before you start take care for the following:
     </para>
-    <substeps>
-     <step>
+    <para>
+      Create an initial package list. This can be done by calling:
+    </para>
+    <screen>rpm -qa | sort &gt; /tmp/deployPackages</screen>
+    <para>
+      Check the output of the command <command>git</command>
+      <option>status</option> and add all files matching the following
+      criteria to <filename>/.gitignore</filename>:
+    </para>
+    <itemizedlist>
+     <listitem>
       <para>
-       Create an initial package list. This can be done by calling:
+       the file is not yet part of the repository
       </para>
-      <screen>rpm -qa | sort &gt; /tmp/deployPackages</screen>
-     </step>
-     <step>
+     </listitem>
+     <listitem>
       <para>
-       Check the output of the command <command>git</command>
-       <option>status</option> and add all files matching the following
-       criteria to <filename>/.gitignore</filename>:
+       you do not plan to change the file
       </para>
-      <itemizedlist>
-       <listitem>
-        <para>
-         the file is not yet part of the repository
-        </para>
-       </listitem>
-       <listitem>
-        <para>
-         you do not plan to change the file
-        </para>
-       </listitem>
-       <listitem>
-        <para>
-         the file will not be included by one of the image description overlay
-         files
-        </para>
-       </listitem>
-      </itemizedlist>
-     </step>
-    </substeps>
+     </listitem>
+     <listitem>
+      <para>
+       the file will not be included by one of the image description overlay
+       files
+      </para>
+     </listitem>
+    </itemizedlist>
     <para>
      When the initial package list exist and the git repository is set up,
      you can start to configure the system.
     </para>
-
-    <important>
+    <note>
      <title>Installing Additional Software</title>
      <para>
       Do not add additional software by installing a package being part of
@@ -152,8 +146,10 @@
       and the <command>config.sh</command> script, but not after the initial
       deployment has happened.
      </para>
-    </important>
+    </note>
+
    </step>
+
    <step>
     <para>
      As soon as the appliance on your test system works as expected it is
@@ -162,58 +158,56 @@
      package list. To include them into your image description, use the
      following process:
     </para>
-    <substeps>
-     <step>
-      <para>
-       Check the differences between the currently installed packages and
-       the initial deployment list. This can be done by running:
-      </para>
-      <screen>rpm -qa | sort &gt; /tmp/appliancePackages
+   </step>
+   <step>
+    <para>
+     Check the differences between the currently installed packages and
+     the initial deployment list. This can be done by running:
+    </para>
+    <screen>rpm -qa | sort &gt; /tmp/appliancePackages
 diff -u /tmp/deployPackages /tmp/appliancePackages</screen>
-      <para>
-       Add all packages labeled with <literal>(&plus;)</literal> to the
-       <sgmltag class="starttag">packages type="image"</sgmltag> section of
-       your config.xml file and remove packages labeled with
-       <literal>(&minus;)</literal>.
-      </para>
-      <para>
-       In case you want to keep packages that have been automatically removed
-       by the package manager, make sure you address these packages in the
-       <filename>config.sh</filename> script. If you have installed packages
-       from repositories which are not yet configured in
-       <filename>config.xml</filename>, add them to allow KIWI to
-       install the packages.
-      </para>
-     </step>
-     <step>
-      <para>
-       Check the differences made in the configuration files by running:
-      </para>
-      <screen>git diff &gt;/tmp/appliancePatch</screen>
-      <para>
-       The patch created with this command
-       (<filename>/tmp/appliancePatch</filename>) should become part of your
-       image description. To make sure it is applied when preparing the image,
-       add the following line to <command>config.sh</command>:
-      </para>
-      <screen><command>patch</command> -p0 &lt; appliancePatch</screen>
-     </step>
-     <step>
-      <para>
-       Check for new non binary files that have been added. This can be done
-       by calling:
-      </para>
-      <screen><command>git</command> status</screen>
-      <para>
-       All files not yet tracked, will be listed under <literal>Untracked
-       files</literal>. Make sure to add all files from this list
-       <emphasis>which are not created automatically</emphasis> to your image
-       description. To do this, clone (copy) these files with regards to the
-       file system structure as overlay files in your image description
-       <filename class="directory">root/</filename> directory.
-      </para>
-     </step>
-    </substeps>
+    <para>
+     Add all packages labeled with <literal>(&plus;)</literal> to the
+     <sgmltag class="starttag">packages type="image"</sgmltag> section of
+     your config.xml file and remove packages labeled with
+     <literal>(&minus;)</literal>.
+    </para>
+    <para>
+     In case you want to keep packages that have been automatically removed
+     by the package manager, make sure you address these packages in the
+     <filename>config.sh</filename> script. If you have installed packages
+     from repositories which are not yet configured in
+     <filename>config.xml</filename>, add them to allow KIWI to
+     install the packages.
+    </para>
+   </step>
+   <step>
+    <para>
+     Check the differences made in the configuration files by running:
+    </para>
+    <screen>git diff &gt;/tmp/appliancePatch</screen>
+    <para>
+     The patch created with this command
+     (<filename>/tmp/appliancePatch</filename>) should become part of your
+     image description. To make sure it is applied when preparing the image,
+     add the following line to <command>config.sh</command>:
+    </para>
+    <screen><command>patch</command> -p0 &lt; appliancePatch</screen>
+   </step>
+   <step>
+    <para>
+     Check for new non binary files that have been added. This can be done
+     by calling:
+    </para>
+    <screen><command>git</command> status</screen>
+    <para>
+     All files not yet tracked, will be listed under <literal>Untracked
+     files</literal>. Make sure to add all files from this list
+     <emphasis>which are not created automatically</emphasis> to your image
+     description. To do this, clone (copy) these files with regards to the
+     file system structure as overlay files in your image description
+     <filename class="directory">root/</filename> directory.
+    </para>
    </step>
    <step>
     <para>
@@ -231,7 +225,7 @@ diff -u /tmp/deployPackages /tmp/appliancePackages</screen>
    this appliance is a server, you should keep it, because it allows you to
    keep track of changes during the live time of this appliance.
   </para>
-  <important>
+  <note>
    <title>Cross Platform Appliance Building</title>
    <para>
     Building appliances for a specific processor architecture on a different
@@ -248,6 +242,6 @@ diff -u /tmp/deployPackages /tmp/appliancePackages</screen>
     cross-platform appliance builds. It rather tells the package manager to
     install packages for the specified architecture.
    </para>
-  </important>
+  </note>
  </sect1>
 </chapter>

@@ -3,15 +3,6 @@
   "-//OASIS//DTD DocBook XML V4.4//EN"
   "http://www.docbook.org/xml/4.4/docbookx.dtd">
 <refentry id="ref.kiwi.kiwirc">
- <refentryinfo>
-  <productname>>KIWI</productname>
-<!--<productnumber></productnumber>--><date>Created: <?dbtimestamp?></date>
-  <authorgroup>
-   <author><firstname>Robert</firstname><surname>Schweikert</surname>
-    <contrib>Developer</contrib><email>rschweikert (AT) novell.com</email>
-   </author>
-  </authorgroup>
- </refentryinfo>
  <refmeta>
   <refentrytitle>kiwi::kiwirc</refentrytitle>
   <manvolnum>1</manvolnum>

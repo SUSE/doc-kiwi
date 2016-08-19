@@ -43,6 +43,7 @@
    filled with the contents of the cache. Only the missing parts need to be
    added, which speeds up the build considerably.
   </para>
+
  <example id="sec.caches.example">
   <title>Building Multiple VMX Images</title>
 
@@ -52,20 +53,14 @@
    like follows:
   </para>
 
-  <procedure>
-   <step>
-    <para>
-     Build the boot image (initrd) cache:
-    </para>
-    <screen>kiwi --init-cache /usr/share/kiwi/image/vmxboot/suse-SLES12</screen>
-   </step>
-   <step>
-    <para>
-     Build the JeOS image cache:
-    </para>
-    <screen>kiwi --init-cache /usr/share/kiwi/image/suse-SLE12-JeOS/</screen>
-   </step>
-  </procedure>
+  <para>
+    Build the boot image (initrd) cache:
+  </para>
+  <screen>kiwi --init-cache /usr/share/kiwi/image/vmxboot/suse-SLES12</screen>
+  <para>
+   Build the JeOS image cache:
+  </para>
+  <screen>kiwi --init-cache /usr/share/kiwi/image/suse-SLE12-JeOS/</screen>
 
   <para>
    By default those caches will be created in

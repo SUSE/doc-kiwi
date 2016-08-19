@@ -1,15 +1,6 @@
 <?xml version="1.0"?>
 <!DOCTYPE refentry PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd">
 <refentry id="ref.kiwi.kiwi">
- <refentryinfo>
-  <productname>KIWI</productname>
-<!--<productnumber></productnumber>--><date>Created: <?dbtimestamp?></date>
-  <authorgroup>
-   <author><firstname>Marcus</firstname><surname>Schaefer</surname>
-    <contrib>Developer</contrib><email>ms (AT) suse.de</email>
-   </author>
-  </authorgroup>
- </refentryinfo>
  <refmeta>
   <refentrytitle>kiwi</refentrytitle>
   <manvolnum>1</manvolnum>
@@ -19,12 +10,14 @@
  <refnamediv>
   <refname>kiwi</refname><refpurpose>Creating Operating System Images</refpurpose>
  </refnamediv>
- <refsynopsisdiv>
+
+ <refsect1>
   <title>Synopsis</title>
   <screen><command>kiwi</command>  { -l  |   --list }</screen>
   <screen><command>kiwi</command>  { -o  |   --clone }  <replaceable>image-path</replaceable>  { -d }  <replaceable>destination</replaceable> </screen>
   <screen><command>kiwi</command>  { -b  |   --build }  <replaceable>image-path</replaceable>  { -d }  <replaceable>destination</replaceable> </screen>
- </refsynopsisdiv>
+ </refsect1>
+
  <refsect1 id="kiwi.image.basics">
   <title>Basics</title>
   <para>

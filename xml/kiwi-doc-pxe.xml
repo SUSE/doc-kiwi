@@ -526,14 +526,14 @@ IMAGE="/dev/sda2;suse-##.#-pxe-client.i686;1.2.8;192.168.100.2;4096"</screen>
           the multicast download option of atftp.
          </para>
          <screen>IMAGE='/dev/sda2;suse.i686.gz;1.2.8;192.168.100.2;4096;compressed'</screen>
-         <important>
+         <note>
           <title></title>
           <para>
            The download will fail if you specify <literal>compressed</literal>
            and the image is not compressed. It will also fail if you don’t
            specify <literal>compressed</literal> but the image is compressed.
           </para>
-         </important>
+         </note>
         </listitem>
        </varlistentry>
       </variablelist>
@@ -1071,12 +1071,12 @@ UNIONFS_CONFIG=/srv/kiwi-read-write-path,nfs,overlayfs</screen>
    image="split" fsreadwrite="ext3" boot="netboot/suse-..."/&gt;
   &lt;split&gt;
     &lt;temporary&gt;
-      <sgmltag class="sgmlcomment"> allow RAM read/write access to: </sgmltag>
+      allow RAM read/write access to:
       &lt;file name="/mnt"/&gt;
       &lt;file name="/mnt/*"/&gt;
     &lt;/temporary&gt;
     &lt;persistent&gt;
-      <sgmltag class="sgmlcomment"> allow DISK read/write access to: </sgmltag>
+      allow DISK read/write access to:
       &lt;file name="/var"/&gt;
       &lt;file name="/var/*"/&gt;
       &lt;file name="/boot"/&gt;

@@ -190,7 +190,7 @@
   displayname="text"
   kiwirevision="number"
   id="10 digit number"&gt;
-  <sgmltag class="sgmlcomment"> ... </sgmltag>
+  ...
 &lt;/image&gt;</screen>
    <para>
     The image definition starts with an <sgmltag>image</sgmltag> tag and
@@ -277,7 +277,7 @@
    <title><sgmltag>profiles</sgmltag> Element</title>
 <screen>&lt;profiles&gt;
    &lt;profile name="name" description="text"/&gt;
-   <sgmltag class="sgmlcomment"> ... </sgmltag>
+   ...
 &lt;/profiles&gt;</screen>
    <para>
     The optional <sgmltag>profiles</sgmltag> section lets you maintain one
@@ -906,8 +906,7 @@
         <listitem>
          <para>
           By default, the string
-          <phrase remap="verb"
-                      >OEM</phrase> will be
+          <phrase>OEM</phrase> will be
           used as the boot manager menu entry when KIWI creates the GRUB
           configuration during deployment. The
           <sgmltag>oem-boot-title</sgmltag> element allows you to set a
@@ -1388,17 +1387,17 @@
       </para>
 <screen>&lt;split&gt;
   &lt;temporary&gt;
-    <sgmltag class="sgmlcomment"> read/write access to </sgmltag>
+    read/write access to
     &lt;file name="/var"/&gt;
     &lt;file name="/var/*"/&gt;
-    <sgmltag class="sgmlcomment"> but not on this file: </sgmltag>
+    but not on this file:
     &lt;except name="/etc/shadow"/&gt;
   &lt;/temporary&gt;
   &lt;persistent&gt;
-    <sgmltag class="sgmlcomment"> persistent read/write access to: </sgmltag>
+    persistent read/write access to:
     &lt;file name="/etc"/&gt;
     &lt;file name="/etc/*"/&gt;
-    <sgmltag class="sgmlcomment"> but not on this file: </sgmltag>
+    but not on this file:
     &lt;except name="/etc/passwd"/&gt;
   &lt;/persistent&gt;
 &lt;/split&gt;</screen>
@@ -1654,7 +1653,7 @@
 <screen>&lt;users group="group_name" id="number"&gt;
   &lt;user home="dir" id="number" name="user" password="..."
         pwdformat="encrypted|plain" realname="string" shell="path"/&gt;
-  <sgmltag class="sgmlcomment"> ... </sgmltag>
+  ...
 &lt;/users&gt;</screen>
    <para>
     The optional <sgmltag>users</sgmltag> element lists the users belonging
@@ -1697,7 +1696,7 @@
    <title><sgmltag>drivers</sgmltag> Element</title>
 <screen>&lt;drivers profiles="name"&gt;
   &lt;file name="filename"/&gt;
-  <sgmltag class="sgmlcomment"> ... </sgmltag>
+  ...
 &lt;/drivers&gt;</screen>
    <para>
     The optional <sgmltag>drivers</sgmltag> element is only useful for boot
@@ -1715,7 +1714,7 @@
     driver names is provided as environment variable named like the value of
     the <sgmltag class="attribute"
           >type</sgmltag> attribute and
-    is processed by the function <function>suseStripKernel</function>.
+    is processed by the function suseStripKernel().
     According to this along with a boot image description a script called
     <command>images.sh</command> must exist which calls this function in
     order to allow the driver information to have any effect.
@@ -2143,7 +2142,7 @@
        names are stored in the $<envar>delete</envar> environment variable
        of the <filename>/.profile</filename> file created by KIWI. The list
        of package names is returned by the
-       <function>baseGetPackagesForDeletion</function> function. This list
+       baseGetPackagesForDeletion() function. This list
        can then be used to delete the packages ignoring requirements or
        dependencies. This can be accomplished in the
        <command>config.sh</command> or <command>images.sh</command> script

@@ -445,7 +445,7 @@
   <screen>&lt;type boot="oemboot/suse-SLES12"&gt;</screen>
 
 
-  <important>
+  <note>
    <title>Difference Between Boot Image and System Image Descriptions</title>
    <para>
     The <emphasis>boot image description</emphasis> only represents the initrd
@@ -459,7 +459,7 @@
     target system. It is manually created and usually tailor-made for a
     specific use case.
    </para>
-  </important>
+  </note>
 
 
   <tip>
@@ -750,7 +750,7 @@
      <para>
       Command post processing needs to be activated within the corresponding
       hook script. this is achieved by setting the variable
-      <envar>KIWI_ALLOW_HOOK_CMD_<replaceable>HOOKNAME</replaceable></envar>
+      <envar>KIWI_ALLOW_HOOK_CMD_HOOKNAME</envar>
       to <literal>1</literal>. For example:
      </para>
      <screen>KIWI_ALLOW_HOOK_CMD_preHWdetect=1</screen>
@@ -763,7 +763,7 @@
     <listitem>
      <para>
       The corresponding variable
-      <envar>KIWI_HOOK_CMD_<replaceable>HOOKNAME</replaceable></envar> needs
+      <envar>KIWI_HOOK_CMD_HOOKNAME</envar> needs
       to passed to the Kernel command line. Its value contains the command
       that is to be executed, for example:
      </para>
