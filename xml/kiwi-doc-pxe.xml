@@ -6,13 +6,7 @@
   %entities;
 ]>
 <chapter id="chap.pxe">
- <title>PXE Image / Thin Clients</title><indexterm>
- <primary>KIWI</primary>
- <secondary>PXE image</secondary></indexterm><indexterm>
- <primary>images</primary>
- <secondary>PXE</secondary></indexterm><indexterm>
- <primary>PXE images</primary></indexterm><indexterm>
- <primary>network boot</primary></indexterm>
+ <title>PXE Image / Thin Clients</title>
  <abstract>
   <para>
    PXE is a network boot protocol that is shipped with most BIOS
@@ -871,9 +865,7 @@ UNIONFS_CONFIG=/dev/sda2,/dev/sda3,overlayfs</screen>
    </sect2>
 
    <sect2 id="sec.pxe.ram-only-image">
-    <title>RAM Only Image</title><indexterm>
-    <primary>KIWI</primary>
-    <secondary>RAM only image</secondary></indexterm>
+    <title>RAM Only Image</title>
     <para>
      If there is no local or remote storage for mounting the root file system,
      the image can be stored into the main memory of the client. The machine
@@ -898,9 +890,7 @@ UNIONFS_CONFIG=/dev/sda2,/dev/sda3,overlayfs</screen>
    </sect2>
 
    <sect2 id="sec.pxe.union-image">
-    <title>Union Image</title><indexterm>
-    <primary>KIWI</primary>
-    <secondary>union image</secondary></indexterm>
+    <title>Union Image</title>
     <para>
      As shown in <xref linkend="var.pxe.client-config-file.unionfs"/> it is
      possible to use the union file system with overlayfs, to combine
@@ -959,10 +949,6 @@ UNIONFS_CONFIG=/dev/sda2,/dev/sda3,overlayfs</screen>
      <title>
       Download Compressed Image to Local Storage, Write to Local Storage
      </title>
-     <indexterm>
-      <primary>union image</primary>
-      <secondary>local-local</secondary>
-     </indexterm>
      <screen>DISK=/dev/sda
 PART='5;S;x,400;L;/,x;L;x'
 IMAGE='/dev/sda2;suse-##.#-pxe-client.i386;1.2.8;192.168.100.2;4096'
@@ -974,9 +960,6 @@ KIWI_INITRD=/boot/initrd</screen>
      <title>
       Download Compressed Image to Local Storage, Write to RAM
      </title>
-     <indexterm>
-      <primary>union image</primary>
-     <secondary>local-ram</secondary></indexterm>
      <screen>DISK=/dev/sda
 PART='5;S;x,400;L;/'
 IMAGE='/dev/sda2;suse-##.#-pxe-client.i386;1.2.8;192.168.100.2;4096'
@@ -987,10 +970,6 @@ UNIONFS_CONFIG=tmpfs,/dev/sda2,overlayfs</screen>
      <title>
       Mount Compressed Image from Remote, Write to Local Storage
      </title>
-     <indexterm>
-      <primary>union image</primary>
-      <secondary>remote-local</secondary>
-     </indexterm>
      <para>
       Depending on whether the remote image is served via AoE, NBD, or NFS, the
       configuration differs:
@@ -1019,10 +998,6 @@ UNIONFS_CONFIG=/dev/sda2,nfs,overlayfs</screen>
      <title>
       Mount Compressed Image from Remote, Write to RAM
      </title>
-     <indexterm>
-      <primary>union image</primary>
-      <secondary>remote-ram</secondary>
-     </indexterm>
      <para>
       Depending on whether the remote image is served via AoE, NBD, or NFS, the
       configuration differs:
@@ -1048,10 +1023,6 @@ UNIONFS_CONFIG=tmpfs,nfs,overlayfs</screen>
      <title>
       Mount Compressed Image from Remote, Write to Remote
      </title>
-     <indexterm>
-      <primary>union image</primary>
-      <secondary>remote-remote</secondary>
-     </indexterm>
      <para>
       <emphasis role="bold">AoE</emphasis>
      </para>
@@ -1083,9 +1054,7 @@ UNIONFS_CONFIG=/srv/kiwi-read-write-path,nfs,overlayfs</screen>
    </sect2>
 
    <sect2 id="sec.pxe.split-image">
-    <title>Split Image</title><indexterm>
-    <primary>KIWI</primary>
-    <secondary>split image</secondary></indexterm>
+    <title>Split Image</title>
     <para>
      An alternative to a Union Image (see <xref
      linkend="sec.pxe.union-image"/>)is a split image that combines the read

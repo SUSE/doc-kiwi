@@ -7,12 +7,7 @@
 ]>
 
 <chapter id="chap.vmx">
- <title>VMX Image / Virtual Disks</title><indexterm>
- <primary>KIWI</primary>
- <secondary>VMX image</secondary></indexterm><indexterm>
- <primary>images</primary>
- <secondary>VMX</secondary></indexterm><indexterm>
- <primary>VMX images</primary></indexterm>
+ <title>VMX Image / Virtual Disks</title>
  <abstract>
   <para>
    A VMX image is a virtual disk image for use in full virtualization systems
@@ -86,10 +81,7 @@
   </para>
 
   <table id="tab.vmx.supported-disk-formats">
-   <title>Supported Virtual Disk Formats</title><indexterm>
-   <primary>KIWI</primary>
-   <secondary>virtual disk formats</secondary></indexterm><indexterm>
-   <primary>virtual disk formats</primary></indexterm>
+   <title>Supported Virtual Disk Formats</title>
    <tgroup cols="2">
     <colspec colwidth="1*"/>
     <colspec colwidth="3*"/>
@@ -133,10 +125,7 @@
   </table>
  </sect1>
  <sect1 id="sec.vmx.vmware-support">
-  <title>VMware support</title><indexterm>
-  <primary>KIWI</primary>
-  <secondary>VMware</secondary></indexterm><indexterm>
-  <primary>VMware</primary></indexterm>
+  <title>VMware support</title>
   <para>
    A VMware image is accompanied by a guest configuration file. This file
    includes information about the hardware to be represented by the guest
@@ -173,9 +162,7 @@
  </sect1>
  
 <sect1 id="sec.vmx.lvm">
- <title>LVM Support</title><indexterm>
- <primary>KIWI</primary>
- <secondary>LVM support</secondary></indexterm>
+ <title>LVM Support</title>
  <para>
   Support for LVM has been added for all image types which are disk-based.  In
   order to use LVM for the vmx type just add the <option>--lvm</option> option
@@ -198,9 +185,7 @@
 </sect1>
 
 <sect1 id="sec.vmx.bootpartition">
- <title>Extra Boot Partition</title><indexterm>
- <primary>KIWI</primary>
- <secondary>boot partition</secondary></indexterm>
+ <title>Extra Boot Partition</title>
  <para>
   Depending on the selected root file system and the capabilities of the boot
   loader, KIWI automatically decides whether to set up a separate boot

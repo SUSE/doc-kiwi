@@ -2,9 +2,7 @@
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
                          "http://www.docbook.org/xml/4.5/docbookx.dtd">
 <chapter id="chap.maintenance">
- <title>Maintaining Appliance Images</title><indexterm>
- <primary>KIWI</primary>
- <secondary>maintenance</secondary></indexterm>
+ <title>Maintaining Appliance Images</title>
  <abstract>
   <para>
    Whenever you create an appliance as described in <xref

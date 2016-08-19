@@ -2,9 +2,7 @@
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
                          "http://www.docbook.org/xml/4.5/docbookx.dtd">
 <chapter id="chap.workflow">
- <title>Basic Workflow</title><indexterm>
- <primary>KIWI</primary>
- <secondary>Workflow</secondary></indexterm>
+ <title>Basic Workflow</title>
  <abstract>
   <para>
    Installation of a Linux system generally occurs by booting the target
@@ -72,14 +70,7 @@
   </note>
 
  <sect1 id="sec.workflow.buildprocess">
-  <title>Building Images</title><indexterm>
-
-  <primary>KIWI</primary>
-
-  <secondary>build process</secondary></indexterm><indexterm>
-
-  <primary>build process</primary></indexterm>
-
+  <title>Building Images</title>
   <para>
    KIWI creates images in a two step process. The first step, the
    <literal>prepare</literal> operation, generates a so-called
@@ -162,9 +153,7 @@
    <orderedlist>
     <listitem>
      <formalpara>
-      <title>Create Target Root Directory</title><indexterm>
-      <primary>KIWI</primary>
-      <secondary>prepare -- create target root directory</secondary></indexterm>
+      <title>Create Target Root Directory</title>
       <para>
        KIWI will exit with an error if the target root tree already exists to
        prevent accidental deletion of an existing unpacked image. Using the
@@ -176,9 +165,7 @@
     </listitem>
     <listitem>
      <formalpara>
-      <title>Install Packages</title><indexterm>
-      <primary>KIWI</primary>
-      <secondary>prepare -- install packages</secondary></indexterm>
+      <title>Install Packages</title>
       <para>
        Initially KIWI configures the package manager to use the repositories
        specified in the configuration file and/or the command line. Following
@@ -204,9 +191,7 @@
    </listitem>
    <listitem>
     <formalpara>
-     <title>Apply The Overlay Tree</title><indexterm>
-     <primary>KIWI</primary>
-     <secondary>prepare -- apply overlay tree</secondary></indexterm>
+     <title>Apply The Overlay Tree</title>
      <para>
       After the package installation is complete, KIWI will apply all files
       and directories present in the overlay directory named
@@ -219,9 +204,7 @@
    </listitem>
    <listitem>
     <formalpara>
-     <title>Apply Archives</title><indexterm>
-     <primary>KIWI</primary>
-     <secondary>prepare -- apply archives</secondary></indexterm>
+     <title>Apply Archives</title>
      <para>
       Any archive specified with the <sgmltag
       class="element">archive</sgmltag> element in the
@@ -238,9 +221,6 @@
      <title>
       Execute the User-defined Script <filename>config.sh</filename>
      </title>
-     <indexterm>
-     <primary>KIWI</primary>
-     <secondary>prepare -- user defined scripts config.sh</secondary></indexterm>
      <para>
       At the end of the preparation stage the script named
       <filename>config.sh</filename> is executed if present. It is executed on
@@ -253,9 +233,7 @@
    </listitem>
    <listitem>
     <formalpara>
-     <title>Manage The New Root Tree</title><indexterm>
-     <primary>KIWI</primary>
-     <secondary>prepare -- manage target root tree</secondary></indexterm>
+     <title>Manage The New Root Tree</title>
      <para>
       The unpacked image directory is a directory, as far as the build system
       is concerned and you can manipulate the content of this directory
@@ -297,17 +275,12 @@
    are performed by kiwi:
   </para>
 
-  <orderedlist><indexterm>
-   <primary>KIWI</primary>
-   <secondary>stages</secondary></indexterm>
+  <orderedlist>
    <listitem>
     <formalpara>
      <title>
       Execute the User-defined Script <filename>images.sh</filename>
      </title>
-     <indexterm>
-     <primary>KIWI</primary>
-     <secondary>create -- user defined scripts images.sh</secondary></indexterm>
      <para>
       At the beginning of the image creation process the script named
       <filename>images.sh</filename> is executed if present. It is executed on
@@ -323,9 +296,7 @@
    </listitem>
    <listitem>
     <formalpara>
-     <title>Create Requested Image Type</title><indexterm>
-     <primary>KIWI</primary>
-     <secondary>create -- requested image types</secondary></indexterm>
+     <title>Create Requested Image Type</title>
      <para>
       The image types that can be created from a prepared image tree depend on
       the types specified in the image description
@@ -398,12 +369,7 @@
  </sect2>
 </sect1>
  <sect1 id="sec.workflow.bootprocess">
-  <title>Customizing the Boot Process</title><indexterm>
-
-  <primary>KIWI</primary>
-
-  <secondary>boot process</secondary></indexterm>
-
+  <title>Customizing the Boot Process</title>
   <para>
    Most Linux systems use a special boot image to control the system boot
    process after the system firmware, BIOS or UEFI, hands control of the
@@ -507,14 +473,7 @@
 
 
   <sect2 id="sec.hooks">
-  <title>Boot Image Hook-Scripts</title><indexterm>
-
-  <primary>KIWI</primary>
-
-  <secondary>hook scripts</secondary></indexterm><indexterm>
-
-  <primary>hook scripts</primary></indexterm>
-
+  <title>Boot Image Hook-Scripts</title>
   <para>
    All KIWI created boot images contain kiwi boot code that gets executed
    when the image is booted for the first time. This boot code differs from
@@ -832,14 +791,7 @@
   </sect3>
  </sect2>
  <sect2 id="sec.bootcustomization">
-  <title>FAQ: Boot Image Customization</title><indexterm>
-
-  <primary>KIWI</primary>
-
-  <secondary>initrd customization</secondary></indexterm><indexterm>
-
-  <primary>initrd customization</primary></indexterm>
-
+  <title>FAQ: Boot Image Customization</title>
   <para>
    The KIWI provided boot image descriptions should satisfy the requirements
    for a majority of image builds and the environments in which these images
@@ -984,13 +936,7 @@
    </qandaentry>
    <qandaentry>
     <question>
-     <para><indexterm>
-      <primary>KIWI</primary>
-      <secondary>boot parameters</secondary>
-     </indexterm>
-     <indexterm>
-      <primary>boot parameters</primary>
-     </indexterm>
+     <para>
       My customized boot image refuses to boot. How to debug?
      </para>
     </question>
@@ -1007,14 +953,7 @@
   </qandaset>
  </sect2>
  <sect2 id="sec.workflow.bootparameters">
-  <title>Boot Parameters</title><indexterm>
-
-  <primary>KIWI</primary>
-
-  <secondary>boot parameters</secondary></indexterm><indexterm>
-
-  <primary>boot parameters</primary></indexterm>
-
+  <title>Boot Parameters</title>
   <para>
    A KIWI created initrd based on one of the KIWI provided boot image
    descriptions recognizes kernel parameters that are useful for debugging
@@ -1089,12 +1028,7 @@ rsync -avz &lt;ip&gt;:/var/log/boot.kiwi</screen>
  </sect2>
 </sect1>
  <sect1 id="sec.workflow.common-specific-code">
-  <title>Distribution-Specific Code</title><indexterm>
-
-  <primary>KIWI</primary>
-
-  <secondary>distribution specific code</secondary></indexterm>
-
+  <title>Distribution-Specific Code</title>
   <para>
    KIWI is designed to be distribution-independent. However, Linux
    distributions differ from each other, primarily in the package management

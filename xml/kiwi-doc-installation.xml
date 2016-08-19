@@ -2,9 +2,7 @@
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
                          "http://www.docbook.org/xml/4.5/docbookx.dtd">
 <chapter id="chap.installation">
- <title>Installation</title><indexterm>
- <primary>KIWI</primary>
- <secondary>Installation</secondary></indexterm>
+ <title>Installation</title>
  <sect1 id="sec.installation.rpminstall">
   <title>Installing KIWI Packages</title>
 

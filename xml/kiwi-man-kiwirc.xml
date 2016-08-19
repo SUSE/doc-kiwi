@@ -3,9 +3,8 @@
   "-//OASIS//DTD DocBook XML V4.4//EN"
   "http://www.docbook.org/xml/4.4/docbookx.dtd">
 <refentry id="ref.kiwi.kiwirc">
- <refentryinfo><indexterm>
-  <primary>manpages</primary>
-  <secondary>kiwi::kiwirc</secondary></indexterm><productname>>KIWI</productname>
+ <refentryinfo>
+  <productname>>KIWI</productname>
 <!--<productnumber></productnumber>--><date>Created: <?dbtimestamp?></date>
   <authorgroup>
    <author><firstname>Robert</firstname><surname>Schweikert</surname>

@@ -2,9 +2,7 @@
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
                          "http://www.docbook.org/xml/4.5/docbookx.dtd">
 <chapter id="chap.migration">
- <title>System Analysis/Migration</title><indexterm>
- <primary>KIWI</primary>
- <secondary>image analysis</secondary></indexterm>
+ <title>System Analysis/Migration</title>
  <para>
   KIWI provides a module which allows you to analyze the running system for
   creating a report and an image description representing the current state of

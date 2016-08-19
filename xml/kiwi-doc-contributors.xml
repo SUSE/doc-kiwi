@@ -2,9 +2,7 @@
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
                          "http://www.docbook.org/xml/4.5/docbookx.dtd">
 <chapter id="chap.contributors">
- <title>Contributors</title><indexterm>
- <primary>KIWI</primary>
- <secondary>Contributors</secondary></indexterm>
+ <title>Contributors</title>
  <sect1 id="sec.contributors">
   <title>Contributors to KIWI</title>
 

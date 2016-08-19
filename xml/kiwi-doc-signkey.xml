@@ -2,13 +2,7 @@
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
                          "http://www.docbook.org/xml/4.5/docbookx.dtd">
 <chapter id="chap.signkey">
- <title>Adding signing keys</title><indexterm>
- <primary>package</primary>
- <secondary>rpm key</secondary></indexterm><indexterm>
- <primary>signing</primary>
- <secondary>build key</secondary></indexterm><indexterm>
- <primary>zypper</primary>
- <secondary>unknown package key</secondary></indexterm>
+ <title>Adding signing keys</title>
  <para>
   The KIWI image build process uses the distribution package management
   system to install the specified packages into the unpacked image tree that
@@ -20,9 +14,7 @@
   is not in the build system key ring will break the image build. After the
   unpacked image tree is created and the package installation is complete
   the GPG keys are removed from from the key ring of the image root system.
- </para><indexterm>
- <primary>rpm keys</primary>
- <secondary>importing</secondary></indexterm>
+ </para>
  <para>
   To permanently import the package signing keys into your
   appliance follow the steps outlined below:

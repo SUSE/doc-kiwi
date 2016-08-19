@@ -38,12 +38,7 @@
   </para>
  </abstract>
  <sect1 id="sec.appliance.kiwi-model">
-  <title>The KIWI Model</title><indexterm>
-
-  <primary>KIWI</primary>
-
-  <secondary>model</secondary></indexterm>
-
+  <title>The KIWI Model</title>
   <para>
    KIWI supports building appliances. When building appliances with KIWI the
    following procedure has proven to work reliably. Nevertheless it is a
@@ -237,10 +232,7 @@ diff -u /tmp/deployPackages /tmp/appliancePackages</screen>
    keep track of changes during the live time of this appliance.
   </para>
   <important>
-   <title>Cross Platform Appliance Building</title><indexterm>
-   <primary>KIWI</primary>
-   <secondary>cross-platform</secondary></indexterm>
-
+   <title>Cross Platform Appliance Building</title>
    <para>
     Building appliances for a specific processor architecture on a different
     processor architecture is in generally <emphasis>not</emphasis> possible

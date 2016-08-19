@@ -7,12 +7,7 @@
 ]>
 
 <chapter id="chap.iso">
- <title>ISO Image / Live System</title><indexterm>
- <primary>KIWI</primary>
- <secondary>ISO image</secondary></indexterm><indexterm>
- <primary>images</primary>
- <secondary>ISO</secondary></indexterm><indexterm>
- <primary>ISO images</primary></indexterm>
+ <title>ISO Image / Live System</title>
  <abstract>
   <para>
    A live system image is an operating System on CD, DVD or removable USB
@@ -162,11 +157,7 @@
   </informaltable>
 
   <sect2 id="sec.iso.split-mode">
-   <title>Split mode</title><indexterm>
-   <primary>KIWI</primary>
-   <secondary>split mode</secondary></indexterm><indexterm>
-   <primary>KIWI</primary>
-   <secondary>overlay file system</secondary></indexterm>
+   <title>Split mode</title>
    <para>
     If no overlay file system is in use but the image file system is based on
     a compressed file system, KIWI allows toc onfigure which files and
@@ -205,11 +196,7 @@
   </sect2>
 
   <sect2 id="sec.iso.hybrid-mode">
-   <title>Hybrid mode</title><indexterm>
-   <primary>KIWI</primary>
-   <secondary>hybrid mode</secondary></indexterm><indexterm>
-   <primary>KIWI</primary>
-   <secondary>USB sticks</secondary></indexterm>
+   <title>Hybrid mode</title>
    <para>
     A hybrid image is an ISO image including a partition table.  therefore it
     cab be attached as a CD/DVD <emphasis>and</emphasis> as a normal disk to
@@ -228,12 +215,7 @@
   </sect2>
  </sect1>
  <sect1 id="sec.iso.usb">
-  <title>Building Live Images for Removable USB Devices</title><indexterm>
-
-  <primary>KIWI</primary>
-
-  <secondary>USB</secondary></indexterm>
-
+  <title>Building Live Images for Removable USB Devices</title>
   <para>
    KIWI supports two types of images for removable USB devices. Hybrid ISO
    images are the same as the live CD/DVD images. The second type are OEM
@@ -243,9 +225,7 @@
   </para>
 
   <sect2 id="sec.iso.usb.hybrid">
-   <title>Hybrid ISO Image</title><indexterm>
-   <primary>KIWI</primary>
-   <secondary>Hybrid stick</secondary></indexterm>
+   <title>Hybrid ISO Image</title>
    <para>
     As indicated above a hybrid ISO image also works as an image for removable
     USB devices. If a hybrid ISO image is used like a disk image on a writable
@@ -265,9 +245,7 @@
   </sect2>
 
   <sect2 id="sec.iso.tmpfs">
-   <title>In RAM ISO Image</title><indexterm>
-   <primary>KIWI</primary>
-   <secondary>ram only system</secondary></indexterm>
+   <title>In RAM ISO Image</title>
    <para>
     Any live CD iso image supports the <replaceable>toram</replaceable> mode.
     In this mode the contents on the ISO are copied into a tmpfs on the
@@ -285,9 +263,7 @@
   </sect2>
 
   <sect2 id="sec.iso.usb.oem">
-   <title>OEM Virtual Disk Image</title><indexterm>
-   <primary>KIWI</primary>
-   <secondary>OEM stick</secondary></indexterm>
+   <title>OEM Virtual Disk Image</title>
    <para>
     In contrast to the hybrid ISO image it is also possible to create an OEM
     virtual disk image. This image type allows to create the
@@ -305,9 +281,7 @@
     information about the OEM image type refer <xref linkend="chap.oem"/>.
    </para>
    <sect3 id="sec.iso.usb.oem.ro">
-    <title>OEM compressed / Read-only removable USB Media</title><indexterm>
-    <primary>KIWI</primary>
-    <secondary>compressed root</secondary></indexterm>
+    <title>OEM compressed / Read-only removable USB Media</title>
     <para>
      If a compressed file system type like <systemitem class="filesystem">overlayfs</systemitem> is used for the image
      root directory,  it is also possible to choose whether to write on a

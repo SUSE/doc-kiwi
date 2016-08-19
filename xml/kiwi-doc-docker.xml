@@ -6,53 +6,8 @@
   %entities;
 ]>
 <chapter id="chap.docker">
-<!--
- <title>Linux Containers and Docker</title>
--->
  <title>Docker images</title>
- <indexterm>
-  <primary>KIWI</primary>
-  <secondary>Container image</secondary>
- </indexterm>
- <indexterm>
-  <primary>container</primary>
-  <secondary>docker</secondary>
- </indexterm>
-<!--
- <indexterm>
-  <primary>images</primary>
-  <secondary>lxc</secondary>
- </indexterm>
- <indexterm>
-  <primary>Container image</primary>
-  <secondary>lxc image</secondary>
- </indexterm>
--->
  <abstract>
-  <!--
-  <para>
-   Linux Containers (LXC) provide operating system-level virtualization,
-   utilizing Control Groups (cgroups). The virtualization is similar to
-   technologies in OpenVZ, Linux-VServer, FreeBSD jails, AIX Workload
-   Partitions, and Solaris Containers. The network and process space of the
-   container is separated from the host resources by using namespaces. Kernel
-   space information is mounted into the container root filesystem using the
-   <filename>fstab</filename> file in the configuration directory. The
-   container root filesystem provides the new user space on top of the running
-   kernel of the host.
-  </para>
-  <para>
-   A Linux container has two components: the container root file system stored
-   in <filename
-   class="directory">/var/lib/lxc/<replaceable>CONTAINER_NAME</replaceable></filename>
-   and the container configuration stored in <filename
-   class="directory">/etc/lxc/<replaceable>CONTAINER_NAME</replaceable></filename>.
-   A container image created by KIWI is packed into a TAR archive containing the
-   root filesystem and the configuration. To install it, unpack it at the
-   root level (<filename class="directory">/</filename>) of the host system.
-   For information on SUSE Linux Enterprise and LXC refer to <ulink url="https://www.suse.com/documentation/sles-12/book_virt/data/part_virt_lxc.html"/>.
- </para>
--->
   <para>
    Docker is a shipping container system for code that can run virtually
    everywhere. It is an extension of LXC's capabilities. Since

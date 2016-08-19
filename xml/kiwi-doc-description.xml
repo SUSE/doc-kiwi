@@ -2,9 +2,7 @@
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
                          "http://www.docbook.org/xml/4.5/docbookx.dtd">
 <chapter id="chap.description">
- <title>KIWI Image Description</title><indexterm>
- <primary>KIWI</primary>
- <secondary>image description</secondary></indexterm>
+ <title>KIWI Image Description</title>
  <para>
   To be able to create an image with KIWI, a so called image
   description must be created. The image description is represented by a
@@ -171,12 +169,7 @@
   </varlistentry>
  </variablelist>
  <sect1 id="sec.description.config.xml">
-  <title>The config.xml File</title><indexterm>
-
-  <primary>KIWI</primary>
-
-  <secondary>config.xml</secondary></indexterm>
-
+  <title>The config.xml File</title>
   <para>
    The mandatory image definition file is divided into different sections
    which describes information like the image name and type as well as the
@@ -330,10 +323,7 @@
     <emphasis role="bold"
           >Major</emphasis>.<emphasis role="bold"
           >Minor</emphasis>.<emphasis role="bold">Release</emphasis>.
-    <indexterm>
-    <primary>KIWI</primary>
-    <secondary>release format</secondary>
-    </indexterm> In case of changes to the image description the following
+    In case of changes to the image description the following
     rules should apply:
    </para>
    <itemizedlist>
@@ -2217,9 +2207,7 @@
     </varlistentry>
    </variablelist>
    <sect3 id="sec.descriptions.using-patterns">
-    <title>Using Patterns</title><indexterm>
-    <primary>KIWI</primary>
-    <secondary>patterns</secondary></indexterm>
+    <title>Using Patterns</title>
     <para>
      Using a pattern name allows you to considerably shorten the list of
      specified packages in the <filename>config.xml</filename> file. A named
@@ -2287,9 +2275,7 @@
     </para>
    </sect3>
    <sect3 id="sec.description.architecture-restrictions">
-    <title>Architecture Restrictions</title><indexterm>
-    <primary>KIWI</primary>
-    <secondary>architecture restrictions</secondary></indexterm>
+    <title>Architecture Restrictions</title>
     <para>
      To restrict a package to a specific architecture, use the arch
      attribute to specify a comma separated list of allowed architectures.

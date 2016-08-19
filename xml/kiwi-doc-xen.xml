@@ -6,32 +6,7 @@
   %entities;
 ]>
 <chapter id="chap.xen">
- <title>Xen Para- and Full virtual Images</title><indexterm>
- <primary>KIWI</primary>
- <secondary>XEN image</secondary></indexterm><indexterm>
- <primary>images</primary>
- <secondary>XEN</secondary></indexterm><indexterm>
- <primary>XEN image</primary></indexterm>
-
- <!-- fs 2015-12-21:
-      I do not think we need to explain what XEN is here
- <para>
-  Xen is a free software virtual machine monitor. It allows several guest
-  operating systems to be executed on the same computer hardware at the same
-  time.
- </para>
- <para>
-  A Xen system is structured with the Xen hypervisor as the lowest and most
-  privileged layer. Above this layer are one or more guest operating
-  systems, which the hypervisor schedules across the physical CPUs. The
-  first guest operating system, called in Xen terminology <quote>domain
-  0</quote> (dom0), is booted automatically when the hypervisor boots and
-  given special management privileges and direct access to the physical
-  hardware. The system administrator logs into dom0 to start any
-  further guest operating systems, called <quote>domain 0</quote> (domU) in
-  Xen terminology.
-  </para>
-  -->
+ <title>Xen Para- and Full virtual Images</title>
  <para>
   A Xen image is a virtual disk like a vmx but with the Xen kernel installed
   for dom0 or para virtual guest images. For fully virtualized guest images

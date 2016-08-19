@@ -2,11 +2,7 @@
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
                          "http://www.docbook.org/xml/4.5/docbookx.dtd">
 <sect1 id="chap.encryption">
- <title>KIWI Encryption Support</title><indexterm>
- <primary>KIWI</primary>
- <secondary>encryption</secondary></indexterm><indexterm>
- <primary>KIWI</primary>
- <secondary>luks</secondary></indexterm>
+ <title>KIWI Encryption Support</title>
  <para>
   KIWI supports Linux Unified Key Setup (LUKS) encrypted images. To set up an
   encrypted volume , add the attribute <sgmltag

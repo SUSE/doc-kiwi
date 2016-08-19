@@ -6,12 +6,7 @@
   %entities;
 ]>
 <chapter id="chap.oem">
- <title>OEM Image / Preload Systems</title><indexterm>
- <primary>KIWI</primary>
- <secondary>OEM image</secondary></indexterm><indexterm>
- <primary>images</primary>
- <secondary>OEM</secondary></indexterm><indexterm>
- <primary>OEM images</primary></indexterm>
+ <title>OEM Image / Preload Systems</title>
  <para>
   An OEM image is a virtual disk image representing all partitions and
   boot loader information the same way as on a physical disk. All flavors

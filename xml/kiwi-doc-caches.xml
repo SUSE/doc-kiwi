@@ -2,10 +2,7 @@
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
                          "http://www.docbook.org/xml/4.5/docbookx.dtd">
 <sect1 id="chap.caches">
- <title>Image Caches</title><indexterm>
- <primary>KIWI</primary>
- <secondary>Caches</secondary></indexterm>
-
+ <title>Image Caches</title>
   <para>
    The process of creating an appliance could take quite some time and often
    the same software is installed over and over again. To speed up that

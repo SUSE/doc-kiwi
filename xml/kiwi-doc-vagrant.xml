@@ -2,13 +2,7 @@
 <!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
                          "http://www.docbook.org/xml/4.5/docbookx.dtd">
 <chapter id="chap.vagrant">
- <title>Vagrant boxes</title><indexterm>
- <primary>KIWI</primary>
- <secondary>container</secondary></indexterm><indexterm>
- <primary>vagrant</primary>
- <secondary>box</secondary></indexterm><indexterm>
- <primary>vagrant image</primary>
- <secondary>vagrant image</secondary></indexterm>
+ <title>Vagrant boxes</title>
  <abstract>
   <para>
    <ulink url="http://vagrantup.com/">Vagrant</ulink> is a nice framework to

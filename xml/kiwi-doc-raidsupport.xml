@@ -2,9 +2,7 @@
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
                          "http://www.docbook.org/xml/4.5/docbookx.dtd">
 <sect1 id="chap.raid">
- <title>KIWI RAID Support</title><indexterm>
- <primary>KIWI</primary>
- <secondary>RAID</secondary></indexterm>
+ <title>KIWI RAID Support</title>
  <para>
   KIWI supports three types of RAID systems:
  </para>

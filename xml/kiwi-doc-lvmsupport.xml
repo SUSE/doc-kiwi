@@ -2,13 +2,7 @@
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
                          "http://www.docbook.org/xml/4.5/docbookx.dtd">
 <sect1 id="chap.partitions">
- <title>KIWI Custom Partitions</title><indexterm>
- <primary>KIWI</primary>
- <secondary>LVM</secondary></indexterm><indexterm>
- <primary>KIWI</primary>
- <secondary>Btrfs</secondary></indexterm><indexterm>
- <primary>KIWI</primary>
- <secondary>zfs</secondary></indexterm>
+ <title>KIWI Custom Partitions</title>
  <para>
   KIWI supports custom partitioning via LVM, the logical volume manager
   for the Linux kernel, or on file systems with volume support like Btrfs or
