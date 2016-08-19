@@ -38,7 +38,7 @@ $System='/usr/share/kiwi/image';</screen>
   </para>
   <variablelist>
    <varlistentry>
-    <term><optional>BasePath</optional>
+    <term>BasePath
     </term>
     <listitem>
      <para>
@@ -51,7 +51,7 @@ $System='/usr/share/kiwi/image';</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>Gzip</optional>
+    <term>Gzip
     </term>
     <listitem>
      <para>
@@ -64,7 +64,7 @@ $System='/usr/share/kiwi/image';</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>LogServerPort</optional>
+    <term>LogServerPort
     </term>
     <listitem>
      <para>
@@ -76,7 +76,7 @@ $System='/usr/share/kiwi/image';</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>LuksCipher</optional>
+    <term>LuksCipher
     </term>
     <listitem>
      <para>
@@ -85,7 +85,7 @@ $System='/usr/share/kiwi/image';</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>System</optional>
+    <term>System
     </term>
     <listitem>
      <para>

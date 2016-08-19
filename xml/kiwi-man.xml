@@ -62,7 +62,7 @@
   <title>General Options</title>
   <variablelist>
    <varlistentry>
-    <term><optional><option>-h</option> | <option>--help</option></optional>
+    <term><option>-h</option> | <option>--help</option>
     </term>
     <listitem>
      <para>
@@ -71,7 +71,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--version</option></optional>
+    <term><option>--version</option>
     </term>
     <listitem>
      <para>
@@ -80,7 +80,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--check-config <replaceable>path-to-the-configuration-file</replaceable></option></optional>
+    <term><option>--check-config <replaceable>path-to-the-configuration-file</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -89,7 +89,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--nocolor</option></optional>
+    <term><option>--nocolor</option>
     </term>
     <listitem>
      <para>
@@ -200,7 +200,7 @@
   </para>
   <variablelist>
    <varlistentry>
-    <term><optional><option>--createpassword</option></optional>
+    <term><option>--createpassword</option>
     </term>
     <listitem>
      <para>
@@ -211,7 +211,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--createhash <replaceable>image-path</replaceable></option></optional>
+    <term><option>--createhash <replaceable>image-path</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -222,7 +222,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>-i</option> | <option>--info <replaceable>image-path</replaceable></option><option>--select <replaceable>selection</replaceable></option></optional>
+    <term><option>-i</option> | <option>--info <replaceable>image-path</replaceable></option><option>--select <replaceable>selection</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -242,7 +242,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--setup-splash <replaceable>initrd</replaceable></option></optional>
+    <term><option>--setup-splash <replaceable>initrd</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -259,7 +259,7 @@
   <title>Global Options</title>
   <variablelist>
    <varlistentry>
-    <term><optional><option>--add-profile</option><replaceable>profile-name</replaceable></optional>
+    <term><option>--add-profile</option><replaceable>profile-name</replaceable>
     </term>
     <listitem>
      <para>
@@ -270,7 +270,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--set-repo</option><replaceable>URL</replaceable></optional>
+    <term><option>--set-repo</option><replaceable>URL</replaceable>
     </term>
     <listitem>
      <para>
@@ -281,7 +281,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--set-repotype</option><replaceable>type</replaceable></optional>
+    <term><option>--set-repotype</option><replaceable>type</replaceable>
     </term>
     <listitem>
      <para>
@@ -293,7 +293,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--set-repoalias</option><replaceable>name</replaceable></optional>
+    <term><option>--set-repoalias</option><replaceable>name</replaceable>
     </term>
     <listitem>
      <para>
@@ -307,7 +307,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--set-repoprio</option><replaceable>number</replaceable></optional>
+    <term><option>--set-repoprio</option><replaceable>number</replaceable>
     </term>
     <listitem>
      <para>
@@ -319,9 +319,9 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--add-repo
+    <term><option>--add-repo
       <replaceable>URL</replaceable></option>,
-      <option>--add-repotype <replaceable>type</replaceable></option><option>--add-repoalias <replaceable>name</replaceable></option><option>--add-repoprio <replaceable>number</replaceable></option></optional>
+      <option>--add-repotype <replaceable>type</replaceable></option><option>--add-repoalias <replaceable>name</replaceable></option><option>--add-repoprio <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -334,7 +334,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--ignore-repos</option></optional>
+    <term><option>--ignore-repos</option>
     </term>
     <listitem>
      <para>
@@ -346,8 +346,8 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--logfile <replaceable>Filename</replaceable></option>
-      | <option>terminal</option></optional>
+    <term><option>--logfile <replaceable>Filename</replaceable></option>
+      | <option>terminal</option>
     </term>
     <listitem>
      <para>
@@ -357,7 +357,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--gzip-cmd <replaceable>cmd</replaceable></option></optional>
+    <term><option>--gzip-cmd <replaceable>cmd</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -367,7 +367,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--package-manager <replaceable>smart|zypper</replaceable></option></optional>
+    <term><option>--package-manager <replaceable>smart|zypper</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -377,7 +377,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>-A</option> | <option>--target-arch <replaceable>i586|x86_64|armv5tel|ppc</replaceable></option></optional>
+    <term><option>-A</option> | <option>--target-arch <replaceable>i586|x86_64|armv5tel|ppc</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -388,7 +388,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--disk-start-sector <replaceable>number</replaceable></option></optional>
+    <term><option>--disk-start-sector <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -399,7 +399,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--disk-sector-size <replaceable>number</replaceable></option></optional>
+    <term><option>--disk-sector-size <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -409,7 +409,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--disk-alignment <replaceable>number</replaceable></option></optional>
+    <term><option>--disk-alignment <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -419,7 +419,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--debug</option></optional>
+    <term><option>--debug</option>
     </term>
     <listitem>
      <para>
@@ -428,7 +428,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--verbose <replaceable>1|2|3</replaceable></option></optional>
+    <term><option>--verbose <replaceable>1|2|3</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -437,7 +437,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>-y</option> | <option>--yes</option></optional>
+    <term><option>-y</option> | <option>--yes</option>
     </term>
     <listitem>
      <para>
@@ -446,7 +446,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--create-instsource <replaceable>path-to-config.xml</replaceable></option></optional>
+    <term><option>--create-instsource <replaceable>path-to-config.xml</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -457,7 +457,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--bundle-build</option></optional>
+    <term><option>--bundle-build</option>
     </term>
     <listitem>
      <para>
@@ -470,7 +470,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--bundle-id <replaceable>build-number</replaceable></option></optional>
+    <term><option>--bundle-id <replaceable>build-number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -485,8 +485,8 @@
   <title>Image Preparation Options</title>
   <variablelist>
    <varlistentry>
-    <term><optional><option>-r</option> | <option>--root
-      <replaceable>RootPath</replaceable></option></optional>
+    <term><option>-r</option> | <option>--root
+      <replaceable>RootPath</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -499,7 +499,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--force-new-root</option></optional>
+    <term><option>--force-new-root</option>
     </term>
     <listitem>
      <para>
@@ -514,7 +514,7 @@
   <title>Image Upgrade/Preparation Options</title>
   <variablelist>
    <varlistentry>
-    <term><optional><option>--cache</option><replaceable>directory</replaceable></optional>
+    <term><option>--cache</option><replaceable>directory</replaceable>
     </term>
     <listitem>
      <para>
@@ -525,7 +525,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--init-cache</option><replaceable>image description</replaceable></optional>
+    <term><option>--init-cache</option><replaceable>image description</replaceable>
     </term>
     <listitem>
      <para>
@@ -534,7 +534,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--recycle-root</option></optional>
+    <term><option>--recycle-root</option>
     </term>
     <listitem>
      <para>
@@ -544,7 +544,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--force-bootstrap</option></optional>
+    <term><option>--force-bootstrap</option>
     </term>
     <listitem>
      <para>
@@ -555,7 +555,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--add-package</option><replaceable>package</replaceable></optional>
+    <term><option>--add-package</option><replaceable>package</replaceable>
     </term>
     <listitem>
      <para>
@@ -566,7 +566,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--add-pattern</option><replaceable>name</replaceable></optional>
+    <term><option>--add-pattern</option><replaceable>name</replaceable>
     </term>
     <listitem>
      <para>
@@ -578,7 +578,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--del-package</option><replaceable>package</replaceable></optional>
+    <term><option>--del-package</option><replaceable>package</replaceable>
     </term>
     <listitem>
      <para>
@@ -593,8 +593,8 @@
   <title>Image Creation Options</title>
   <variablelist>
    <varlistentry>
-    <term><optional><option>-d</option> | <option>--destdir
-      <replaceable>DestinationPath</replaceable></option></optional>
+    <term><option>-d</option> | <option>--destdir
+      <replaceable>DestinationPath</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -609,8 +609,8 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>-t</option> | <option>--type
-      <replaceable>Imagetype</replaceable></option></optional>
+    <term><option>-t</option> | <option>--type
+      <replaceable>Imagetype</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -628,7 +628,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>-s</option> | <option>--strip</option></optional>
+    <term><option>-s</option> | <option>--strip</option>
     </term>
     <listitem>
      <para>
@@ -638,8 +638,8 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--prebuiltbootimage
-      <replaceable>Directory</replaceable></option></optional>
+    <term><option>--prebuiltbootimage
+      <replaceable>Directory</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -649,7 +649,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--isocheck</option></optional>
+    <term><option>--isocheck</option>
     </term>
     <listitem>
      <para>
@@ -661,7 +661,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--lvm</option></optional>
+    <term><option>--lvm</option>
     </term>
     <listitem>
      <para>
@@ -673,7 +673,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--fs-blocksize <replaceable>number</replaceable></option></optional>
+    <term><option>--fs-blocksize <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -684,7 +684,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--fs-journalsize <replaceable>number</replaceable></option></optional>
+    <term><option>--fs-journalsize <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -695,7 +695,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--fs-inodesize <replaceable>number</replaceable></option></optional>
+    <term><option>--fs-inodesize <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -705,7 +705,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--fs-inoderatio <replaceable>number</replaceable></option></optional>
+    <term><option>--fs-inoderatio <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -715,7 +715,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--fs-max-mount-count <replaceable>number</replaceable></option></optional>
+    <term><option>--fs-max-mount-count <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -726,7 +726,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--fs-check-interval <replaceable>number</replaceable></option></optional>
+    <term><option>--fs-check-interval <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -737,7 +737,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--fat-storage <replaceable>size in MB</replaceable></option></optional>
+    <term><option>--fat-storage <replaceable>size in MB</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -750,7 +750,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--partitioner <replaceable>parted|fdasd</replaceable></option></optional>
+    <term><option>--partitioner <replaceable>parted|fdasd</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -760,7 +760,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--check-kernel</option></optional>
+    <term><option>--check-kernel</option>
     </term>
     <listitem>
      <para>
@@ -771,7 +771,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--mbrid <replaceable>number</replaceable></option></optional>
+    <term><option>--mbrid <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -783,7 +783,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--edit-bootconfig <replaceable>script</replaceable></option></optional>
+    <term><option>--edit-bootconfig <replaceable>script</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -799,7 +799,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--edit-bootinstall <replaceable>script</replaceable></option></optional>
+    <term><option>--edit-bootinstall <replaceable>script</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -809,7 +809,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--archive-image</option></optional>
+    <term><option>--archive-image</option>
     </term>
     <listitem>
      <para>
@@ -819,7 +819,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional><option>--targetdevice</option><replaceable>device</replaceable></optional>
+    <term><option>--targetdevice</option><replaceable>device</replaceable>
     </term>
     <listitem>
      <para>

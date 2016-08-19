@@ -76,7 +76,7 @@ exit 0</programlisting>
   </para>
   <variablelist>
    <varlistentry>
-    <term><optional>baseCleanMount</optional>
+    <term>baseCleanMount
     </term>
     <listitem>
      <para>
@@ -86,7 +86,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseDisableCtrlAltDel</optional>
+    <term>baseDisableCtrlAltDel
     </term>
     <listitem>
      <para>
@@ -99,7 +99,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseGetPackagesForDeletion</optional>
+    <term>baseGetPackagesForDeletion
     </term>
     <listitem>
      <para>
@@ -108,7 +108,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseGetProfilesUsed</optional>
+    <term>baseGetProfilesUsed
     </term>
     <listitem>
      <para>
@@ -117,7 +117,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseSetRunlevel {value}</optional>
+    <term>baseSetRunlevel {value}
     </term>
     <listitem>
      <para>
@@ -126,7 +126,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseSetupBoot</optional>
+    <term>baseSetupBoot
     </term>
     <listitem>
      <para>
@@ -135,7 +135,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseSetupBusyBox {-f}</optional>
+    <term>baseSetupBusyBox {-f}
     </term>
     <listitem>
      <para>
@@ -148,7 +148,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseSetupInPlaceGITRepository</optional>
+    <term>baseSetupInPlaceGITRepository
     </term>
     <listitem>
      <para>
@@ -159,7 +159,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseSetupInPlaceSVNRepository {path_list}</optional>
+    <term>baseSetupInPlaceSVNRepository {path_list}
     </term>
     <listitem>
      <para>
@@ -171,7 +171,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseSetupPlainTextGITRepository</optional>
+    <term>baseSetupPlainTextGITRepository
     </term>
     <listitem>
      <para>
@@ -181,7 +181,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseSetupUserPermissions</optional>
+    <term>baseSetupUserPermissions
     </term>
     <listitem>
      <para>
@@ -192,7 +192,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseStripAndKeep {list of info-files to keep}</optional>
+    <term>baseStripAndKeep {list of info-files to keep}
     </term>
     <listitem>
      <para>
@@ -202,7 +202,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseStripDocs {list of docu names to keep}</optional>
+    <term>baseStripDocs {list of docu names to keep}
     </term>
     <listitem>
      <para>
@@ -211,7 +211,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseStripInfos {list of info-files to keep}</optional>
+    <term>baseStripInfos {list of info-files to keep}
     </term>
     <listitem>
      <para>
@@ -220,7 +220,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseStripLocales {list of locales}</optional>
+    <term>baseStripLocales {list of locales}
     </term>
     <listitem>
      <para>
@@ -229,7 +229,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseStripMans {list of manpages to keep}</optional>
+    <term>baseStripMans {list of manpages to keep}
     </term>
     <listitem>
      <para>
@@ -239,7 +239,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseStripRPM</optional>
+    <term>baseStripRPM
     </term>
     <listitem>
      <para>
@@ -249,7 +249,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>suseRemovePackagesMarkedForDeletion</optional>
+    <term>suseRemovePackagesMarkedForDeletion
     </term>
     <listitem>
      <para>
@@ -263,7 +263,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseStripTools {list of toolpath} {list of tools}</optional>
+    <term>baseStripTools {list of toolpath} {list of tools}
     </term>
     <listitem>
      <para>
@@ -272,7 +272,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseStripUnusedLibs</optional>
+    <term>baseStripUnusedLibs
     </term>
     <listitem>
      <para>
@@ -282,7 +282,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseUpdateSysConfig {filename} {variable} {value}</optional>
+    <term>baseUpdateSysConfig {filename} {variable} {value}
     </term>
     <listitem>
      <para>
@@ -291,7 +291,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>Debug {message}</optional>
+    <term>Debug {message}
     </term>
     <listitem>
      <para>
@@ -301,7 +301,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>Echo {echo commandline}</optional>
+    <term>Echo {echo commandline}
     </term>
     <listitem>
      <para>
@@ -310,7 +310,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>Rm {list of files}</optional>
+    <term>Rm {list of files}
     </term>
     <listitem>
      <para>
@@ -319,7 +319,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>Rpm {rpm commandline}</optional>
+    <term>Rpm {rpm commandline}
     </term>
     <listitem>
      <para>
@@ -328,7 +328,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>suseConfig</optional>
+    <term>suseConfig
     </term>
     <listitem>
      <para>
@@ -339,7 +339,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>suseInsertService {servicename}</optional>
+    <term>suseInsertService {servicename}
     </term>
     <listitem>
      <para>
@@ -349,7 +349,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>suseRemoveService {servicename}</optional>
+    <term>suseRemoveService {servicename}
     </term>
     <listitem>
      <para>
@@ -359,7 +359,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseInsertService {servicename}</optional>
+    <term>baseInsertService {servicename}
     </term>
     <listitem>
      <para>
@@ -369,7 +369,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseRemoveService {servicename}</optional>
+    <term>baseRemoveService {servicename}
     </term>
     <listitem>
      <para>
@@ -379,7 +379,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>baseService {servicename} {on|off}</optional>
+    <term>baseService {servicename} {on|off}
     </term>
     <listitem>
      <para>
@@ -390,7 +390,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>suseActivateDefaultServices</optional>
+    <term>suseActivateDefaultServices
     </term>
     <listitem>
      <para>
@@ -403,7 +403,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>suseSetupProduct</optional>
+    <term>suseSetupProduct
     </term>
     <listitem>
      <para>
@@ -413,7 +413,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>suseSetupProductInformation</optional>
+    <term>suseSetupProductInformation
     </term>
     <listitem>
      <para>
@@ -424,7 +424,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>suseStripPackager {-a}</optional>
+    <term>suseStripPackager {-a}
     </term>
     <listitem>
      <para>
@@ -443,7 +443,7 @@ exit 0</programlisting>
   </para>
   <variablelist>
    <varlistentry>
-    <term><optional>$kiwi_compressed</optional>
+    <term>$kiwi_compressed
     </term>
     <listitem>
      <para>
@@ -453,7 +453,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>$kiwi_delete</optional>
+    <term>$kiwi_delete
     </term>
     <listitem>
      <para>
@@ -465,7 +465,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>$kiwi_drivers</optional>
+    <term>$kiwi_drivers
     </term>
     <listitem>
      <para>
@@ -475,7 +475,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>$kiwi_iname</optional>
+    <term>$kiwi_iname
     </term>
     <listitem>
      <para>
@@ -484,7 +484,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>$kiwi_iversion</optional>
+    <term>$kiwi_iversion
     </term>
     <listitem>
      <para>
@@ -493,7 +493,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>$kiwi_keytable</optional>
+    <term>$kiwi_keytable
     </term>
     <listitem>
      <para>
@@ -503,7 +503,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>$kiwi_language</optional>
+    <term>$kiwi_language
     </term>
     <listitem>
      <para>
@@ -513,7 +513,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>$kiwi_profiles</optional>
+    <term>$kiwi_profiles
     </term>
     <listitem>
      <para>
@@ -522,7 +522,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>$kiwi_size</optional>
+    <term>$kiwi_size
     </term>
     <listitem>
      <para>
@@ -533,7 +533,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>$kiwi_timezone</optional>
+    <term>$kiwi_timezone
     </term>
     <listitem>
      <para>
@@ -543,7 +543,7 @@ exit 0</programlisting>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><optional>$kiwi_type</optional>
+    <term>$kiwi_type
     </term>
     <listitem>
      <para>
