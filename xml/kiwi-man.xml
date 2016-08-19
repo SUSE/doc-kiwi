@@ -1,7 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE refentry PUBLIC
-  "-//OASIS//DTD DocBook XML V4.4//EN"
-  "http://www.docbook.org/xml/4.4/docbookx.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE refentry PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd">
 <refentry id="ref.kiwi.kiwi">
  <refentryinfo>
   <productname>KIWI</productname>
@@ -23,28 +21,9 @@
  </refnamediv>
  <refsynopsisdiv>
   <title>Synopsis</title>
-  <cmdsynopsis><command>kiwi</command><group choice="req">
-   <arg choice="plain">-l</arg>
-   <arg choice="plain">--list</arg></group>
-  </cmdsynopsis>
-  <cmdsynopsis><command>kiwi</command><group choice="req">
-   <arg choice="plain">-o</arg>
-   <arg choice="plain">--clone</arg></group>
-   <arg choice="plain"><replaceable>image-path</replaceable>
-   </arg><group choice="req">
-   <arg choice="plain">-d</arg></group>
-   <arg choice="plain"><replaceable>destination</replaceable>
-   </arg>
-  </cmdsynopsis>
-  <cmdsynopsis><command>kiwi</command><group choice="req">
-   <arg choice="plain">-b</arg>
-   <arg choice="plain">--build</arg></group>
-   <arg choice="plain"><replaceable>image-path</replaceable>
-   </arg><group choice="req">
-   <arg choice="plain">-d</arg></group>
-   <arg choice="plain"><replaceable>destination</replaceable>
-   </arg>
-  </cmdsynopsis>
+  <screen><command>kiwi</command>  { -l  |   --list }</screen>
+  <screen><command>kiwi</command>  { -o  |   --clone }  <replaceable>image-path</replaceable>  { -d }  <replaceable>destination</replaceable> </screen>
+  <screen><command>kiwi</command>  { -b  |   --build }  <replaceable>image-path</replaceable>  { -d }  <replaceable>destination</replaceable> </screen>
  </refsynopsisdiv>
  <refsect1 id="kiwi.image.basics">
   <title>Basics</title>
@@ -63,8 +42,7 @@
   <para>
    Detailed description of the kiwi image system exists in the system design
    document in
-   <ulink
-        url="file:///usr/share/doc/packages/kiwi/kiwi.pdf"/>. KIWI
+   <ulink url="file:///usr/share/doc/packages/kiwi/kiwi.pdf"/>. KIWI
    always operates in two steps. The KIWI <option>--build</option> option
    just combines both steps into one to make it easier to start with KIWI.
    The first step is the preparation step and if that step was successful, a
@@ -81,8 +59,7 @@
    The creation step is based on the result of the preparation step and uses
    the contents of the new image root tree to create the output image. If
    the image type ISO was requested, the output image would be a file with
-   the suffix <filename
-        class="extension">.iso</filename>
+   the suffix <filename>.iso</filename>
    representing a live system on CD or DVD. Other than that KIWI can
    create images for virtual and para-virtual (Xen) environments as well as
    for USB stick, PXE network clients and OEM customized Linux systems.
@@ -131,32 +108,10 @@
  </refsect1>
  <refsect1 id="kiwi.image.prepcreate">
   <title>Image Preparation and Creation</title>
-  <cmdsynopsis><command>kiwi</command><group choice="req">
-   <arg choice="plain">-p</arg>
-   <arg choice="plain">--prepare</arg></group>
-   <arg choice="plain"><replaceable>image-path</replaceable>
-   </arg>
-   <sbr/><group choice="req">
-   <arg choice="plain">-r</arg>
-   <arg choice="plain">--root</arg></group>
-   <arg choice="plain"><replaceable>image-root</replaceable>
-   </arg>
-   <arg choice="opt">--cache <replaceable>directory</replaceable>
-   </arg>
-  </cmdsynopsis>
-  <cmdsynopsis><command>kiwi</command><group choice="req">
-   <arg choice="plain">-c</arg>
-   <arg choice="plain">--create</arg></group>
-   <arg choice="plain"><replaceable>image-root</replaceable>
-   </arg>
-   <sbr/><group choice="req">
-   <arg choice="plain">-d</arg>
-   <arg choice="plain">--destdir</arg></group>
-   <arg choice="plain"><replaceable>destination</replaceable>
-   </arg>
-   <arg choice="opt">--type <replaceable>image-type</replaceable>
-   </arg>
-  </cmdsynopsis>
+  <screen><command>kiwi</command>  { -p  |   --prepare }  <replaceable>image-path</replaceable> 
+ { -r  |   --root }  <replaceable>image-root</replaceable>  [--cache <replaceable>directory</replaceable>]</screen>
+  <screen><command>kiwi</command>  { -c  |   --create }  <replaceable>image-root</replaceable> 
+ { -d  |   --destdir }  <replaceable>destination</replaceable>  [--type <replaceable>image-type</replaceable>]</screen>
  </refsect1>
  <refsect1 id="kiwi.image.upgrade">
   <title>Image Upgrade</title>
@@ -170,16 +125,7 @@
    Given that the root tree exists it's also possible to add or remove
    software and recreate the image of the desired type.
   </para>
-  <cmdsynopsis><command>kiwi</command><group choice="req">
-   <arg choice="plain">-u</arg>
-   <arg choice="plain">--upgrade</arg></group>
-   <arg choice="plain"><replaceable>image-root</replaceable>
-   </arg>
-   <arg choice="opt">--add-package <replaceable>name</replaceable>
-   </arg>
-   <arg choice="opt">--add-pattern <replaceable>name</replaceable>
-   </arg>
-  </cmdsynopsis>
+  <screen><command>kiwi</command>  { -u  |   --upgrade }  <replaceable>image-root</replaceable>  [--add-package <replaceable>name</replaceable>] [--add-pattern <replaceable>name</replaceable>]</screen>
  </refsect1>
  <refsect1 id="kiwi.image.system2image">
   <title>System Analysis</title>
@@ -193,10 +139,10 @@
   <para>
    The process will always place it's result into the
    <filename>/tmp/$OptionValueOf--describe</filename> directory. The reason
-   for this is because <filename class="directory">/tmp</filename> is always
+   for this is because <filename>/tmp</filename> is always
    excluded from the analysis and therefore we can safely place new files
    there without influencing the process itself. You should have at least
-   100&nbsp;MB free space for the cache file and the image description all
+   100 MB free space for the cache file and the image description all
    the rest are just hard links.
   </para>
   <para>
@@ -210,11 +156,7 @@
    currently running operating system. You should understand the module as a
    helper to analyze running linux systems.
   </para>
-  <cmdsynopsis><command>kiwi</command><group choice="req">
-   <arg choice="plain">--describe</arg></group>
-   <arg choice="plain"><replaceable>name</replaceable>
-   </arg>
-  </cmdsynopsis>
+  <screen><command>kiwi</command>  { --describe }  <replaceable>name</replaceable> </screen>
  </refsect1>
  <refsect1 id="kiwi.image.postproc">
   <title>Image Postprocessing Modes</title>
@@ -225,40 +167,12 @@
    modules automatically according to the specified output image type and
    attributes but it's also possible to call them manually.
   </para>
-  <cmdsynopsis><command>kiwi</command>
-   <arg choice="plain">--bootvm <replaceable>initrd</replaceable>
-   </arg>
-   <arg choice="plain">--bootvm-system <replaceable>systemImage</replaceable>
-   </arg>
-   <arg choice="opt">--bootvm-disksize <replaceable>size</replaceable>
-   </arg>
-  </cmdsynopsis>
-  <cmdsynopsis><command>kiwi</command>
-   <arg choice="plain">--bootcd <replaceable>initrd</replaceable>
-   </arg>
-  </cmdsynopsis>
-  <cmdsynopsis><command>kiwi</command>
-   <arg choice="plain">--bootusb <replaceable>initrd</replaceable>
-   </arg>
-  </cmdsynopsis>
-  <cmdsynopsis><command>kiwi</command>
-   <arg choice="plain">--installcd <replaceable>initrd</replaceable>
-   </arg>
-   <arg choice="plain">--installcd-system <replaceable>raw-system-image</replaceable>
-   </arg>
-  </cmdsynopsis>
-  <cmdsynopsis><command>kiwi</command>
-   <arg choice="plain">--installstick <replaceable>initrd</replaceable>
-   </arg>
-   <arg choice="plain">--installstick-system <replaceable>raw-system-image</replaceable>
-   </arg>
-  </cmdsynopsis>
-  <cmdsynopsis><command>kiwi</command>
-   <arg choice="plain">--installpxe <replaceable>initrd</replaceable>
-   </arg>
-   <arg choice="plain">--installpxe-system <replaceable>raw-system-image</replaceable>
-   </arg>
-  </cmdsynopsis>
+  <screen><command>kiwi</command>   --bootvm <replaceable>initrd</replaceable>   --bootvm-system <replaceable>systemImage</replaceable>  [--bootvm-disksize <replaceable>size</replaceable>]</screen>
+  <screen><command>kiwi</command>   --bootcd <replaceable>initrd</replaceable> </screen>
+  <screen><command>kiwi</command>   --bootusb <replaceable>initrd</replaceable> </screen>
+  <screen><command>kiwi</command>   --installcd <replaceable>initrd</replaceable>   --installcd-system <replaceable>raw-system-image</replaceable> </screen>
+  <screen><command>kiwi</command>   --installstick <replaceable>initrd</replaceable>   --installstick-system <replaceable>raw-system-image</replaceable> </screen>
+  <screen><command>kiwi</command>   --installpxe <replaceable>initrd</replaceable>   --installpxe-system <replaceable>raw-system-image</replaceable> </screen>
  </refsect1>
  <refsect1>
   <title>Image Format Conversion</title>
@@ -269,12 +183,7 @@
    configuration according to the format if there is a machine section
    specified in the XML description
   </para>
-  <cmdsynopsis><command>kiwi</command>
-   <arg choice="plain">--convert <replaceable>systemImage</replaceable>
-   </arg>
-   <arg choice="opt">--format <replaceable>vmdk|ovf|qcow2|vhd</replaceable>
-   </arg>
-  </cmdsynopsis>
+  <screen><command>kiwi</command>   --convert <replaceable>systemImage</replaceable>  [--format <replaceable>vmdk|ovf|qcow2|vhd</replaceable>]</screen>
  </refsect1>
  <refsect1>
   <title>Helper Tools</title>
@@ -285,29 +194,14 @@
    description with an md5sum hash and adding splash data to the boot image
    used by the boot loader.
   </para>
-  <cmdsynopsis><command>kiwi</command>
-   <arg choice="plain">--createpassword</arg>
-  </cmdsynopsis>
-  <cmdsynopsis><command>kiwi</command>
-   <arg choice="plain">--createhash
-      <replaceable>image-path</replaceable>
-   </arg>
-  </cmdsynopsis>
-  <cmdsynopsis><command>kiwi</command><group choice="req">
-   <arg choice="plain">-i</arg>
-   <arg choice="plain">--info</arg></group>
-   <arg choice="plain"><replaceable>ImagePath</replaceable>
-   </arg>
-   <arg choice="req">--select
+  <screen><command>kiwi</command>   --createpassword </screen>
+  <screen><command>kiwi</command>   --createhash
+      <replaceable>image-path</replaceable> </screen>
+  <screen><command>kiwi</command>  { -i  |   --info }  <replaceable>ImagePath</replaceable>  {--select
       <replaceable>
     repo-patterns|patterns|types|sources|size|profiles|packages|version
-    </replaceable>
-   </arg>
-  </cmdsynopsis>
-  <cmdsynopsis><command>kiwi</command>
-   <arg choice="plain">--setup-splash <replaceable>initrd</replaceable>
-   </arg>
-  </cmdsynopsis>
+    </replaceable>}</screen>
+  <screen><command>kiwi</command>   --setup-splash <replaceable>initrd</replaceable> </screen>
   <para>
    The following list describes the helper tools more detailed
   </para>
@@ -970,8 +864,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><ulink
-        url="file:///usr/share/doc/packages/kiwi/kiwi.pdf"/>
+    <term><ulink url="file:///usr/share/doc/packages/kiwi/kiwi.pdf"/>
     </term>
     <listitem>
      <para>
@@ -985,7 +878,7 @@
     </term>
     <listitem>
      <para>
-      The KIWI RELAX&nbsp;NG XML Schema documentation.
+      The KIWI RELAX NG XML Schema documentation.
      </para>
     </listitem>
    </varlistentry>
