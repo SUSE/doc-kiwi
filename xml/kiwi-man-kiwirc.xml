@@ -1,18 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE refentry PUBLIC 
-  "-//OASIS//DTD DocBook XML V4.4//EN"
-  "http://www.docbook.org/xml/4.4/docbookx.dtd">
-<refentry id="ref.kiwi.kiwirc">
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<refentry xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="ref.kiwi.kiwirc">
  <refmeta>
   <refentrytitle>kiwi::kiwirc</refentrytitle>
   <manvolnum>1</manvolnum>
-  <refmiscinfo class="version">_KV_</refmiscinfo>
-  <refmiscinfo class="manual">KIWI Manualpage</refmiscinfo>
+  <refmiscinfo version="5.0" class="version">_KV_</refmiscinfo>
+  <refmiscinfo version="5.0" class="manual">KIWI Manualpage</refmiscinfo>
  </refmeta>
  <refnamediv>
   <refname>KIWI::kiwirc</refname><refpurpose>Resource file for the Kiwi imaging system</refpurpose>
  </refnamediv>
- <refsect1 id="kiwi.kiwirc.description">
+ <refsect1 xml:id="kiwi.kiwirc.description">
   <title>Description</title>
   <para>
    The KIWI imaging tool chain supports the use of an optional resource file
@@ -30,7 +28,7 @@ $LogServerPort='4455';
 $System='/usr/share/kiwi/image';</screen>
   </example>
  </refsect1>
- <refsect1 id="kiwi.kiwirc.settings">
+ <refsect1 xml:id="kiwi.kiwirc.settings">
   <title>Supported Resource Settings</title>
   <para>
    KIWI recognizes the BasePath, Gzip, LogServerPort, LuksCipher, and System
@@ -38,7 +36,7 @@ $System='/usr/share/kiwi/image';</screen>
   </para>
   <variablelist>
    <varlistentry>
-    <term>BasePath
+    <term version="5.0">BasePath
     </term>
     <listitem>
      <para>
@@ -51,7 +49,7 @@ $System='/usr/share/kiwi/image';</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Gzip
+    <term version="5.0">Gzip
     </term>
     <listitem>
      <para>
@@ -64,7 +62,7 @@ $System='/usr/share/kiwi/image';</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>LogServerPort
+    <term version="5.0">LogServerPort
     </term>
     <listitem>
      <para>
@@ -76,7 +74,7 @@ $System='/usr/share/kiwi/image';</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>LuksCipher
+    <term version="5.0">LuksCipher
     </term>
     <listitem>
      <para>
@@ -85,7 +83,7 @@ $System='/usr/share/kiwi/image';</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>System
+    <term version="5.0">System
     </term>
     <listitem>
      <para>

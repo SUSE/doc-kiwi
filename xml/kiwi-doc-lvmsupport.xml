@@ -1,53 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd">
-<sect1 id="chap.partitions">
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="chap.partitions">
  <title>KIWI Custom Partitions</title>
  <para>
   KIWI supports custom partitioning via LVM, the logical volume manager
   for the Linux kernel, or on file systems with volume support like Btrfs or
   ZFS.
  </para>
- <sect2 id="chap.partitions.lvm">
+ <section xml:id="chap.partitions.lvm">
   <title>Custom Partitioning via LVM</title>
 
   <para>
-   To define an LVM volume, a <sgmltag class="element">systemdisk</sgmltag>
-   element within the <sgmltag class="element">type</sgmltag> element in the
+   To define an LVM volume, a <tag class="element">systemdisk</tag>
+   element within the <tag class="element">type</tag> element in the
    <filename>config.xml</filename> file must be defined. The
-   <sgmltag class="element">systemdisk</sgmltag> element has an optional
-   attribute <sgmltag class="attribute">name</sgmltag>, which specifies the
+   <tag class="element">systemdisk</tag> element has an optional
+   attribute <tag class="attribute">name</tag>, which specifies the
    volume group name.
   </para>
 
   <para>
    For additional non root or swap volumes the
-   <sgmltag class="element">systemdisk</sgmltag> element can contain the
-   child element <sgmltag class="element">volume</sgmltag>, with four
+   <tag class="element">systemdisk</tag> element can contain the
+   child element <tag class="element">volume</tag>, with four
    possible attributes:
   </para>
 
   <variablelist>
    <varlistentry>
-    <term><sgmltag class="attribute">name</sgmltag>
+    <term><tag class="attribute">name</tag>
     </term>
     <listitem>
      <para>
-      A required attribute. The name of the volume. If <sgmltag
-      class="attribute">mountpoint</sgmltag> is not specified, a directory
+      A required attribute. The name of the volume. If <tag class="attribute">mountpoint</tag> is not specified, a directory
       with the given name will be created by KIWI if it does not already exist
       inside the root tree. However, if the name contains the KIWI internal
       path field separator <quote>_</quote>, it is required to specify the
       path in an additional mount point attribute. The special value
-      <emphasis>@root</emphasis> can be combined with the <sgmltag
-      class="attribute">size</sgmltag> or <sgmltag
-      class="attribute">freespace</sgmltag> attribute to control the size of
+      <emphasis>@root</emphasis> can be combined with the <tag class="attribute">size</tag> or <tag class="attribute">freespace</tag> attribute to control the size of
       the root volume.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><sgmltag class="attribute">size</sgmltag>
+    <term><tag class="attribute">size</tag>
     </term>
     <listitem>
      <para>
@@ -60,7 +56,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><sgmltag class="attribute">freespace</sgmltag>
+    <term><tag class="attribute">freespace</tag>
     </term>
     <listitem>
      <para>
@@ -72,7 +68,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><sgmltag class="attribute">mountpoint</sgmltag>
+    <term><tag class="attribute">mountpoint</tag>
     </term>
     <listitem>
      <para>
@@ -83,7 +79,7 @@
    </varlistentry>
   </variablelist>
 
-  <example id="ex.lvm">
+  <example xml:id="ex.lvm">
    <title>Examples for Configuring LVM</title>
   <para>
    The following example will create a logical volume named
@@ -158,14 +154,14 @@
   ...
 &lt;/image&gt;</screen>
   </example>
- </sect2>
+ </section>
 
- <sect2 id="chap.partitions.btrfs">
+ <section xml:id="chap.partitions.btrfs">
   <title>Custom Partitioning via Btrfs</title>
 
   <para>
    If Btrfs is used as a file system, the subvolume management is configured
-   via the same <sgmltag class="element">systemdisk</sgmltag> element as
+   via the same <tag class="element">systemdisk</tag> element as
    explained in <xref linkend="chap.partitions.lvm"/>. Also the same rules as
    explained for lvm volumes applies to Btrfs subvolumes with the following
    exception;
@@ -174,12 +170,12 @@
    <title>There is no @root volume and no size setup</title>
    <para>
     The Btrfs file system is created with an initial size which can be
-    specified by the <sgmltag class="element">size</sgmltag> element All
+    specified by the <tag class="element">size</tag> element All
     subvolumes are part of the file system itself and managed by a
     namespace. The overall size is shared across the entire file system and the
     size of an entity can be controlled by a Btrfs quota which is not applied
     by kiwi at the moment
    </para>
   </formalpara>
- </sect2>
-</sect1>
+ </section>
+</section>

@@ -1,21 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook50-profile.xsl"
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:docbook51-profile.xsl"
                  type="text/xml" 
                  title="Profiling step"?>
-<!DOCTYPE sect1
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-    %entities;
-]>
 <!-- Converted by suse-upgrade version 1.1 -->
-<sect1 version="5.0" role="legal"
-  xmlns="http://docbook.org/ns/docbook"
-  xmlns:xi="http://www.w3.org/2001/XInclude"
-  xmlns:xlink="http://www.w3.org/1999/xlink">
+<sect1 xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" role="legal">
  <title>GNU Free Documentation License</title>
 
  <info>
-  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager"></dm:docmanager>
+  <dm:docmanager xmlns:dm="urn:x-suse:ns:docmanager"/>
  </info>
 
  <para>
@@ -520,12 +513,12 @@ Permission is granted to copy, distribute and/or modify this document
 under the terms of the GNU Free Documentation License, Version 1.2
 or any later version published by the Free Software Foundation;
 with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-A copy of the license is included in the section entitled &ldquo;GNU
-Free Documentation License&rdquo;.</screen>
+A copy of the license is included in the section entitled “GNU
+Free Documentation License”.</screen>
 
  <para>
   If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
-  replace the &ldquo;with...Texts.&rdquo; line with this:
+  replace the “with...Texts.” line with this:
  </para>
 
 <screen>with the Invariant Sections being LIST THEIR TITLES, with the

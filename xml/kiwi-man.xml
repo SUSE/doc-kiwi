@@ -1,11 +1,11 @@
-<?xml version="1.0"?>
-<!DOCTYPE refentry PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd">
-<refentry id="ref.kiwi.kiwi">
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<refentry xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="ref.kiwi.kiwi">
  <refmeta>
   <refentrytitle>kiwi</refentrytitle>
   <manvolnum>1</manvolnum>
-  <refmiscinfo class="version">_KV_</refmiscinfo>
-  <refmiscinfo class="manual">KIWI Manualpage</refmiscinfo>
+  <refmiscinfo version="5.0" class="version">_KV_</refmiscinfo>
+  <refmiscinfo version="5.0" class="manual">KIWI Manualpage</refmiscinfo>
  </refmeta>
  <refnamediv>
   <refname>kiwi</refname><refpurpose>Creating Operating System Images</refpurpose>
@@ -18,7 +18,7 @@
   <screen><command>kiwi</command>  { -b  |   --build }  <replaceable>image-path</replaceable>  { -d }  <replaceable>destination</replaceable> </screen>
  </refsect1>
 
- <refsect1 id="kiwi.image.basics">
+ <refsect1 xml:id="kiwi.image.basics">
   <title>Basics</title>
   <para>
    KIWI is a complete imaging solution that is based on an image
@@ -35,7 +35,7 @@
   <para>
    Detailed description of the kiwi image system exists in the system design
    document in
-   <ulink url="file:///usr/share/doc/packages/kiwi/kiwi.pdf"/>. KIWI
+   <link version="5.0" xlink:href="file:///usr/share/doc/packages/kiwi/kiwi.pdf"/>. KIWI
    always operates in two steps. The KIWI <option>--build</option> option
    just combines both steps into one to make it easier to start with KIWI.
    The first step is the preparation step and if that step was successful, a
@@ -58,11 +58,11 @@
    for USB stick, PXE network clients and OEM customized Linux systems.
   </para>
  </refsect1>
- <refsect1 id="kiwi.general">
+ <refsect1 xml:id="kiwi.general">
   <title>General Options</title>
   <variablelist>
    <varlistentry>
-    <term><option>-h</option> | <option>--help</option>
+    <term version="5.0"><option>-h</option> | <option>--help</option>
     </term>
     <listitem>
      <para>
@@ -71,7 +71,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--version</option>
+    <term version="5.0"><option>--version</option>
     </term>
     <listitem>
      <para>
@@ -80,7 +80,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--check-config <replaceable>path-to-the-configuration-file</replaceable></option>
+    <term version="5.0"><option>--check-config <replaceable>path-to-the-configuration-file</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -89,7 +89,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--nocolor</option>
+    <term version="5.0"><option>--nocolor</option>
     </term>
     <listitem>
      <para>
@@ -99,14 +99,14 @@
    </varlistentry>
   </variablelist>
  </refsect1>
- <refsect1 id="kiwi.image.prepcreate">
+ <refsect1 xml:id="kiwi.image.prepcreate">
   <title>Image Preparation and Creation</title>
   <screen><command>kiwi</command>  { -p  |   --prepare }  <replaceable>image-path</replaceable> 
  { -r  |   --root }  <replaceable>image-root</replaceable>  [--cache <replaceable>directory</replaceable>]</screen>
   <screen><command>kiwi</command>  { -c  |   --create }  <replaceable>image-root</replaceable> 
  { -d  |   --destdir }  <replaceable>destination</replaceable>  [--type <replaceable>image-type</replaceable>]</screen>
  </refsect1>
- <refsect1 id="kiwi.image.upgrade">
+ <refsect1 xml:id="kiwi.image.upgrade">
   <title>Image Upgrade</title>
   <para>
    If the image root tree is stored and not removed, it can be used for
@@ -120,7 +120,7 @@
   </para>
   <screen><command>kiwi</command>  { -u  |   --upgrade }  <replaceable>image-root</replaceable>  [--add-package <replaceable>name</replaceable>] [--add-pattern <replaceable>name</replaceable>]</screen>
  </refsect1>
- <refsect1 id="kiwi.image.system2image">
+ <refsect1 xml:id="kiwi.image.system2image">
   <title>System Analysis</title>
   <para>
    KIWI provides a module which allows you to analyze the running system and
@@ -151,7 +151,7 @@
   </para>
   <screen><command>kiwi</command>  { --describe }  <replaceable>name</replaceable> </screen>
  </refsect1>
- <refsect1 id="kiwi.image.postproc">
+ <refsect1 xml:id="kiwi.image.postproc">
   <title>Image Postprocessing Modes</title>
   <para>
    The KIWI post-processing modes are used for special image deployment
@@ -200,7 +200,7 @@
   </para>
   <variablelist>
    <varlistentry>
-    <term><option>--createpassword</option>
+    <term version="5.0"><option>--createpassword</option>
     </term>
     <listitem>
      <para>
@@ -211,7 +211,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--createhash <replaceable>image-path</replaceable></option>
+    <term version="5.0"><option>--createhash <replaceable>image-path</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -222,7 +222,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>-i</option> | <option>--info <replaceable>image-path</replaceable></option><option>--select <replaceable>selection</replaceable></option>
+    <term version="5.0"><option>-i</option> | <option>--info <replaceable>image-path</replaceable></option><option>--select <replaceable>selection</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -242,7 +242,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--setup-splash <replaceable>initrd</replaceable></option>
+    <term version="5.0"><option>--setup-splash <replaceable>initrd</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -255,11 +255,11 @@
    </varlistentry>
   </variablelist>
  </refsect1>
- <refsect1 id="kiwi..global.options">
+ <refsect1 xml:id="kiwi..global.options">
   <title>Global Options</title>
   <variablelist>
    <varlistentry>
-    <term><option>--add-profile</option><replaceable>profile-name</replaceable>
+    <term version="5.0"><option>--add-profile</option><replaceable>profile-name</replaceable>
     </term>
     <listitem>
      <para>
@@ -270,7 +270,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--set-repo</option><replaceable>URL</replaceable>
+    <term version="5.0"><option>--set-repo</option><replaceable>URL</replaceable>
     </term>
     <listitem>
      <para>
@@ -281,7 +281,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--set-repotype</option><replaceable>type</replaceable>
+    <term version="5.0"><option>--set-repotype</option><replaceable>type</replaceable>
     </term>
     <listitem>
      <para>
@@ -293,7 +293,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--set-repoalias</option><replaceable>name</replaceable>
+    <term version="5.0"><option>--set-repoalias</option><replaceable>name</replaceable>
     </term>
     <listitem>
      <para>
@@ -307,7 +307,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--set-repoprio</option><replaceable>number</replaceable>
+    <term version="5.0"><option>--set-repoprio</option><replaceable>number</replaceable>
     </term>
     <listitem>
      <para>
@@ -319,7 +319,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--add-repo
+    <term version="5.0"><option>--add-repo
       <replaceable>URL</replaceable></option>,
       <option>--add-repotype <replaceable>type</replaceable></option><option>--add-repoalias <replaceable>name</replaceable></option><option>--add-repoprio <replaceable>number</replaceable></option>
     </term>
@@ -334,7 +334,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--ignore-repos</option>
+    <term version="5.0"><option>--ignore-repos</option>
     </term>
     <listitem>
      <para>
@@ -346,7 +346,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--logfile <replaceable>Filename</replaceable></option>
+    <term version="5.0"><option>--logfile <replaceable>Filename</replaceable></option>
       | <option>terminal</option>
     </term>
     <listitem>
@@ -357,7 +357,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--gzip-cmd <replaceable>cmd</replaceable></option>
+    <term version="5.0"><option>--gzip-cmd <replaceable>cmd</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -367,7 +367,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--package-manager <replaceable>smart|zypper</replaceable></option>
+    <term version="5.0"><option>--package-manager <replaceable>smart|zypper</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -377,7 +377,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>-A</option> | <option>--target-arch <replaceable>i586|x86_64|armv5tel|ppc</replaceable></option>
+    <term version="5.0"><option>-A</option> | <option>--target-arch <replaceable>i586|x86_64|armv5tel|ppc</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -388,7 +388,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--disk-start-sector <replaceable>number</replaceable></option>
+    <term version="5.0"><option>--disk-start-sector <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -399,7 +399,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--disk-sector-size <replaceable>number</replaceable></option>
+    <term version="5.0"><option>--disk-sector-size <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -409,7 +409,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--disk-alignment <replaceable>number</replaceable></option>
+    <term version="5.0"><option>--disk-alignment <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -419,7 +419,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--debug</option>
+    <term version="5.0"><option>--debug</option>
     </term>
     <listitem>
      <para>
@@ -428,7 +428,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--verbose <replaceable>1|2|3</replaceable></option>
+    <term version="5.0"><option>--verbose <replaceable>1|2|3</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -437,7 +437,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>-y</option> | <option>--yes</option>
+    <term version="5.0"><option>-y</option> | <option>--yes</option>
     </term>
     <listitem>
      <para>
@@ -446,7 +446,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--create-instsource <replaceable>path-to-config.xml</replaceable></option>
+    <term version="5.0"><option>--create-instsource <replaceable>path-to-config.xml</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -457,7 +457,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--bundle-build</option>
+    <term version="5.0"><option>--bundle-build</option>
     </term>
     <listitem>
      <para>
@@ -470,7 +470,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--bundle-id <replaceable>build-number</replaceable></option>
+    <term version="5.0"><option>--bundle-id <replaceable>build-number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -481,11 +481,11 @@
    </varlistentry>
   </variablelist>
  </refsect1>
- <refsect1 id="kiwi.prepare.options">
+ <refsect1 xml:id="kiwi.prepare.options">
   <title>Image Preparation Options</title>
   <variablelist>
    <varlistentry>
-    <term><option>-r</option> | <option>--root
+    <term version="5.0"><option>-r</option> | <option>--root
       <replaceable>RootPath</replaceable></option>
     </term>
     <listitem>
@@ -499,7 +499,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--force-new-root</option>
+    <term version="5.0"><option>--force-new-root</option>
     </term>
     <listitem>
      <para>
@@ -510,11 +510,11 @@
    </varlistentry>
   </variablelist>
  </refsect1>
- <refsect1 id="kiwi.prepare.upgrade.options">
+ <refsect1 xml:id="kiwi.prepare.upgrade.options">
   <title>Image Upgrade/Preparation Options</title>
   <variablelist>
    <varlistentry>
-    <term><option>--cache</option><replaceable>directory</replaceable>
+    <term version="5.0"><option>--cache</option><replaceable>directory</replaceable>
     </term>
     <listitem>
      <para>
@@ -525,7 +525,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--init-cache</option><replaceable>image description</replaceable>
+    <term version="5.0"><option>--init-cache</option><replaceable>image description</replaceable>
     </term>
     <listitem>
      <para>
@@ -534,7 +534,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--recycle-root</option>
+    <term version="5.0"><option>--recycle-root</option>
     </term>
     <listitem>
      <para>
@@ -544,7 +544,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--force-bootstrap</option>
+    <term version="5.0"><option>--force-bootstrap</option>
     </term>
     <listitem>
      <para>
@@ -555,7 +555,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--add-package</option><replaceable>package</replaceable>
+    <term version="5.0"><option>--add-package</option><replaceable>package</replaceable>
     </term>
     <listitem>
      <para>
@@ -566,7 +566,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--add-pattern</option><replaceable>name</replaceable>
+    <term version="5.0"><option>--add-pattern</option><replaceable>name</replaceable>
     </term>
     <listitem>
      <para>
@@ -578,7 +578,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--del-package</option><replaceable>package</replaceable>
+    <term version="5.0"><option>--del-package</option><replaceable>package</replaceable>
     </term>
     <listitem>
      <para>
@@ -589,11 +589,11 @@
    </varlistentry>
   </variablelist>
  </refsect1>
- <refsect1 id="kiwi.create.options">
+ <refsect1 xml:id="kiwi.create.options">
   <title>Image Creation Options</title>
   <variablelist>
    <varlistentry>
-    <term><option>-d</option> | <option>--destdir
+    <term version="5.0"><option>-d</option> | <option>--destdir
       <replaceable>DestinationPath</replaceable></option>
     </term>
     <listitem>
@@ -609,7 +609,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>-t</option> | <option>--type
+    <term version="5.0"><option>-t</option> | <option>--type
       <replaceable>Imagetype</replaceable></option>
     </term>
     <listitem>
@@ -628,7 +628,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>-s</option> | <option>--strip</option>
+    <term version="5.0"><option>-s</option> | <option>--strip</option>
     </term>
     <listitem>
      <para>
@@ -638,7 +638,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--prebuiltbootimage
+    <term version="5.0"><option>--prebuiltbootimage
       <replaceable>Directory</replaceable></option>
     </term>
     <listitem>
@@ -649,7 +649,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--isocheck</option>
+    <term version="5.0"><option>--isocheck</option>
     </term>
     <listitem>
      <para>
@@ -661,7 +661,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--lvm</option>
+    <term version="5.0"><option>--lvm</option>
     </term>
     <listitem>
      <para>
@@ -673,7 +673,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--fs-blocksize <replaceable>number</replaceable></option>
+    <term version="5.0"><option>--fs-blocksize <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -684,7 +684,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--fs-journalsize <replaceable>number</replaceable></option>
+    <term version="5.0"><option>--fs-journalsize <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -695,7 +695,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--fs-inodesize <replaceable>number</replaceable></option>
+    <term version="5.0"><option>--fs-inodesize <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -705,7 +705,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--fs-inoderatio <replaceable>number</replaceable></option>
+    <term version="5.0"><option>--fs-inoderatio <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -715,7 +715,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--fs-max-mount-count <replaceable>number</replaceable></option>
+    <term version="5.0"><option>--fs-max-mount-count <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -726,7 +726,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--fs-check-interval <replaceable>number</replaceable></option>
+    <term version="5.0"><option>--fs-check-interval <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -737,7 +737,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--fat-storage <replaceable>size in MB</replaceable></option>
+    <term version="5.0"><option>--fat-storage <replaceable>size in MB</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -750,7 +750,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--partitioner <replaceable>parted|fdasd</replaceable></option>
+    <term version="5.0"><option>--partitioner <replaceable>parted|fdasd</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -760,7 +760,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--check-kernel</option>
+    <term version="5.0"><option>--check-kernel</option>
     </term>
     <listitem>
      <para>
@@ -771,7 +771,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--mbrid <replaceable>number</replaceable></option>
+    <term version="5.0"><option>--mbrid <replaceable>number</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -783,7 +783,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--edit-bootconfig <replaceable>script</replaceable></option>
+    <term version="5.0"><option>--edit-bootconfig <replaceable>script</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -799,7 +799,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--edit-bootinstall <replaceable>script</replaceable></option>
+    <term version="5.0"><option>--edit-bootinstall <replaceable>script</replaceable></option>
     </term>
     <listitem>
      <para>
@@ -809,7 +809,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--archive-image</option>
+    <term version="5.0"><option>--archive-image</option>
     </term>
     <listitem>
      <para>
@@ -819,7 +819,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><option>--targetdevice</option><replaceable>device</replaceable>
+    <term version="5.0"><option>--targetdevice</option><replaceable>device</replaceable>
     </term>
     <listitem>
      <para>
@@ -831,14 +831,14 @@
    </varlistentry>
   </variablelist>
  </refsect1>
- <refsect1 id="kiwi.moreinfo">
+ <refsect1 xml:id="kiwi.moreinfo">
   <title>For More Information</title>
   <para>
    More information about KIWI, its files can be found at:
   </para>
   <variablelist>
    <varlistentry>
-    <term><ulink url="https://opensuse.github.io/kiwi/"/>
+    <term version="5.0"><link xlink:href="https://opensuse.github.io/kiwi/"/>
     </term>
     <listitem>
      <para>
@@ -847,7 +847,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><filename>config.xml</filename>
+    <term version="5.0"><filename>config.xml</filename>
     </term>
     <listitem>
      <para>
@@ -857,7 +857,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><ulink url="file:///usr/share/doc/packages/kiwi/kiwi.pdf"/>
+    <term version="5.0"><link xlink:href="file:///usr/share/doc/packages/kiwi/kiwi.pdf"/>
     </term>
     <listitem>
      <para>
@@ -867,7 +867,7 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><ulink url="file:///usr/share/doc/packages/kiwi/schema/kiwi.xsd.html"/>
+    <term version="5.0"><link xlink:href="file:///usr/share/doc/packages/kiwi/schema/kiwi.xsd.html"/>
     </term>
     <listitem>
      <para>

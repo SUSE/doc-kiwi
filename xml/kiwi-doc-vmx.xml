@@ -1,14 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd"
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
+<!-- Converted by suse-upgrade version 1.1 -->
 
-<chapter id="chap.vmx">
- <title>VMX Image / Virtual Disks</title>
- <abstract>
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="chap.vmx"><title>VMX Image / Virtual Disks</title><info><abstract>
   <para>
    A VMX image is a virtual disk image for use in full virtualization systems
    like Qemu or VMware. The image is a file containing the system (represented
@@ -17,12 +9,17 @@
    size and geometry that cannot be changed (see <xref linkend="chap.oem"/>
    for images with expandable disks).
   </para>
- </abstract>
+ </abstract></info>
+ 
+ 
 
  <tip>
   <title>VMX Image Description Templates</title>
   <para>
-   &template_intro;
+   KIWI comes with many image description templates. It is
+   recommended to use them as a basis for your own image descriptions. To do
+   so, copy the respective directory containing the image description of your
+   choice to you working directory and adjust it according to your needs.
   </para>
   <para>
    VMX image templates are shipped with the package
@@ -31,9 +28,21 @@
   </para>
  </tip>
  
- &jeos_tip;
+ <tip>
+  <title>Just Enough Operating System (JeOS) Templates</title>
+  <para>
+   The package <package>kiwi-templates</package> contains ready-to-use JeOS
+   templates. They are installed to <filename class="directory">/usr/share/kiwi/image/*-JeOS/</filename>. These
+   templates can be used without any modification to build images containing
+   a minimal operating system. The template directory is in KIWI's search
+   path, therefore it is sufficient to only specify the name of the
+   <filename>*-JeOS</filename> directory on the KIWI command line. Get a list
+   of available templates with the following command:
+  </para>
+  <screen>(cd /usr/share/kiwi/image/ &amp;&amp; ls -d1 *-JeOS)</screen>
+ </tip>
 
- <sect1 id="sec.vmx.building">
+ <section xml:id="sec.vmx.building">
   <title>Building VMX Images</title>
 
   <para>
@@ -44,19 +53,15 @@
   <screen>kiwi --build suse-SLE12-JeOS -d /tmp/myvm-result --type vmx</screen>
 
   <para>
-   The command creates a virtual disk in the <filename
-   class="extension">.raw</filename> format that can be directly booted with any
+   The command creates a virtual disk in the <filename class="extension">.raw</filename> format that can be directly booted with any
    virtualization system. The following example shows how to boot it with QEMU:
   </para>
 
   <screen>qemu /tmp/myvm-result/LimeJeOS-SLE12.x86_64-1.13.1.raw -m 1024 </screen>
 
   <para>
-   KIWI always generates a file in the <filename
-   class="extension">.raw</filename> format. The <filename
-   class="extension">.raw</filename> file is a disk image with an
-   equivalent to the structure of a physical hard disk. <filename
-   class="extension">.raw</filename> images are supported by any hypervisor,
+   KIWI always generates a file in the <filename class="extension">.raw</filename> format. The <filename class="extension">.raw</filename> file is a disk image with an
+   equivalent to the structure of a physical hard disk. <filename class="extension">.raw</filename> images are supported by any hypervisor,
    but are rather big in size (not compressed) and do not offer the best
    performance. 
   </para>
@@ -64,7 +69,7 @@
    Therefore each virtualization system supports its own proprietary format
    supporting compression and improved I/O performance. To build an image in a
    format other than <filename class="extension">.raw</filename>, add the
-   <sgmltag class="attribute">format</sgmltag> attribute to the type
+   <tag class="attribute">format</tag> attribute to the type
    definition in <filename>config.xml</filename>:
   </para>
 
@@ -80,7 +85,7 @@
    The following values can be set for <replaceable>FORMAT</replaceable>:
   </para>
 
-  <table id="tab.vmx.supported-disk-formats">
+  <table xml:id="tab.vmx.supported-disk-formats">
    <title>Supported Virtual Disk Formats</title>
    <tgroup cols="2">
     <colspec colwidth="1*"/>
@@ -123,8 +128,8 @@
     </tbody>
    </tgroup>
   </table>
- </sect1>
- <sect1 id="sec.vmx.vmware-support">
+ </section>
+ <section xml:id="sec.vmx.vmware-support">
   <title>VMware support</title>
   <para>
    A VMware image is accompanied by a guest configuration file. This file
@@ -137,7 +142,7 @@
    include selected packages in the created image that are specific to the VM
    image generation. This is done in the <emphasis>machine</emphasis> section
    in the configuration file. The following example will create a VMware
-   guest configuration with 512&nbsp;MB of RAM and an IDE disk controller:
+   guest configuration with 512 MB of RAM and an IDE disk controller:
   </para>
   <screen>&lt;image ...&gt;
   &lt;preferences&gt;
@@ -159,9 +164,9 @@
    image:
   </para>
   <screen>/tmp/myvm-result/LimeJeOS-SLE12.x86_64-1.13.1.vmx</screen>
- </sect1>
+ </section>
  
-<sect1 id="sec.vmx.lvm">
+<section xml:id="sec.vmx.lvm">
  <title>LVM Support</title>
  <para>
   Support for LVM has been added for all image types which are disk-based.  In
@@ -182,9 +187,9 @@
    their native volume management system. For more information how to setup
    custom partitions/volumes, see <xref linkend="chap.partitions"/>.
  </para>
-</sect1>
+</section>
 
-<sect1 id="sec.vmx.bootpartition">
+<section xml:id="sec.vmx.bootpartition">
  <title>Extra Boot Partition</title>
  <para>
   Depending on the selected root file system and the capabilities of the boot
@@ -192,15 +197,8 @@
   partition. The format of a boot partition is set to ext2 by default.
  </para>
  <para>
-  To manually control the attributes <sgmltag
-  class="attribute">bootpartition</sgmltag> (can be set to <sgmltag
-  class="attvalue">true</sgmltag> or <sgmltag
-  class="attvalue">false</sgmltag>) and <sgmltag
-  class="attribute">bootfilesystem</sgmltag> (can be set to <sgmltag
-  class="attvalue">ext2</sgmltag>, <sgmltag class="attvalue">ext3</sgmltag>,
-  <sgmltag class="attvalue">ext4</sgmltag>, <sgmltag
-  class="attvalue">fat32</sgmltag>, or <sgmltag
-  class="attvalue">fat16</sgmltag>). A runtime check at build time will test
+  To manually control the attributes <tag class="attribute">bootpartition</tag> (can be set to <tag class="attvalue">true</tag> or <tag class="attvalue">false</tag>) and <tag class="attribute">bootfilesystem</tag> (can be set to <tag class="attvalue">ext2</tag>, <tag class="attvalue">ext3</tag>,
+  <tag class="attvalue">ext4</tag>, <tag class="attvalue">fat32</tag>, or <tag class="attvalue">fat16</tag>). A runtime check at build time will test
   whether the given configuration can be implemented. The following example
   will create an etx3-formatted boot partition:
  </para>
@@ -211,5 +209,5 @@
   &lt;/preferences
   ...
 &lt;/image&gt;</screen>
- </sect1>
+ </section>
 </chapter>

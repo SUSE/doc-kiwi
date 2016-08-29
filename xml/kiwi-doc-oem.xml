@@ -1,12 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd"
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<chapter id="chap.oem">
- <title>OEM Image / Preload Systems</title>
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="chap.oem"><title>OEM Image / Preload Systems</title><info/>
+ 
  <para>
   An OEM image is a virtual disk image representing all partitions and
   boot loader information the same way as on a physical disk. All flavors
@@ -29,7 +24,10 @@
  <tip>
   <title>OEM Image Description Templates</title>
   <para>
-   &template_intro;
+   KIWI comes with many image description templates. It is
+   recommended to use them as a basis for your own image descriptions. To do
+   so, copy the respective directory containing the image description of your
+   choice to you working directory and adjust it according to your needs.
   </para>
   <para>
    OEM image templates are shipped with the package
@@ -39,7 +37,7 @@
  </tip>
 
 
- <sect1 id="sec.oem.building">
+ <section xml:id="sec.oem.building">
   <title>Building an OEM System and an Installation Image</title>
 
   <para>
@@ -55,8 +53,8 @@
   </para>
 
  <screen><command>kiwi</command> --build suse-SLE12-JeOS -d /tmp/myoem-result --type oem</screen>
- </sect1>
- <sect1 id="sec.oem.testing">
+ </section>
+ <section xml:id="sec.oem.testing">
   <title>Testing the Images</title><indexterm>
 
   <primary>raw</primary>
@@ -128,10 +126,10 @@ dd if=LimeJeOS-SLE12.x86_64-1.13.1.raw of=/dev/<replaceable>device</replaceable>
   <screen>cd /tmp/myoem-result
 qemu-img create /tmp/mydisk 20G
 qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
- </sect1>
+ </section>
 
 
- <sect1 id="sec.oem.flavours">
+ <section xml:id="sec.oem.flavours">
   <title>Installation Image Flavors</title>
 
   <para>
@@ -150,9 +148,8 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
    suitable for CD/DVD media and flash disks and a second one suitable for a
    flash disks only. The latter format can be used if the BIOS/EFI does not
    support booting from hybrid images.  The following
-   configuration snippets show the use of the <sgmltag
-   class="attribute">installiso</sgmltag> to create a CD/DVD iso image and
-   <sgmltag class="attribute">installstick</sgmltag> attributes in
+   configuration snippets show the use of the <tag class="attribute">installiso</tag> to create a CD/DVD iso image and
+   <tag class="attribute">installstick</tag> attributes in
    <filename>configuration.xml</filename> to create a USB installation image
    format.
   </para>
@@ -166,11 +163,10 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
      <para>
       Creates an <filename class="extension">.iso</filename> file which can be
       burned onto a CD or a DVD or dumped on a flash disk. The attribute
-      <sgmltag class="attribute">hybrid="true"</sgmltag> makes sure a hybrid
+      <tag class="attribute">hybrid="true"</tag> makes sure a hybrid
       iso image is created that is suitable for both purposes. A
       hybrid image is the recommended format for an installation image. If the
-      target hardware is not able to boot from such an image, try the <sgmltag
-      class="attribute">installstick</sgmltag> variant described below.
+      target hardware is not able to boot from such an image, try the <tag class="attribute">installstick</tag> variant described below.
      </para>
      <screen>&lt;image ...&gt;
   &lt;preferences&gt;
@@ -205,9 +201,9 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </listitem>
    </varlistentry>
   </variablelist>
- </sect1>
+ </section>
 
- <sect1 id="sec.oem.customize">
+ <section xml:id="sec.oem.customize">
   <title>Customizing the OEM Images</title>
   <para>
    KIWI not only allows to customize the boot process of an OEM image by
@@ -216,7 +212,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
    the image.
   </para>
 
-  <sect2 id="sec.oem.customize.installation">
+  <section xml:id="sec.oem.customize.installation">
    <title>Customizing the OEM Install Process</title><indexterm>
    <primary>preHWdetect.sh</primary></indexterm><indexterm>
    <primary>postHWdetect.sh</primary></indexterm><indexterm>
@@ -266,16 +262,15 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
      </listitem>
     </varlistentry>
    </variablelist>
-  </sect2>
+  </section>
 
-  <sect2 id="sec.oem.customize.parameters">
+  <section xml:id="sec.oem.customize.parameters">
    <title>OEM Customizing Parameters</title>
    <para>
     <remark condition="clarity">
      2015-12-01 - fs: oem-home* is/are? missing. Any others?
     </remark>
-    All OEM customizing parameters reside in the <sgmltag
-    class="element">oemconfig</sgmltag> tag in
+    All OEM customizing parameters reside in the <tag class="element">oemconfig</tag> tag in
     <filename>configuration.xml</filename>:
    </para>
    <screen>&lt;image ...&gt;
@@ -294,14 +289,13 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
    <variablelist>
     <varlistentry>
      <term>
-      <sgmltag class="starttag">oem-boot-title</sgmltag
-      >text<sgmltag class="endtag">oem-boot-title</sgmltag>
+      <tag class="starttag">oem-boot-title</tag>text<tag class="endtag">oem-boot-title</tag>
      </term>
      <listitem>
       <para>
-       By default, the string <literal>OEM</literal>> will be used
+       By default, the string <literal>OEM</literal>&gt; will be used
        as the boot manager menu entry when KIWI creates the GRUB configuration
-       during deployment. The <sgmltag>oem-boot-title</sgmltag> element allows
+       during deployment. The <tag>oem-boot-title</tag> element allows
        you to set a custom name for the GRUB menu entry. This value can also
        be set at the boot prompt by the parameter
        <literal>kiwi_oemtitle="<replaceable>TITLE</replaceable>"</literal>.
@@ -310,8 +304,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </varlistentry>
     <varlistentry>
      <term>
-      <sgmltag class="starttag">oem-bootwait</sgmltag
-       >true|false<sgmltag class="endtag">oem-bootwait</sgmltag>
+      <tag class="starttag">oem-bootwait</tag>true|false<tag class="endtag">oem-bootwait</tag>
      </term>
      <listitem>
       <para>
@@ -325,8 +318,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </varlistentry>
     <varlistentry>
      <term>
-      <sgmltag class="starttag">oem-inplace-recovery</sgmltag
-       >true|false<sgmltag class="endtag">oem-inplace-recovery</sgmltag>
+      <tag class="starttag">oem-inplace-recovery</tag>true|false<tag class="endtag">oem-inplace-recovery</tag>
      </term>
      <listitem>
       <para>
@@ -340,8 +332,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </varlistentry>
     <varlistentry>
      <term>
-      <sgmltag class="starttag">oem-kiwi-initrd</sgmltag
-       >true|false<sgmltag class="endtag">oem-kiwi-initrd</sgmltag>
+      <tag class="starttag">oem-kiwi-initrd</tag>true|false<tag class="endtag">oem-kiwi-initrd</tag>
      </term>
      <listitem>
       <para>
@@ -359,8 +350,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </varlistentry>
     <varlistentry>
      <term>
-      <sgmltag class="starttag">oem-partition-install</sgmltag
-       >true|false<sgmltag class="endtag">oem-partition-install</sgmltag>
+      <tag class="starttag">oem-partition-install</tag>true|false<tag class="endtag">oem-partition-install</tag>
      </term>
      <listitem>
       <para>
@@ -373,9 +363,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
        be created. The empty partition needs to exist prior to booting the
        KIWI image, otherwise the installation will fail. Setting this
        parameter to <literal>true</literal> also makes KIWI ignore any other
-       partitioning-related setting (for example <sgmltag
-       class="element">oem-swap</sgmltag>). See <xref
-       linkend="sec.oem.partition-based-installation"/> for more details. This
+       partitioning-related setting (for example <tag class="element">oem-swap</tag>). See <xref linkend="sec.oem.partition-based-installation"/> for more details. This
        value can also be set at the boot prompt by the parameter
        <literal>kiwi_oempartition_install=<replaceable>TRUE_OR_FALSE</replaceable></literal>.
       </para>
@@ -383,8 +371,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </varlistentry>
     <varlistentry>
      <term>
-      <sgmltag class="starttag">oem-reboot</sgmltag
-       >true|false<sgmltag class="endtag">oem-reboot</sgmltag>
+      <tag class="starttag">oem-reboot</tag>true|false<tag class="endtag">oem-reboot</tag>
      </term>
      <listitem>
       <para>
@@ -398,8 +385,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </varlistentry>
     <varlistentry>
      <term>
-      <sgmltag class="starttag">oem-reboot-interactive</sgmltag
-       >true|false<sgmltag class="endtag">oem-reboot-interactive</sgmltag>
+      <tag class="starttag">oem-reboot-interactive</tag>true|false<tag class="endtag">oem-reboot-interactive</tag>
      </term>
      <listitem>
       <para>
@@ -414,8 +400,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </varlistentry>
     <varlistentry>
      <term>
-      <sgmltag class="starttag">oem-recovery</sgmltag
-       >true|false<sgmltag class="endtag">oem-recovery</sgmltag>
+      <tag class="starttag">oem-recovery</tag>true|false<tag class="endtag">oem-recovery</tag>
      </term>
      <listitem>
       <para>
@@ -426,8 +411,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
        first boot of the image a single recovery partition will be created and
        the recovery archive will be moved to that partition. A boot menu entry
        for recovery, that will restores the original root tree on the system,
-       is created. User data stored in <filename
-       class="directory">/home</filename> will not be affected by the recovery
+       is created. User data stored in <filename class="directory">/home</filename> will not be affected by the recovery
        process. This value can also be set at the boot prompt by the parameter
        <literal>kiwi_oemrecovery=<replaceable>TRUE_OR_FALSE</replaceable></literal>.
       </para>
@@ -435,8 +419,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </varlistentry>
     <varlistentry>
      <term>
-      <sgmltag class="starttag">oem-recoveryID</sgmltag
-       >partition-id<sgmltag class="endtag">oem-recoveryID</sgmltag>
+      <tag class="starttag">oem-recoveryID</tag>partition-id<tag class="endtag">oem-recoveryID</tag>
      </term>
      <listitem>
       <para>
@@ -449,8 +432,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </varlistentry>
     <varlistentry>
      <term>
-      <sgmltag class="starttag">oem-silent-boot</sgmltag
-       >true|false<sgmltag class="endtag">oem-silent-boot</sgmltag>
+      <tag class="starttag">oem-silent-boot</tag>true|false<tag class="endtag">oem-silent-boot</tag>
      </term>
      <listitem>
       <para>
@@ -465,8 +447,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </varlistentry>
     <varlistentry>
      <term>
-      <sgmltag class="starttag">oem-shutdown</sgmltag
-       >true|false<sgmltag class="endtag">oem-shutdown</sgmltag>
+      <tag class="starttag">oem-shutdown</tag>true|false<tag class="endtag">oem-shutdown</tag>
      </term>
      <listitem>
       <para>
@@ -479,8 +460,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </varlistentry>
     <varlistentry>
      <term>
-      <sgmltag class="starttag">oem-shutdown-interactive</sgmltag
-       >true|false<sgmltag class="endtag">oem-shutdown-interactive</sgmltag>
+      <tag class="starttag">oem-shutdown-interactive</tag>true|false<tag class="endtag">oem-shutdown-interactive</tag>
      </term>
      <listitem>
       <para>
@@ -494,8 +474,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </varlistentry>
     <varlistentry>
      <term>
-      <sgmltag class="starttag">oem-swap</sgmltag
-       >true|false<sgmltag class="endtag">oem-swap</sgmltag>
+      <tag class="starttag">oem-swap</tag>true|false<tag class="endtag">oem-swap</tag>
      </term>
      <listitem>
       <para>
@@ -508,8 +487,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </varlistentry>
     <varlistentry>
      <term>
-      <sgmltag class="starttag">oem-swapsize</sgmltag
-       >size in MB<sgmltag class="endtag">oem-swapsize</sgmltag>
+      <tag class="starttag">oem-swapsize</tag>size in MB<tag class="endtag">oem-swapsize</tag>
      </term>
      <listitem>
       <para>
@@ -523,31 +501,27 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="starttag">oem-systemsize</sgmltag
-      >size in MB<sgmltag class="endtag">oem-systemsize</sgmltag>
+     <term><tag class="starttag">oem-systemsize</tag>size in MB<tag class="endtag">oem-systemsize</tag>
      </term>
      <listitem>
       <para>
        Set the size the operating system is allowed to consume on the target
        disk. The size limit does not include any consideration for swap space
        or a recovery partition. In a setup <emphasis>without</emphasis> a
-       <sgmltag class="element">systemdisk</sgmltag> element this value
+       <tag class="element">systemdisk</tag> element this value
        specifies the size of the root partition. In a setup
-       <emphasis>including</emphasis> a <sgmltag
-       class="element">systemdisk</sgmltag> element this value specifies the
+       <emphasis>including</emphasis> a <tag class="element">systemdisk</tag> element this value specifies the
        size of the LVM partition which contains all specified volumes. Thus,
        the sum of all specified volume sizes plus the sum of the specified
        free space for each volume must be smaller or equal than the size
-       specified with the <sgmltag
-       class="element">oem-systemsize</sgmltag>. This value can also be set at
+       specified with the <tag class="element">oem-systemsize</tag>. This value can also be set at
        the boot prompt by the parameter
        <literal>kiwi_oemrootMB=<replaceable>SIZE_IN_MB</replaceable></literal>.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="starttag">oem-unattended</sgmltag
-      >true|false<sgmltag class="endtag">oem-unattended</sgmltag>
+     <term><tag class="starttag">oem-unattended</tag>true|false<tag class="endtag">oem-unattended</tag>
      </term>
      <listitem>
       <para>
@@ -561,9 +535,9 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
      </listitem>
     </varlistentry>
    </variablelist>
-  </sect2>
+  </section>
 
-  <sect2 id="sec.oem.partition-based-installation">
+  <section xml:id="sec.oem.partition-based-installation">
    <title>Partition Based Installation</title><indexterm>
    <primary>config.xml</primary></indexterm>
    <para>
@@ -605,9 +579,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </listitem>
     <listitem>
      <para>
-      The parameter <sgmltag class="element">oem-home*</sgmltag>, <sgmltag
-      class="element">oem-swap*</sgmltag>, and <sgmltag
-      class="element">oem-systemsize</sgmltag> for system, swap and home are
+      The parameter <tag class="element">oem-home*</tag>, <tag class="element">oem-swap*</tag>, and <tag class="element">oem-systemsize</tag> for system, swap and home are
       ignored. In this mode KIWI will not create additional partitions. If a
       swap partition exists, it will automatically be used, if not, a
       swap-file will be created.
@@ -622,10 +594,10 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
      </para>
     </listitem>
    </itemizedlist>
-  </sect2>
- </sect1>
+  </section>
+ </section>
 
- <sect1 id="sec.oem.pxe-based-installation">
+ <section xml:id="sec.oem.pxe-based-installation">
   <title>Network Based Installation</title><indexterm>
   <primary>network installation</primary></indexterm><indexterm>
   <primary>installation</primary>
@@ -634,8 +606,7 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
    Instead of manually dumping the OEM image on the target device or creating
    a KIWI installation CD or flash disk, the image can alternatively be
    downloaded from a PXE boot server over the network. This requires a PXE
-   network boot server to be setup as explained in <xref
-   linkend="chap.pxe"/>. If your PXE server is running the following steps are
+   network boot server to be setup as explained in <xref linkend="chap.pxe"/>. If your PXE server is running the following steps are
    required to set up the installation process over the network:
   </para>
   <procedure>
@@ -686,8 +657,8 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     <para>
      Optionally the image and its md5sum can be stored on an FTP or HTTP
      server specified via the parameters
-     <command>kiwiserver=<replaceable>IP_ADRESS</replaceable></command> and
-     <command>kiwiservertype=<replaceable>HTTP_HTTPS_OR_FTP</replaceable></command>. In
+     <command>kiwiserver=</command> <replaceable>IP_ADRESS</replaceable> and
+     <command>kiwiservertype=</command> <replaceable>HTTP_HTTPS_OR_FTP</replaceable>. In
      this case make sure to copy the system image and md5 file to the correct
      location on the server. KIWI searches the image at
      <replaceable>SERVER_ROOT</replaceable>/image (for example
@@ -696,5 +667,5 @@ qemu -hda /tmp/mydisk -cdrom LimeJeOS-SLE12.x86_64-1.13.1.iso -boot d</screen>
     </para>
    </step>
   </procedure>
- </sect1>
+ </section>
 </chapter>

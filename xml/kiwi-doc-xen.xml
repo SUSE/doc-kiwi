@@ -1,17 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd"
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<chapter id="chap.xen">
- <title>Xen Para- and Full virtual Images</title>
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="chap.xen"><title>Xen Para- and Full virtual Images</title><info/>
+ 
  <para>
   A Xen image is a virtual disk like a vmx but with the Xen kernel installed
   for dom0 or para virtual guest images. For fully virtualized guest images
-  any Kernel, for example <systemitem
-  class="resource">kernel-default</systemitem>, my be used together with the
+  any Kernel, for example <systemitem class="resource">kernel-default</systemitem>, my be used together with the
   Xen kernel modules.
  </para>
  <para>
@@ -27,7 +21,10 @@
  <tip>
   <title>Xen Image Description Templates</title>
   <para>
-   &template_intro;
+   KIWI comes with many image description templates. It is
+   recommended to use them as a basis for your own image descriptions. To do
+   so, copy the respective directory containing the image description of your
+   choice to you working directory and adjust it according to your needs.
   </para>
   <para>
    There are no special templates for Xen images. You may either use OEM or
@@ -40,7 +37,7 @@
  </tip>
 
 
- <sect1 id="sec.xen.dom0.building">
+ <section xml:id="sec.xen.dom0.building">
   <title>Building a Dom0 Image</title>
 
   <para>
@@ -52,9 +49,9 @@
 
 <screen><command>kiwi</command> --build suse-SLE12-JeOS -d /tmp/myoem-result --type oem \
      --add-profile xenFlavour</screen>
- </sect1>
+ </section>
 
- <sect1 id="sec.xen.dom0.using">
+ <section xml:id="sec.xen.dom0.using">
   <title>Testing the Dom0 Image</title>
 
   <para>
@@ -73,9 +70,9 @@
    When booted <emphasis>mydom0</emphasis> is a Xen dom0 from which other
    Xen guests can be started.
   </para>
- </sect1>
+ </section>
 
- <sect1 id="sec.xen.domU.pv.building">
+ <section xml:id="sec.xen.domU.pv.building">
   <title>Building a Paravirtualized Xen Guest Image</title>
 
   <para>
@@ -90,9 +87,9 @@
 
 <screen><command>kiwi</command> --build suse-SLE12-JeOS -d /tmp/myvmx-result --type vmx \
      --add-profile xenFlavour</screen>
- </sect1>
+ </section>
 
- <sect1 id="sec.xen.domU.hvm.building">
+ <section xml:id="sec.xen.domU.hvm.building">
   <title>Building a Fully Virtualized Xen Guest</title>
 
   <para>
@@ -105,9 +102,9 @@
 
 <screen><command>kiwi</command> --build suse-SLE12-JeOS -d /tmp/myvmx-result --type vmx \
      --add-profile xenFlavourHVM</screen>
- </sect1>
+ </section>
 
- <sect1 id="sec.xen.using">
+ <section xml:id="sec.xen.using">
   <title>Using the Guest Images</title>
 
   <para>
@@ -119,8 +116,7 @@
 
   <para>
    For paravirtual guest images KIWI supports the creation of the
-   configuration file according to information provided with the <sgmltag
-   class="element">machine</sgmltag> element of the KIWI
+   configuration file according to information provided with the <tag class="element">machine</tag> element of the KIWI
    configuration file <filename>config.xml</filename>:
   </para>
 
@@ -141,11 +137,9 @@
    options are supported by the KIWI Xen configuration file creator. For fully
    virtualized images there is currently no support to create the
    configuration from KIWI. However tools like <command>virt-manager</command>
-   support you setting up the machine configuration. Refer to the <ulink
-   url="https://www.suse.com/documentation/sles-12/book_virt/data/book_virt.html">SUSE
-   Linux Enterprise Virtualization Guide</ulink> or the <ulink
-   url="http://www.xenproject.org/help/documentation.html">Xen
-   Documentation</ulink> for more information.
+   support you setting up the machine configuration. Refer to the <link xlink:href="https://www.suse.com/documentation/sles-12/book_virt/data/book_virt.html">SUSE
+   Linux Enterprise Virtualization Guide</link> or the <link xlink:href="http://www.xenproject.org/help/documentation.html">Xen
+   Documentation</link> for more information.
   </para>
- </sect1>
+ </section>
 </chapter>

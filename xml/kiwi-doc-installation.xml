@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd">
-<chapter id="chap.installation">
- <title>Installation</title>
- <sect1 id="sec.installation.rpminstall">
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="chap.installation"><title>Installation</title><info/>
+ 
+ <section xml:id="sec.installation.rpminstall">
   <title>Installing KIWI Packages</title>
 
   <para>
@@ -14,7 +13,7 @@
    <package>kiwi</package> package and at least one package containing
    the boot descriptions for the various image types:
   </para>
-  <simplelist>
+  <simplelist type="vert">
    <member>
     <package>kiwi-desc-isoboot</package>: Live ISO boot templates
    </member>
@@ -35,18 +34,17 @@
    command <command>zypper se kiwi</command>.
   </para>
   
-  <sect2 id="sec.installation.rpminstall.latest">
+  <section xml:id="sec.installation.rpminstall.latest">
    <title>Installing the Latest Version Available</title>
    <para>
     KIWI is an active project and new releases are published
     regularly. Packages with the latest KIWI version for all SUSE
     distributions that are actively maintained can be obtained from the
-    Virtualization:Appliances repository at <ulink
-    url="http://download.opensuse.org/repositories/Virtualization:/Appliances/"/>.
+    Virtualization:Appliances repository at <link xlink:href="http://download.opensuse.org/repositories/Virtualization:/Appliances/"/>.
    </para>
-  </sect2>
+  </section>
 
-  <sect2 id="sec.installation.tmpfs">
+  <section xml:id="sec.installation.tmpfs">
    <title>Notes for /tmp living in a tmpfs</title>
    <para>
     On systems with <filename class="directory">/tmp</filename> living in a
@@ -58,10 +56,10 @@
     tmpfiles prior to the image build process:
    </para>
    <screen>export TMPDIR=/directory/on/real/disk</screen>
-  </sect2>
- </sect1>
+  </section>
+ </section>
 
- <sect1 id="sec.installation.fromsource">
+ <section xml:id="sec.installation.fromsource">
   <title>Running KIWI from a Source Checkout</title>
 
   <para>
@@ -97,5 +95,5 @@
    To update to the latest version available, run <command>git pull</command>
    from the KIWI checkout directory.
   </para>
- </sect1>
+ </section>
 </chapter>

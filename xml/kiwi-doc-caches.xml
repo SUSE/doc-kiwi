@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd">
-<sect1 id="chap.caches">
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<section xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="chap.caches">
  <title>Image Caches</title>
   <para>
    The process of creating an appliance could take quite some time and often
@@ -10,7 +9,7 @@
    in KIWI is a partial root tree created from a cache image description.
   </para>
 
-  <figure id="fig.imagecachingarch">
+  <figure xml:id="fig.imagecachingarch">
    <title>Image Caching Architecture</title>
    <mediaobject>
     <imageobject role="fo">
@@ -44,7 +43,7 @@
    added, which speeds up the build considerably.
   </para>
 
- <example id="sec.caches.example">
+ <example xml:id="sec.caches.example">
   <title>Building Multiple VMX Images</title>
 
   <para>
@@ -79,4 +78,4 @@
    make sure that the cache exists and is accessible on the system.
   </para>
  </example>
-</sect1>
+</section>

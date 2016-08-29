@@ -1,20 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd">
-<chapter id="chap.vagrant">
- <title>Vagrant boxes</title>
- <abstract>
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="chap.vagrant"><title>Vagrant boxes</title><info><abstract>
   <para>
-   <ulink url="http://vagrantup.com/">Vagrant</ulink> is a nice framework to
+   <link xlink:href="http://vagrantup.com/">Vagrant</link> is a nice framework to
    implement consistent processing/testing work environments based on
    Virtualization technologies. To run a system, Vagrant needs so-called
    <quote>boxes</quote>. A box is a TAR archive containing a virtual disk
    image and some metadata.
   </para>
   <para>
-   To build Vagrant boxes, you can use <ulink
-   url="https://github.com/jedi4ever/veewee">veewee</ulink> which builds boxes
-   based on AutoYaST, or <ulink url="http://packer.io">Packer</ulink>, which
+   To build Vagrant boxes, you can use <link xlink:href="https://github.com/jedi4ever/veewee">veewee</link> which builds boxes
+   based on AutoYaST, or <link xlink:href="http://packer.io">Packer</link>, which
    is provided by Vagrant itself.
   </para>
   <para>
@@ -22,12 +18,13 @@
    media does not exist (for example if the distribution is still under
    development or you want to use a collection of your own repositories), the
    KIWI way of building images might be helpful. In addition you can use the
-   KIWI image description as source for the <ulink
-   url="http://openbuildservice.org/">Open Build Service</ulink> which then
+   KIWI image description as source for the <link xlink:href="http://openbuildservice.org/">Open Build Service</link> which then
    allows building and maintaining boxes in the Build Service as a plus.
   </para>
- </abstract>
- <sect1 id="sec.vagrant.building">
+ </abstract></info>
+ 
+ 
+ <section xml:id="sec.vagrant.building">
   <title>Building Vagrant Boxes</title>
 
   <para>
@@ -37,8 +34,7 @@
   <screen>kiwi --build suse-SLE12-JeOS --add-profile vagrant --type vmx -d /tmp/my-box</screen>
   <para>
    The build result is written to <filename>/tmp/my-box</filename>. The
-   <filename class="extension">.box</filename> and <filename
-   class="extension">.json</filename> files are needed to add and run the box
+   <filename class="extension">.box</filename> and <filename class="extension">.json</filename> files are needed to add and run the box
    in Vagrant. The <filename class="extension">.box</filename> file is a TAR
    archive containing the virtual disk image for the selected virtualization
    provider.  In this example it is a qcow2 image to be used with libvirt and
@@ -51,8 +47,7 @@
   </para>
   <para>
    The system installed on the virtual disk needs to fulfill some requirements
-   which are documented at <ulink
-   url="http://docs.vagrantup.com/v2/boxes/base.html"/>. The KIWI template
+   which are documented at <link xlink:href="http://docs.vagrantup.com/v2/boxes/base.html"/>. The KIWI template
    makes sure these requirements are met:
   </para>
   <itemizedlist>
@@ -64,15 +59,13 @@
    </listitem>
    <listitem>
     <para>
-     users <systemitem class="username">root</systemitem> and <systemitem
-     class="username">vagrant</systemitem> are both configured to use
+     users <systemitem class="username">root</systemitem> and <systemitem class="username">vagrant</systemitem> are both configured to use
      <literal>vagrant</literal> as password
     </para>
    </listitem>
    <listitem>
     <para>
-     integration of the Vagrant public SSH key from <ulink
-     url="https://github.com/mitchellh/vagrant/tree/master/keys"/>
+     integration of the Vagrant public SSH key from <link xlink:href="https://github.com/mitchellh/vagrant/tree/master/keys"/>
     </para>
    </listitem>
    <listitem>
@@ -105,7 +98,7 @@ vagrant box add my-box LimeJeOS-SLE12.x86_64-1.13.1.libvirt.box</screen>
   <para>
    or by using the <filename class="extension">.json</filename> file to
    provide metadata such as a version number (similar to the boxes downloaded
-   from <ulink url="https://vagrantcloud.com/"/>):
+   from <link xlink:href="https://vagrantcloud.com/"/>):
   </para>
 
   <screen>cd /tmp/my-box
@@ -138,5 +131,5 @@ vagrant box add /tmp/my-box/LimeJeOS-SLE12.x86_64-1.13.1.libvirt.json ?
     image as described in <xref linkend="chap.docker"/>.
    </para>
   </tip>
- </sect1>
+ </section>
 </chapter>

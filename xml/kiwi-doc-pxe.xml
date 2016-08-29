@@ -1,13 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd"
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<chapter id="chap.pxe">
- <title>PXE Image / Thin Clients</title>
- <abstract>
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="chap.pxe"><title>PXE Image / Thin Clients</title><info><abstract>
   <para>
    PXE is a network boot protocol that is shipped with most BIOS
    implementations. The protocol sends a DHCP request to get an IP
@@ -17,12 +10,17 @@
    both images need to be made available in different locations on the network
    boot server.
   </para>
- </abstract>
+ </abstract></info>
+ 
+ 
 
  <tip>
   <title>PXE Image Description Templates</title>
   <para>
-   &template_intro;
+   KIWI comes with many image description templates. It is
+   recommended to use them as a basis for your own image descriptions. To do
+   so, copy the respective directory containing the image description of your
+   choice to you working directory and adjust it according to your needs.
   </para>
   <para>
    PXE image templates are shipped with the package
@@ -31,8 +29,20 @@
   </para>
  </tip>
 
- &jeos_tip;
- <sect1 id="sec.pxe.building">
+ <tip>
+  <title>Just Enough Operating System (JeOS) Templates</title>
+  <para>
+   The package <package>kiwi-templates</package> contains ready-to-use JeOS
+   templates. They are installed to <filename class="directory">/usr/share/kiwi/image/*-JeOS/</filename>. These
+   templates can be used without any modification to build images containing
+   a minimal operating system. The template directory is in KIWI's search
+   path, therefore it is sufficient to only specify the name of the
+   <filename>*-JeOS</filename> directory on the KIWI command line. Get a list
+   of available templates with the following command:
+  </para>
+  <screen>(cd /usr/share/kiwi/image/ &amp;&amp; ls -d1 *-JeOS)</screen>
+ </tip>
+ <section xml:id="sec.pxe.building">
   <title>Building PXE Images</title>
 
   <para>
@@ -49,7 +59,7 @@
    (if not, use <command>scp</command> to copy the files on the remote host).
   </para>
 
-  <procedure id="proc.pxe.using">
+  <procedure xml:id="proc.pxe.using">
    <step>
     <para>
      Change into the build directory:
@@ -66,16 +76,14 @@ cp initrd-netboot-suse-SLES12.x86_64-2.1.1.kernel /srv/tftpboot/boot/linux</scre
    </step>
    <step>
     <para>
-     Copy the system image and its md5 sum to <filename
-     class="directory">/srv/tftpboot/image</filename>:
+     Copy the system image and its md5 sum to <filename class="directory">/srv/tftpboot/image</filename>:
     </para>
 <screen>cp LimeJeOS-SLE12-Community.x86_64-1.13.1 /srv/tftpboot/image
 cp LimeJeOS-SLE12-Community.x86_64-1.13.1.md5 /srv/tftpboot/image</screen>
    </step>
    <step>
     <para>
-     Copy the image boot configuration to <filename
-     class="directory">/srv/tftpboot/KIWI/config.default</filename>. See
+     Copy the image boot configuration to <filename class="directory">/srv/tftpboot/KIWI/config.default</filename>. See
      <xref linkend="sec.pxe.files"/> for details.
     </para>
     <screen>cp LimeJeOS-SLE12-Community.x86_64-1.13.1.config \
@@ -113,8 +121,8 @@ LABEL Local-Boot
     </para>
    </step>
   </procedure>
- </sect1>
- <sect1 id="sec.pxe.files">
+ </section>
+ <section xml:id="sec.pxe.files">
   <title>PXE Configuration Files</title>
 
   <para>
@@ -128,8 +136,7 @@ LABEL Local-Boot
    (<filename>config.<replaceable>MAC_ADDRESS</replaceable></filename>, for
    example <filename>config.00.AB.F3.11.73.C8</filename>),
    group-specific
-   (<filename>config.<replaceable>GROUP</replaceable></filename>, see <xref
-   linkend="sec.pxe.groups"/> for details) or generic
+   (<filename>config.<replaceable>GROUP</replaceable></filename>, see <xref linkend="sec.pxe.groups"/> for details) or generic
    (<filename>config.default</filename>).  In an environment with
    heterogeneous clients, this allows to have a default configuration suitable
    for the majority of clients, to have configurations suitable for a group of
@@ -167,7 +174,7 @@ LABEL Local-Boot
    group-specific configuration files, use the final version of
    <filename>config.default</filename> as a template.
   </para>
- </sect1>
+ </section>
 
   <!--
   <sect2 id="sec.pxe.client-control-file">
@@ -184,7 +191,7 @@ LABEL Local-Boot
    </para>
 -->
 
-  <sect1 id="sec.pxe.client-config-file">
+  <section xml:id="sec.pxe.client-config-file">
    <title>The PXE Client Configuration File Syntax</title>
    <para>
     The configuration file contains data about the image and about
@@ -242,8 +249,7 @@ IMAGE="/dev/sda2;suse-##.#-pxe-client.i686;1.2.8;192.168.100.2;4096"</screen>
        subsystem. The block device could be a partition of a real or a
        virtual disk. To use the AoE subsystem it is recommended to
        install the <package>aoetools</package> and <package>vblade</package>
-       packages from <ulink
-       url="http://download.opensuse.org/repositories/server:/ltsp"/>.
+       packages from <link xlink:href="http://download.opensuse.org/repositories/server:/ltsp"/>.
       </para>
       <para>
        When these packages are installed, partitions can be exported with the
@@ -259,8 +265,7 @@ IMAGE="/dev/sda2;suse-##.#-pxe-client.i686;1.2.8;192.168.100.2;4096"</screen>
       </para>
       <screen>AOEROOT=/dev/etherd/e0.1</screen>
       <para>
-       In case of a compressed read-only image with <systemitem
-       class="filesystem">overlayfs</systemitem>, the
+       In case of a compressed read-only image with <systemitem class="filesystem">overlayfs</systemitem>, the
        <varname>AOEROOT</varname> variable can also contain a second device
        for the write actions:
       </para>
@@ -311,7 +316,7 @@ IMAGE="/dev/sda2;suse-##.#-pxe-client.i686;1.2.8;192.168.100.2;4096"</screen>
        <varname>VENDOR_CONF</varname> variables and with the local list, the
        following actions can result:
       </para>
-      <table id="tab.configuration.files.synchronization">
+      <table xml:id="tab.configuration.files.synchronization">
        <title>Configuration Files Synchronization Possibilities</title>
         <tgroup cols="3">
          <colspec colwidth="1*"/>
@@ -370,7 +375,7 @@ IMAGE="/dev/sda2;suse-##.#-pxe-client.i686;1.2.8;192.168.100.2;4096"</screen>
 
       <para>
        Note that actual configuration files (or their md5sum hashes) on the
-       client machine are not tested&mdash;only data from the list file
+       client machine are not tested—only data from the list file
        <filename>/etc/KIWI/InstalledConfigFiles</filename> is used to
        determine which files need to be synchronized. This means that actual
        configuration files can be altered or even be deleted without
@@ -445,13 +450,11 @@ IMAGE="/dev/sda2;suse-##.#-pxe-client.i686;1.2.8;192.168.100.2;4096"</screen>
          </remark>
          <para>
           The device the root file system should be installed on. Can either
-          be a RAM disk (for example <filename
-          class="devicefile">/dev/ram1</filename> or a block device (for
+          be a RAM disk (for example <filename class="devicefile">/dev/ram1</filename> or a block device (for
           example <filename class="devicefile">/dev/hda2</filename>).
          </para>
          <para>
-          When using a RAM disk, note that you cannot use <filename
-          class="devicefile">/dev/ram0</filename>, since it is already
+          When using a RAM disk, note that you cannot use <filename class="devicefile">/dev/ram0</filename>, since it is already
           reserved for the initial RAM disk set up by the installation
           system. Use <filename class="devicefile">/dev/ram1</filename>
           instead.
@@ -519,15 +522,14 @@ IMAGE="/dev/sda2;suse-##.#-pxe-client.i686;1.2.8;192.168.100.2;4096"</screen>
           compressed is not specified the standard download workflow is used.
          </para>
          <para>
-          The name of the compressed image needs to contain the suffix <filename
-          class="extension">.gz</filename> and the image needs to be
+          The name of the compressed image needs to contain the suffix <filename class="extension">.gz</filename> and the image needs to be
           compressed with the <command>gzip</command> tool.  Using a
           compressed image will automatically <emphasis>deactivate</emphasis>
           the multicast download option of atftp.
          </para>
          <screen>IMAGE='/dev/sda2;suse.i686.gz;1.2.8;192.168.100.2;4096;compressed'</screen>
          <note>
-          <title></title>
+          <title/>
           <para>
            The download will fail if you specify <literal>compressed</literal>
            and the image is not compressed. It will also fail if you don’t
@@ -558,8 +560,7 @@ IMAGE="/dev/sda2;suse-##.#-pxe-client.i686;1.2.8;192.168.100.2;4096"</screen>
        Specifies the KIWI initrd to be used for a local boot of the system.
        The value must be set to the name of the initrd file which is used via
        PXE network boot. If the standard TFTP setup suggested with the
-       kiwi-pxeboot package is used all initrd files reside in <filename
-       class="directory">/var/lib/tftpboot/boot/</filename>. However, because
+       kiwi-pxeboot package is used all initrd files reside in <filename class="directory">/var/lib/tftpboot/boot/</filename>. However, because
        the TFTP server does a change root (<command>chroot
        /var/lib/tftpboot</command>) you need to specify the initrd file as in
        the following example:
@@ -602,8 +603,7 @@ IMAGE="/dev/sda2;suse-##.#-pxe-client.i686;1.2.8;192.168.100.2;4096"</screen>
        the block layer, together with a remote port that uses the nbd-server
        program. For more information on how to set up the server, see
        <command>man 1 nbd-server</command>. The Kernel on the remote client
-       can set up a special network block device named <filename
-       class="devicefile">/dev/nb0</filename> using the nbd-client
+       can set up a special network block device named <filename class="devicefile">/dev/nb0</filename> using the nbd-client
        command. After this device exists, the mount program is used to mount
        the root file system. To allow the KIWI boot image to use that, the
        following information must be provided:
@@ -679,7 +679,7 @@ IMAGE="/dev/sda2;suse-##.#-pxe-client.i686;1.2.8;192.168.100.2;4096"</screen>
         <para>
          <replaceable>type</replaceable> can be one of the following values:
         </para>
-        <simplelist>
+        <simplelist type="vert">
          <member>
           <literal>S</literal> or <literal>82</literal>: swap partition
          </member>
@@ -777,7 +777,7 @@ PART='5;S;x,2000;L;/'</screen>
       </para>
      </listitem>
     </varlistentry>
-    <varlistentry id="var.pxe.client-config-file.unionfs">
+    <varlistentry xml:id="var.pxe.client-config-file.unionfs">
      <term><varname>UNIONFS_CONFIG</varname>
      </term>
      <listitem>
@@ -789,10 +789,8 @@ PART='5;S;x,2000;L;/'</screen>
       </para>
 <screen>UNIONFS_CONFIG=/dev/sda2,/dev/sda3,overlayfs</screen>
       <para>
-       In this example the first device <filename
-       class="devicefile">/dev/sda2</filename> represents the read/write
-       file system and the second device <filename
-       class="devicefile">/dev/sda3</filename> represents the compressed
+       In this example the first device <filename class="devicefile">/dev/sda2</filename> represents the read/write
+       file system and the second device <filename class="devicefile">/dev/sda3</filename> represents the compressed
        system image file system.
       </para>
       <para>
@@ -818,7 +816,7 @@ UNIONFS_CONFIG=/dev/sda2,/dev/sda3,overlayfs</screen>
      </listitem>
     </varlistentry>
    </variablelist>
-   <sect2 id="sec.pxe.another-user">
+   <section xml:id="sec.pxe.another-user">
     <title>Use a Different Download Protocol</title>
     <para>
      By default all downloads controlled by the KIWI linuxrc code are
@@ -862,9 +860,9 @@ UNIONFS_CONFIG=/dev/sda2,/dev/sda3,overlayfs</screen>
      directory and file structure as initially provided by the
      <package>kiwi-pxeboot</package> package.
     </para>
-   </sect2>
+   </section>
 
-   <sect2 id="sec.pxe.ram-only-image">
+   <section xml:id="sec.pxe.ram-only-image">
     <title>RAM Only Image</title>
     <para>
      If there is no local or remote storage for mounting the root file system,
@@ -887,9 +885,9 @@ UNIONFS_CONFIG=/dev/sda2,/dev/sda3,overlayfs</screen>
       <screen>IMAGE='/dev/ram1;suse-##.#-pxe-client.i686;1.2.8;192.168.100.2;4096'</screen>
      </step>
     </procedure>
-   </sect2>
+   </section>
 
-   <sect2 id="sec.pxe.union-image">
+   <section xml:id="sec.pxe.union-image">
     <title>Union Image</title>
     <para>
      As shown in <xref linkend="var.pxe.client-config-file.unionfs"/> it is
@@ -945,7 +943,7 @@ UNIONFS_CONFIG=/dev/sda2,/dev/sda3,overlayfs</screen>
      </listitem>
     </itemizedlist>
 
-    <example id="ex.pxe.union.local.local">
+    <example xml:id="ex.pxe.union.local.local">
      <title>
       Download Compressed Image to Local Storage, Write to Local Storage
      </title>
@@ -956,7 +954,7 @@ UNIONFS_CONFIG=/dev/sda3,/dev/sda2,overlayfs
 KIWI_INITRD=/boot/initrd</screen>
     </example>
 
-    <example id="ex.pxe.union.local.ram">
+    <example xml:id="ex.pxe.union.local.ram">
      <title>
       Download Compressed Image to Local Storage, Write to RAM
      </title>
@@ -966,7 +964,7 @@ IMAGE='/dev/sda2;suse-##.#-pxe-client.i386;1.2.8;192.168.100.2;4096'
 UNIONFS_CONFIG=tmpfs,/dev/sda2,overlayfs</screen>
     </example>
 
-    <example id="ex.pxe.union.remote.local">
+    <example xml:id="ex.pxe.union.remote.local">
      <title>
       Mount Compressed Image from Remote, Write to Local Storage
      </title>
@@ -994,7 +992,7 @@ NFSROOT="192.168.100.2;/srv/kiwi-read-only-path"
 UNIONFS_CONFIG=/dev/sda2,nfs,overlayfs</screen>
     </example>
 
-    <example id="ex.pxe.union.remote.ram">
+    <example xml:id="ex.pxe.union.remote.ram">
      <title>
       Mount Compressed Image from Remote, Write to RAM
      </title>
@@ -1019,7 +1017,7 @@ UNIONFS_CONFIG=tmpfs,nbd,overlayfs</screen>
 UNIONFS_CONFIG=tmpfs,nfs,overlayfs</screen>
     </example>
 
-    <example id="ex.pxe.union.remote.remote">
+    <example xml:id="ex.pxe.union.remote.remote">
      <title>
       Mount Compressed Image from Remote, Write to Remote
      </title>
@@ -1051,21 +1049,20 @@ UNIONFS_CONFIG=/srv/kiwi-read-write-path,nfs,overlayfs</screen>
       ruled out upfront.
      </para>
     </tip>
-   </sect2>
+   </section>
 
-   <sect2 id="sec.pxe.split-image">
+   <section xml:id="sec.pxe.split-image">
     <title>Split Image</title>
     <para>
-     An alternative to a Union Image (see <xref
-     linkend="sec.pxe.union-image"/>)is a split image that combines the read
+     An alternative to a Union Image (see <xref linkend="sec.pxe.union-image"/>)is a split image that combines the read
      and read-write partitions with
      the <varname>COMBINED_IMAGE</varname> method. This allows to use
      different file systems without the need for an overlay file system.
     </para>
     <para>
      Edit <filename>config.xml</filename> and add a split type plus a split
-     section describing the <sgmltag>temporary</sgmltag> and
-    <sgmltag>persistent</sgmltag> parts:
+     section describing the <tag>temporary</tag> and
+    <tag>persistent</tag> parts:
     </para>
     <screen>&lt;type fsreadonly="squashfs"
    image="split" fsreadwrite="ext3" boot="netboot/suse-..."/&gt;
@@ -1099,16 +1096,16 @@ PART='200;S;x,500;L;/,x;L'
 DISK=/dev/sda
 COMBINED_IMAGE=yes
 KIWI_INITRD=/boot/initrd</screen>
-   </sect2>
+   </section>
 
-   <sect2 id="sec.pxe.remote-root">
+   <section xml:id="sec.pxe.remote-root">
     <title>Mounting the Root File System from a Remote Server</title>
     <para>
      Instead of installing the image on a local storage device, it is also
      possible to mount the root file system remotely via AoE, NBD, and NFS.
     </para>
 
-    <example id="ex.pxe.remote-root.aoe">
+    <example xml:id="ex.pxe.remote-root.aoe">
      <title>Root Tree Over AoE</title>
      <para>
       Use the <command>vbladed</command> command on the remote server to bind
@@ -1124,7 +1121,7 @@ KIWI_INITRD=/boot/initrd</screen>
      <screen>AOEROOT=/dev/etherd/e0.1</screen>
     </example>
 
-    <example id="ex.pxe.root-tree-over-nbd">
+    <example xml:id="ex.pxe.root-tree-over-nbd">
      <title>Root Tree Over NBD</title>
      <para>
       Export the KIWI prepared tree on the NBD server and use a
@@ -1134,7 +1131,7 @@ KIWI_INITRD=/boot/initrd</screen>
      <screen>NBDROOT=192.168.100.7;root1;/dev/nbd0</screen>
     </example>
 
-    <example id="ex.pxe.root-tree-over-nfs">
+    <example xml:id="ex.pxe.root-tree-over-nfs">
      <title>Root Tree Over NFS</title>
      <para>
       Export the KIWI prepared tree via NFS and use a
@@ -1143,10 +1140,10 @@ KIWI_INITRD=/boot/initrd</screen>
      </para>
 <screen>NFSROOT=192.168.100.7;/tmp/kiwi.nfsroot</screen>
     </example>
-   </sect2>
-  </sect1>
+   </section>
+  </section>
 
-  <sect1 id="sec.pxe.groups">
+  <section xml:id="sec.pxe.groups">
    <title>Hardware Grouping</title>
 
    <para>
@@ -1173,13 +1170,12 @@ KIWI_INITRD=/boot/initrd</screen>
     group containing image and deployment information.
    </para>
 
-   <sect2 id="sec.pxe.groups.def_file">
+   <section xml:id="sec.pxe.groups.def_file">
     <title>The Group Definition File</title>
     <para>
      The group definition file defines one or more groups and assigns client
      machines by MAC address to these groups. The file is name
-     <filename>config.group</filename> and needs to be placed in <filename
-     class="directory">/srv/tftpboot/KIWI/</filename> on the PXE boot server.
+     <filename>config.group</filename> and needs to be placed in <filename class="directory">/srv/tftpboot/KIWI/</filename> on the PXE boot server.
     </para>
     <para>
      The following example <filename>config.group</filename> defines three
@@ -1227,7 +1223,7 @@ KIWI_INITRD=/boot/initrd</screen>
         group2, group3</literal> are defined, so the corresponding parameters
         are:
        </para>
-       <simplelist>
+       <simplelist type="vert">
         <member><literal>group1_KIWI_MAC_LIST</literal></member>
         <member><literal>group2_KIWI_MAC_LIST</literal></member>
         <member><literal>group3_KIWI_MAC_LIST</literal></member>
@@ -1242,9 +1238,9 @@ KIWI_INITRD=/boot/initrd</screen>
       </listitem>
      </varlistentry>
     </variablelist>
-   </sect2>
+   </section>
 
-   <sect2 id="sec.pxe.groups.group_file">
+   <section xml:id="sec.pxe.groups.group_file">
     <title>The Group Configuration File</title>
     <para>
      In addition to the group definition file
@@ -1254,15 +1250,14 @@ KIWI_INITRD=/boot/initrd</screen>
      is identical to the <filename>config.default</filename> or
      <filename>config.<replaceable>MAC_ADDRESS</replaceable></filename>. See
      <xref linkend="sec.pxe.client-config-file"/> for details. These files
-     need to be placed in <filename
-     class="directory">/srv/tftpboot/KIWI/</filename> on the PXE server. For
+     need to be placed in <filename class="directory">/srv/tftpboot/KIWI/</filename> on the PXE server. For
      our example, the following files would be needed:
     </para>
     <screen>/srv/tftpboot/KIWI/config.group1
 /srv/tftpboot/KIWI/config.group2
 /srv/tftpboot/KIWI/config.group3</screen>
 
-    <sect3 id="sec.pxe.groups.group_file.overrides">
+    <section xml:id="sec.pxe.groups.group_file.overrides">
      <title>Hardware-Specific Configuration Files</title>
      <para>
       Some scenarios may require to provide different system configuration
@@ -1290,7 +1285,7 @@ KIWI_INITRD=/boot/initrd</screen>
       different groups using different CONF parameters, but that would be less
       flexible and produce an unnecessary maintenance overhead.
      </para>
-     <sect4 id="sec.pxe.groups.group_file.overrides.hw_element">
+     <section xml:id="sec.pxe.groups.group_file.overrides.hw_element">
       <title>The Hardware Mapping Elements</title>
       <para>
        To use the hardware linking mechanism, two additional elements
@@ -1340,8 +1335,8 @@ myvendor_foo2000_HARDWARE_MAP="00:11:00:11:22:CA"</screen>
        </listitem>
       </varlistentry>
      </variablelist>
-    </sect4>
-    <sect4 id="sec.pxe.groups.group_file.overrides.hw_config">
+    </section>
+    <section xml:id="sec.pxe.groups.group_file.overrides.hw_config">
      <title>The Hardware Mapping Configuration File</title>
      <para>
       When the hardware map has been defined, the last step is to ensure
@@ -1354,8 +1349,7 @@ myvendor_foo2000_HARDWARE_MAP="00:11:00:11:22:CA"</screen>
 <screen>VENDOR_CONF='CONFIGURATIONS/xorg.conf.<replaceable>hardware_name_model</replaceable>;/etc/X11/xorg.conf;192.168.100.2;4096'</screen>
      <para>
       The format of the VENDOR_CONF values is identical to the CONF
-      variable used in the standard host and group configurations (see <xref
-      linkend="sec.pxe.client-config-file"/>). In addition, files defined
+      variable used in the standard host and group configurations (see <xref linkend="sec.pxe.client-config-file"/>). In addition, files defined
       within this list will over-write any files defined in the group
       configuration, if and only if, the following requirements are met:
      </para>
@@ -1378,9 +1372,9 @@ myvendor_foo2000_HARDWARE_MAP="00:11:00:11:22:CA"</screen>
       was a CONF file. In this case, no overwriting will take place as it is
       considered a new file.
      </para>
-    </sect4>
-   </sect3>
-   <sect3 id="sec.pxe.groups.group_file.overrides.example">
+    </section>
+   </section>
+   <section xml:id="sec.pxe.groups.group_file.overrides.example">
     <title>A Complete Example</title>
     <para>
      The following is an example of a group that is using hardware from
@@ -1394,9 +1388,9 @@ myvendor_foo2000_HARDWARE_MAP="00:11:00:11:22:CA"</screen>
     <para>
      The following configuration files in <filename>/srv/tftpboot/KIWI</filename>are required:
     </para>
-    <screen>config.group<co id="hw_conf.group"/>
-config.myvendor<co id="hw_conf.group_config"/>
-hardware_config.myvendor_foo2000<co id="hw_conf.hw_details"/>
+    <screen>config.group<co xml:id="hw_conf.group"/>
+config.myvendor<co xml:id="hw_conf.group_config"/>
+hardware_config.myvendor_foo2000<co xml:id="hw_conf.hw_details"/>
     </screen>
     <calloutlist>
      <callout arearefs="hw_conf.group">
@@ -1415,7 +1409,7 @@ hardware_config.myvendor_foo2000<co id="hw_conf.hw_details"/>
       </para>
      </callout>
     </calloutlist>
-    <example id="ex.pxe.groups.group_file.overrides.example.group">
+    <example xml:id="ex.pxe.groups.group_file.overrides.example.group">
      <title>The Group Definition File <filename>config.group</filename></title>
      <screen>KIWI_GROUP="myvendor"
 myvendor_KIWI_MAC_LIST=
@@ -1429,7 +1423,7 @@ myvendor_KIWI_MAC_LIST=
       (<literal>myvendor</literal>) containing the ten thin clients.
      </para>
     </example>
-    <example id="ex.pxe.groups.group_file.overrides.example.group_config">
+    <example xml:id="ex.pxe.groups.group_file.overrides.example.group_config">
      <title>
       The Group Configuration File <filename>config.myvendor</filename>
      </title>
@@ -1442,9 +1436,9 @@ UNIONFS_CONFIG=/dev/sda3,/dev/sda2,overlayfs
 RELOAD_IMAGE=yes
 RELOAD_CONFIG=yes
 CONF='prefs.js;/home/kioskuser/.mozilla/firefox/07xvl1ty.default/prefs.js;192.168.1.2;4096,\
-xorg.conf;/etc/X11/xorg.conf;192.168.1.2;4096'<co id="hw_conf.group_config.conf"/>
-HARDWARE_MAP='myvendor_foo2000'<co id="hw_conf.group_config.hw_map"/>
-myvendor_foo2000_HARDWARE_MAP='00:00:00:00:00:02 00:00:00:00:00:03 00:00:00:00:00:04'<co id="hw_conf.group_config.hw_clients"/></screen>
+xorg.conf;/etc/X11/xorg.conf;192.168.1.2;4096'<co xml:id="hw_conf.group_config.conf"/>
+HARDWARE_MAP='myvendor_foo2000'<co xml:id="hw_conf.group_config.hw_map"/>
+myvendor_foo2000_HARDWARE_MAP='00:00:00:00:00:02 00:00:00:00:00:03 00:00:00:00:00:04'<co xml:id="hw_conf.group_config.hw_clients"/></screen>
     <para>
      The first seven lines define a standard KIWI configuration, while the
      last three lines set up a hardware-specific configuration.
@@ -1472,7 +1466,7 @@ myvendor_foo2000_HARDWARE_MAP='00:00:00:00:00:02 00:00:00:00:00:03 00:00:00:00:0
      </callout>
     </calloutlist>
     </example>
-    <example id="ex.pxe.groups.group_file.overrides.example.hw_config">
+    <example xml:id="ex.pxe.groups.group_file.overrides.example.hw_config">
      <title>
       The Hardware Mapping Details File
       <filename>hardware_config.myvendor_foo2000</filename>
@@ -1509,7 +1503,7 @@ someconfig.cfg;/etc/sysconfig/someconfig.cfg;192.168.1.2;4096'</screen>
      <literal>VENDOR_CONF</literal>. The myvendor_foo2000 clients will also
      get the file <filename>someconfig.cfg</filename>.
     </para>
-   </sect3>
-  </sect2>
- </sect1>
+   </section>
+  </section>
+ </section>
 </chapter>

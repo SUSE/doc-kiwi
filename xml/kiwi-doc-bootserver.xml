@@ -1,13 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd">                      
-<appendix id="app.bootserver">
- <title>Setting Up a Network Boot Server</title>
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<appendix xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="app.bootserver"><title>Setting Up a Network Boot Server</title><info/>
+ 
  <para>
   To be able to deploy PXE bot images created with KIWI, you need to
   set up a network boot server providing the services DHCP and atftp.
  </para>
- <procedure id="proc.pxe.atftp-server-setup">
+ <procedure xml:id="proc.pxe.atftp-server-setup">
   <title>Installing and Configuring atftp</title>
   <step>
    <para>

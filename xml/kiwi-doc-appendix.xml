@@ -1,14 +1,14 @@
-<!DOCTYPE appendix PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd">
-<appendix id="appendix">
- <title>KIWI Man Pages</title>
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<appendix xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="appendix"><title>KIWI Man Pages</title><info/>
+ 
  <para>
   The following pages will show you the man page of KIWI and the functions
   which can be used within <command>config.sh</command> and
   <command>index.sh</command>
  </para>
- <xi:include href="kiwi-man.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
- <xi:include href="kiwi-man-config.sh.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
- <xi:include href="kiwi-man-images.sh.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
- <xi:include href="kiwi-man-kiwirc.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+ <xi:include href="kiwi-man.xml"/>
+ <xi:include href="kiwi-man-config.sh.xml"/>
+ <xi:include href="kiwi-man-images.sh.xml"/>
+ <xi:include href="kiwi-man-kiwirc.xml"/>
 </appendix>

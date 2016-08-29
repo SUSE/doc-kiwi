@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd">
-<chapter id="chap.workflow">
- <title>Basic Workflow</title>
- <abstract>
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="chap.workflow"><title>Basic Workflow</title><info><abstract>
   <para>
    Installation of a Linux system generally occurs by booting the target
    system from an installation source such as an installation CD/DVD, a live
@@ -19,11 +16,13 @@
    upon start-up. The configuration may be fully automatic or it may include
    user interaction.
   </para>
- </abstract>
+ </abstract></info>
+ 
+ 
  <para>
   A system image (usually called <quote>image</quote>), is a
   <emphasis>complete installation</emphasis> of a Linux system within a
-  file. The image represents an operational system and&mdash;optionally
+  file. The image represents an operational system and—optionally
   contains the <quote>final</quote> configuration.
  </para>
  <para>
@@ -69,7 +68,7 @@
    </para>
   </note>
 
- <sect1 id="sec.workflow.buildprocess">
+ <section xml:id="sec.workflow.buildprocess">
   <title>Building Images</title>
   <para>
    KIWI creates images in a two step process. The first step, the
@@ -87,7 +86,7 @@
    in the <filename>config.xml</filename> configuration file.
   </para>
 
-  <figure id="fig.imagecreationarch">
+  <figure xml:id="fig.imagecreationarch">
    <title>Image Creation Architecture</title>
    <mediaobject>
     <imageobject role="fo">
@@ -122,7 +121,7 @@
   </variablelist>
 
 
-  <sect2 id="sec.workflow.buildprocess.prepare">
+  <section xml:id="sec.workflow.buildprocess.prepare">
    <title>The Prepare Step</title>
    <para>
     The creation of an image with KIWI is a two step process. The first step
@@ -134,15 +133,14 @@
     During the prepare step, KIWI creates an <emphasis>unpacked
     image</emphasis>, also called <quote>root tree</quote>. The new root tree
     is created in a directory specified on the command line with the
-    <option>--root</option> argument or the value of the <sgmltag
-    class="element">defaultroot</sgmltag> element in the
+    <option>--root</option> argument or the value of the <tag class="element">defaultroot</tag> element in the
     <filename>config.xml</filename> file. This directory will be the
     installation target for software packages to be installed during the image
     creation process.
    </para>
    <para>
     For package installation, KIWI relies on the package manager specified
-    with the <sgmltag class="element">packagemanager</sgmltag> element in the
+    with the <tag class="element">packagemanager</tag> element in the
     <filename>config.xml</filename> file. KIWI supports the following package
     managers: <systemitem>smart</systemitem>, <systemitem>zypper</systemitem>
     (default), <systemitem>yum</systemitem> and <systemitem>apt</systemitem>.
@@ -169,8 +167,7 @@
       <para>
        Initially KIWI configures the package manager to use the repositories
        specified in the configuration file and/or the command line. Following
-       the repository setup the packages specified in the <sgmltag
-       class="attribute">bootstrap</sgmltag> section of the configuration file
+       the repository setup the packages specified in the <tag class="attribute">bootstrap</tag> section of the configuration file
        are installed in a temporary workspace external to the target root
        tree. This establishes the initial environment, to support the
        completion of the process in chroot setting. The essential packages to
@@ -206,8 +203,7 @@
     <formalpara>
      <title>Apply Archives</title>
      <para>
-      Any archive specified with the <sgmltag
-      class="element">archive</sgmltag> element in the
+      Any archive specified with the <tag class="element">archive</tag> element in the
       <filename>config.xml</filename> file is applied in the specified order
       (top to bottom) after the overlay tree copy operation is complete. Files
       and directories will be extracted relative to the top level of the new
@@ -239,8 +235,7 @@
       is concerned and you can manipulate the content of this directory
       according to your needs. Since it represents a system installation you
       can <quote>chroot</quote> into this directory for testing purposes. The
-      file system contains an additional directory named <filename
-      class="directory">/image</filename> that is not present in a regular
+      file system contains an additional directory named <filename class="directory">/image</filename> that is not present in a regular
       system. It contains information KIWI requires during the create step,
       including a copy of the <filename>config.xml</filename> file.
      </para>
@@ -255,9 +250,9 @@
     </para>
    </listitem>
   </orderedlist>
- </sect2>
+ </section>
 
- <sect2 id="sec.workflow.buildprocess.create">
+ <section xml:id="sec.workflow.buildprocess.create">
   <title>The Create Step</title>
   <para>
    The successful completion of the <literal>prepare</literal> step is a
@@ -287,8 +282,7 @@
       the top level of the target root tree. The script is usually used to
       remove files that are no needed in the final image. For example, if an
       appliance is being built for a specific hardware, unnecessary kernel
-      drivers can be removed using this script. Consult the <xref
-      linkend="ref.kiwi.images.sh"/> man page for a detailed description of
+      drivers can be removed using this script. Consult the <xref linkend="ref.kiwi.images.sh"/> man page for a detailed description of
       pre-defined functions available in the <filename>images.sh</filename>
       script.
      </para>
@@ -301,11 +295,11 @@
       The image types that can be created from a prepared image tree depend on
       the types specified in the image description
       <filename>config.xml</filename> file. The configuration file must
-      contain at least one <sgmltag class="element">type</sgmltag>
+      contain at least one <tag class="element">type</tag>
       element. The figure below shows the currently supported image types:
      </para>
     </formalpara>
-    <figure id="fig.imagetypes">
+    <figure xml:id="fig.imagetypes">
      <title>Image Types</title>
      <mediaobject>
       <imageobject role="fo">
@@ -366,9 +360,9 @@
    types.
   </para>
 
- </sect2>
-</sect1>
- <sect1 id="sec.workflow.bootprocess">
+ </section>
+</section>
+ <section xml:id="sec.workflow.bootprocess">
   <title>Customizing the Boot Process</title>
   <para>
    Most Linux systems use a special boot image to control the system boot
@@ -396,7 +390,7 @@
    </para>
   </note>
 
-  <figure id="fig.workflow.imagedescriptions">
+  <figure xml:id="fig.workflow.imagedescriptions">
    <title>Image Descriptions</title>
    <mediaobject>
     <imageobject role="fo">
@@ -435,8 +429,8 @@
    The boot image descriptions are stored in the
    <filename class="directory">/usr/share/kiwi/image/*boot</filename>
    directories. KIWI selects the boot image based on the value of
-   the <sgmltag class="attribute">boot</sgmltag> attribute of the
-   <sgmltag class="element">type</sgmltag> element. The attribute value is
+   the <tag class="attribute">boot</tag> attribute of the
+   <tag class="element">type</tag> element. The attribute value is
    expected in the general form of <emphasis>
    <replaceable>boottype</replaceable>/<replaceable>distribution</replaceable>
    </emphasis>. For example to select the OEM boot image for SLES version 12
@@ -472,7 +466,7 @@
   </tip>
 
 
-  <sect2 id="sec.hooks">
+  <section xml:id="sec.hooks">
   <title>Boot Image Hook-Scripts</title>
   <para>
    All KIWI created boot images contain kiwi boot code that gets executed
@@ -488,7 +482,7 @@
   </para>
 
 
-  <sect3 id="sec.hooks.types">
+  <section xml:id="sec.hooks.types">
    <title>Script Types</title>
    <para>
     Hook scripts are executed using a predetermined name that is hard coded
@@ -508,7 +502,7 @@
 
    <variablelist>
     <varlistentry>
-     <term><sgmltag class="element">handleSplash</sgmltag></term>
+     <term><tag class="element">handleSplash</tag></term>
      <listitem>
       <para>
        This hook is called prior to any dialog/exception message or progress
@@ -519,7 +513,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">init</sgmltag></term>
+     <term><tag class="element">init</tag></term>
      <listitem>
       <para>
        This hook is called before udev is started. It exists only for the
@@ -528,7 +522,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">preconfig</sgmltag>|<sgmltag class="element">postconfig</sgmltag></term>
+     <term><tag class="element">preconfig</tag>|<tag class="element">postconfig</tag></term>
      <listitem>
       <para>
        The hooks are called before and after the client configuration files
@@ -538,7 +532,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">predownload</sgmltag>|<sgmltag class="element">postdownload</sgmltag></term>
+     <term><tag class="element">predownload</tag>|<tag class="element">postdownload</tag></term>
      <listitem>
       <para>
        The hooks are called before and after the client image receives the
@@ -548,7 +542,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">preImageDump</sgmltag>|<sgmltag class="element">postImageDump</sgmltag></term>
+     <term><tag class="element">preImageDump</tag>|<tag class="element">postImageDump</tag></term>
      <listitem>
       <para>
        The hooks are called before and after the install image is dumped on
@@ -558,7 +552,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">preLoadConfiguration</sgmltag>|<sgmltag class="element">postLoadConfiguration</sgmltag></term>
+     <term><tag class="element">preLoadConfiguration</tag>|<tag class="element">postLoadConfiguration</tag></term>
      <listitem>
       <para>
        The hooks are called before and after the client configuration file
@@ -568,7 +562,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">premount</sgmltag>|<sgmltag class="element">postmount</sgmltag></term>
+     <term><tag class="element">premount</tag>|<tag class="element">postmount</tag></term>
      <listitem>
       <para>
        The hooks are called before and after the client root file system is
@@ -578,7 +572,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">prenetwork</sgmltag>|<sgmltag class="element">postnetwork</sgmltag></term>
+     <term><tag class="element">prenetwork</tag>|<tag class="element">postnetwork</tag></term>
      <listitem>
       <para>
        The hooks are called before and after the client network is setup,
@@ -588,7 +582,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">prepartition</sgmltag>|<sgmltag class="element">postpartition</sgmltag></term>
+     <term><tag class="element">prepartition</tag>|<tag class="element">postpartition</tag></term>
      <listitem>
       <para>
        The hooks are called before and after the client creates the partition
@@ -598,7 +592,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">preprobe</sgmltag>|<sgmltag class="element">postprobe</sgmltag></term>
+     <term><tag class="element">preprobe</tag>|<tag class="element">postprobe</tag></term>
      <listitem>
       <para>
        The hooks are called before and after the loading of modules not
@@ -608,7 +602,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">preswap</sgmltag>|<sgmltag class="element">postswap</sgmltag></term>
+     <term><tag class="element">preswap</tag>|<tag class="element">postswap</tag></term>
      <listitem>
       <para>
        The hooks are called before and after the creation of the swap space,
@@ -618,7 +612,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">preactivate</sgmltag></term>
+     <term><tag class="element">preactivate</tag></term>
      <listitem>
       <para>
        This hook is called before the root file system is moved to
@@ -628,7 +622,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">preCallInit</sgmltag></term>
+     <term><tag class="element">preCallInit</tag></term>
      <listitem>
       <para>
        This hook is called before the initialization process, init or systemd,
@@ -639,7 +633,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">preRecovery</sgmltag>|<sgmltag class="element">postRecovery</sgmltag></term>
+     <term><tag class="element">preRecovery</tag>|<tag class="element">postRecovery</tag></term>
      <listitem>
       <para>
        This hook is called before and after the recovery code is processed.
@@ -651,7 +645,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">preRecoverySetup</sgmltag>|<sgmltag class="element">postRecoverySetup</sgmltag></term>
+     <term><tag class="element">preRecoverySetup</tag>|<tag class="element">postRecoverySetup</tag></term>
      <listitem>
       <para>
        This hook is called before and after the recovery setup is processed.
@@ -663,7 +657,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">preException</sgmltag></term>
+     <term><tag class="element">preException</tag></term>
      <listitem>
       <para>
        This hook is called before a system error is handled. The error
@@ -673,7 +667,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">preHWdetect</sgmltag>|<sgmltag class="element">postHWdetect</sgmltag></term>
+     <term><tag class="element">preHWdetect</tag>|<tag class="element">postHWdetect</tag></term>
      <listitem>
       <para>
        The hooks are called before and after the install image boot code
@@ -683,7 +677,7 @@
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><sgmltag class="element">preNetworkRelease</sgmltag></term>
+     <term><tag class="element">preNetworkRelease</tag></term>
      <listitem>
       <para>
        This hook is called before the network connection is released. The
@@ -692,16 +686,14 @@
      </listitem>
     </varlistentry>
    </variablelist>
-  </sect3>
+  </section>
 
-  <sect3 id="sec.hooks.include">
+  <section xml:id="sec.hooks.include">
    <title>Including Hook Scripts into the Boot Image</title>
    <para>
-    All hook scripts must be located in the <filename
-    class="directory">kiwi-hooks</filename> directory at the top level of the
+    All hook scripts must be located in the <filename class="directory">kiwi-hooks</filename> directory at the top level of the
     initrd. The best approach to including the hook scripts in the initrd is
-    to create an archive of a <filename
-    class="directory">kiwi-hooks</filename> directory that contains the custom
+    to create an archive of a <filename class="directory">kiwi-hooks</filename> directory that contains the custom
     boot scripts.
     </para>
 <screen><command>mkdir</command> kiwi-hooks
@@ -716,9 +708,8 @@
      Hook scripts are only executed from within kiwi's boot code and must
      therefore be part of the KIWI created boot image. Including the content
      of a TAR archive in the initrd is accomplished by setting the value of
-     the <sgmltag class="attribute">bootinclude</sgmltag> attribute of the
-     <sgmltag class="element">archive</sgmltag> element to <sgmltag
-     class="attvalue">true</sgmltag> in the <filename>config.xml</filename>
+     the <tag class="attribute">bootinclude</tag> attribute of the
+     <tag class="element">archive</tag> element to <tag class="attvalue">true</tag> in the <filename>config.xml</filename>
      file as shown below:
     </para>
 <screen>&lt;packages type="image"&gt;
@@ -729,13 +720,13 @@
      concepts described for the system image previously. To use an
      archive in a pre-built boot image the archive must be part of the boot
      image description in which case it is not necessary to set the
-     <sgmltag class="attribute">bootinclude</sgmltag>
+     <tag class="attribute">bootinclude</tag>
      attribute.
     </para>
-  </sect3>
+  </section>
 
 
-  <sect3 id="sec.hooks.post">
+  <section xml:id="sec.hooks.post">
    <title>Post Commands</title>
    <para>
     In addition to the hook script itself it is also possible to run a post
@@ -788,9 +779,9 @@
     </para>
     <screen>KIWI_FORBID_HOOK_CMDS=1</screen>
    </tip>
-  </sect3>
- </sect2>
- <sect2 id="sec.bootcustomization">
+  </section>
+ </section>
+ <section xml:id="sec.bootcustomization">
   <title>FAQ: Boot Image Customization</title>
   <para>
    The KIWI provided boot image descriptions should satisfy the requirements
@@ -824,10 +815,8 @@
      <para>
       This will decrease the size of the initrd and will also decrease boot
       time. Removing files in the boot image is accomplished by adding a
-      <sgmltag class="element">strip</sgmltag> section to the system image in
-      the <filename>config.xml</filename> file, with the <sgmltag
-      class="attribute">type</sgmltag> attribute set to <sgmltag
-      class="attvalue">delete</sgmltag>, as shown below:
+      <tag class="element">strip</tag> section to the system image in
+      the <filename>config.xml</filename> file, with the <tag class="attribute">type</tag> attribute set to <tag class="attvalue">delete</tag>, as shown below:
      </para>
 <screen>&lt;strip type="delete"&gt;
     &lt;file name="..."/&gt;
@@ -848,7 +837,7 @@
      <para>
       KIWI uses a subset of the Kernel. Therefore drivers shipped with the
       Kernel that have not been included by the KIWI build process, can be
-      added. Do so by adding a <sgmltag class="element">drivers</sgmltag>
+      added. Do so by adding a <tag class="element">drivers</tag>
       section to the system image configuration file
       <filename>config.xml</filename>, as follows:
      </para>
@@ -857,12 +846,9 @@
 &lt;/drivers&gt;</screen>
      <para>
       If the driver is provided by a package, the package itself needs to be
-      specified as part of the <sgmltag class="attvalue">image</sgmltag>
+      specified as part of the <tag class="attvalue">image</tag>
       package section. Additionally, it must be marked for boot image
-      inclusion by setting the value of the <sgmltag
-      class="attribute">bootinclude</sgmltag> attribute of the <sgmltag
-      class="element">package</sgmltag> element to <sgmltag
-      class="attvalue">true</sgmltag>, as follows:
+      inclusion by setting the value of the <tag class="attribute">bootinclude</tag> attribute of the <tag class="element">package</tag> element to <tag class="attvalue">true</tag>, as follows:
      </para>
 <screen>&lt;packages type="image"/&gt;
   &lt;package name="<replaceable>PACKAGE</replaceable>" bootinclude="true"/&gt;
@@ -878,9 +864,8 @@
     <answer>
      <para>
       Additional software can be added to the boot image with the use of the
-      <sgmltag class="attribute">bootinclude</sgmltag> attribute of the
-      <sgmltag class="element">package</sgmltag> or the <sgmltag
-      class="element">archive</sgmltag> element. At the end of the boot image
+      <tag class="attribute">bootinclude</tag> attribute of the
+      <tag class="element">package</tag> or the <tag class="element">archive</tag> element. At the end of the boot image
       creation process kiwi attempts to reduce the size of the boot image by
       removing files that are not part of a known list of required files or
       their dependencies.
@@ -890,10 +875,9 @@
       <filename>/usr/share/kiwi/modules/KIWIConfig.txt</filename> file.  If
       you added files to the boot image that are needed for your specific use
       case, you need to instruct kiwi to not strip them from the image. This
-      is accomplished by adding a <sgmltag class="element" >strip</sgmltag>
+      is accomplished by adding a <tag class="element">strip</tag>
       section to the system image <filename>config.xml</filename> file, with
-      the <sgmltag class="attribute">type</sgmltag> attribute set to <sgmltag
-      class="attvalue">tools</sgmltag>, as follows:
+      the <tag class="attribute">type</tag> attribute set to <tag class="attvalue">tools</tag>, as follows:
      </para>
 <screen>&lt;strip type="tools"/&gt;
   &lt;file name="<replaceable>FILENAME</replaceable>"/&gt;
@@ -951,8 +935,8 @@
     </answer>
    </qandaentry>
   </qandaset>
- </sect2>
- <sect2 id="sec.workflow.bootparameters">
+ </section>
+ <section xml:id="sec.workflow.bootparameters">
   <title>Boot Parameters</title>
   <para>
    A KIWI created initrd based on one of the KIWI provided boot image
@@ -977,8 +961,7 @@
    file <filename>/var/log/kiwi.boot</filename>.
   </para>
   <para>
-   In addition to the shell, KIWI also starts the <systemitem
-   class="daemon">dropbear</systemitem> SSH server if the environment is
+   In addition to the shell, KIWI also starts the <systemitem class="daemon">dropbear</systemitem> SSH server if the environment is
    suitable. Support for <systemitem class="daemon">dropbear</systemitem> can
    be added to the netboot and oemboot (in PXE boot mode) boot images. For
    isoboot and vmxboot boot images there is no remote login support because
@@ -998,7 +981,7 @@
    image. Note that the required packages need to be provided by the
    repositories configured. To include <command>rsync</command>, for example,
    add the line
-   <literal>&lt;package&nbsp;name="rsync"&nbsp;bootinclude="true"/&gt;</literal>
+   <literal>&lt;package name="rsync" bootinclude="true"/&gt;</literal>
    to the listing above.
   </para>
   <para>
@@ -1025,9 +1008,9 @@
   </para>
   <screen>RSYNC_RSH='ssh -l root'
 rsync -avz &lt;ip&gt;:/var/log/boot.kiwi</screen>
- </sect2>
-</sect1>
- <sect1 id="sec.workflow.common-specific-code">
+ </section>
+</section>
+ <section xml:id="sec.workflow.common-specific-code">
   <title>Distribution-Specific Code</title>
   <para>
    KIWI is designed to be distribution-independent. However, Linux
@@ -1057,5 +1040,5 @@ rsync -avz &lt;ip&gt;:/var/log/boot.kiwi</screen>
    SUSE-specific code can be used as a guideline to support other
    distributions.
   </para>
- </sect1>
+ </section>
 </chapter>

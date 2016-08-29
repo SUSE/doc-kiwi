@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd">
-<chapter id="chap.migration">
- <title>System Analysis/Migration</title>
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="chap.migration"><title>System Analysis/Migration</title><info/>
+ 
  <para>
   KIWI provides a module which allows you to analyze the running system for
   creating a report and an image description representing the current state of
@@ -18,7 +17,7 @@
   </listitem>
   <listitem>
    <para>
-    The process works semi-automatically&mdash;depending on the
+    The process works semi-automatically—depending on the
     complexity of the system, some manual postprocessing might be necessary
    </para>
   </listitem>
@@ -89,8 +88,7 @@
     case you want to publish the image, double check the list for password
     files, configuration files containing plain text passwords, user data,
     databases and other sensitive data. All files that should become part of
-    the image description need to be moved from <filename
-    class="directory">/var/cache/kiwi/describe/worksation/custom</filename> to
+    the image description need to be moved from <filename class="directory">/var/cache/kiwi/describe/worksation/custom</filename> to
     <filename>/var/cache/kiwi/describe/worksation/root</filename>. For
     additional information also check <filename>/var/cache/kiwi/describe/workstation/custom.files.readme</filename>.
    </para>
@@ -137,8 +135,7 @@
    <para>
     Check the size of the image description. It's good practice to keep the
     image as small as possible. The size of a migrated image description
-    mainly depends on how many overlay files exists in the <filename
-    class="directory">root/</filename> directory. You should make sure to
+    mainly depends on how many overlay files exists in the <filename class="directory">root/</filename> directory. You should make sure to
     maintain only required overlay files.
    </para>
   </step>
@@ -147,8 +144,7 @@
     Create an image from the description. By default an OEM image, containing
     a virtual disk that can also be deployed to a physical machine, is
     created. In addition to that, an ISO image containing an installable
-    version of the image, is also generated. Refer to <xref
-    linkend="chap.oem"/> for details.
+    version of the image, is also generated. Refer to <xref linkend="chap.oem"/> for details.
    </para>
 <screen><command>kiwi</command> --build /var/cache/kiwi/describe/workstation -d /tmp/myResult</screen>
   </step>

@@ -1,23 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd">
-<chapter id="chap.introduction">
- <title>Introduction</title>
- <sect1 id="sec.introduction.whatiskiwi">
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="chap.introduction"><title>Introduction</title><info/>
+ 
+ <section xml:id="sec.introduction.whatiskiwi">
   <title>What is KIWI?</title>
 
   <para>
    KIWI is a command line tool, written in Perl, for building images for Linux.
    It supports a variety of image formats. KIWI is used as a back-end for the
-   appliance builder <ulink url="http://susestudio.com/">SUSE Studio</ulink>.
-   It is also used to build images in the <ulink
-   url="http://build.opensuse.org/">openSUSE Build Service</ulink>, among them
+   appliance builder <link xlink:href="http://susestudio.com/">SUSE Studio</link>.
+   It is also used to build images in the <link xlink:href="http://build.opensuse.org/">openSUSE Build Service</link>, among them
    images for all SUSE products.
   </para>
 
   <para>
-   Images for Linux are available in many different formats. A Linux <filename
-   class="extension">*.iso</filename> file, that can be burned to an optical
+   Images for Linux are available in many different formats. A Linux <filename class="extension">*.iso</filename> file, that can be burned to an optical
    medium to install Linux, is an image. A file used by virtualization systems
    such as KVM, Xen, or VMware is an image. The installation of a Linux system
    on your hard drive can be turned into an image using the
@@ -108,14 +105,13 @@
     </para>
    </listitem>
   </itemizedlist>
- </sect1>
- <sect1 id="sec.introduction.whatdoeskiwido">
+ </section>
+ <section xml:id="sec.introduction.whatdoeskiwido">
   <title>What does KIWI do?</title>
   <para>
    KIWI allows you to configure, build, and deploy your own operating system
    images in a variety of formats. The KIWI workflow is divided into two
-   distinct stages. For a detailed description of this process refer to <xref
-   linkend="chap.workflow"/>.
+   distinct stages. For a detailed description of this process refer to <xref linkend="chap.workflow"/>.
   </para>
   <procedure>
    <step>
@@ -144,9 +140,9 @@
     </formalpara>
    </step>
   </procedure>  
- </sect1>
+ </section>
  
- <sect1 id="sec.introduction.howtousekiwi">
+ <section xml:id="sec.introduction.howtousekiwi">
   <title>How to use KIWI?</title>
 
   <para>
@@ -162,12 +158,11 @@
   </para>
 
   <para>
-   The two phases of the image creation process outlined in <xref
-   linkend="sec.introduction.whatdoeskiwido"/> can be started with the
+   The two phases of the image creation process outlined in <xref linkend="sec.introduction.whatdoeskiwido"/> can be started with the
    commands <command>kiwi --prepare</command> for the first step and
    <command>kiwi --create</command> for the second step. For convenience KIWI
    also has the <option>--build</option> that combines the
    <emphasis>prepare</emphasis> and <emphasis>create</emphasis> steps.
   </para>
- </sect1>
+ </section>
 </chapter>

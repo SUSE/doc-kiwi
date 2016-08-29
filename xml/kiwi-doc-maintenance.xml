@@ -1,12 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd">
-<chapter id="chap.maintenance">
- <title>Maintaining Appliance Images</title>
- <abstract>
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="chap.maintenance"><title>Maintaining Appliance Images</title><info><abstract>
   <para>
-   Whenever you create an appliance as described in <xref
-   linkend="chap.appliance"/>, you are using a snapshot of the software
+   Whenever you create an appliance as described in <xref linkend="chap.appliance"/>, you are using a snapshot of the software
    repositories. As time goes by, the software continues to develop and the
    image becomes outdated. Something similar applies to the appliance
    configuration, which may become outdated when, for example, the network
@@ -15,7 +11,9 @@
    repositories. To prevent an image from becoming outdated, KIWI provides
    means to <emphasis>maintain</emphasis> existing images.
   </para>
- </abstract>
+ </abstract></info>
+ 
+ 
  <variablelist>
   <varlistentry>
    <term><command>kiwi --upgrade</command></term>
@@ -45,7 +43,7 @@
   </varlistentry>
  </variablelist>
 
- <sect1 id="sec.maintenance.packages">
+ <section xml:id="sec.maintenance.packages">
   <title>Image Maintenance: Updating Software Packages</title>
   <para>
    The quickest way to produce an updated image containing the latest software
@@ -60,8 +58,7 @@
    <step>
     <para>
      Make sure you know the path to the existing unpacked root tree. In the
-     following we assume it is located at <filename
-     class="directory">/tmp/myISO</filename>. If you need to add additional
+     following we assume it is located at <filename class="directory">/tmp/myISO</filename>. If you need to add additional
      repositories, note down the paths and types.
     </para>
    </step>
@@ -95,8 +92,7 @@
     Repositories, packages or patterns that you specify with the --add-*
     commands are not added to the image description! Therefore these additions
     are not permanent and need to be specified again with the next run. If you
-    want to make these additions permanent, proceed as described in <xref
-    linkend="sec.maintenance.config"/>.
+    want to make these additions permanent, proceed as described in <xref linkend="sec.maintenance.config"/>.
    </para>
   </warning>
 
@@ -104,7 +100,7 @@
    <title>Configuration Changes</title>
    <para>
     Running KIWI with the <option>--upgrade</option> option does not rebuild
-    the root tree&mdash;it only manipulates the existing version that was
+    the root tree—it only manipulates the existing version that was
     created with the last <option>--prepare</option>-run. Changes to the image
     description that have been made after the last
     <option>--prepare</option>-run, have no effect when running the
@@ -116,14 +112,12 @@
    </para>
   </note>
 
- </sect1>
+ </section>
 
- <sect1 id="sec.maintenance.config">
+ <section xml:id="sec.maintenance.config">
   <title>Image Maintenance: Modifying the Configuration</title>
   <para>
-   In case you need to change the configuration of the appliance (see <xref
-   linkend="sec.appliance.kiwi-model"/>) or the image description (see <xref
-   linkend="chap.description"/> you need to rebuild the complete image tree by
+   In case you need to change the configuration of the appliance (see <xref linkend="sec.appliance.kiwi-model"/>) or the image description (see <xref linkend="chap.description"/> you need to rebuild the complete image tree by
    running <command>kiwi --prepare</command>, to make your changes
    permanent. It is strongly recommended to put your image description under a
    version control system to enable tracking of changes and different version
@@ -145,15 +139,13 @@
    <step>
     <para>
      To add packages or patterns, modify the respective entries in
-     <filename>configuration.xml</filename>. See <xref
-     linkend="sec.description.packages"/> for details.
+     <filename>configuration.xml</filename>. See <xref linkend="sec.description.packages"/> for details.
     </para>
    </step>
    <step>
     <para>
      To change the list of repositories, modify the respective entries in
-     <filename>configuration.xml</filename>. See <xref
-     linkend="sec.description.repository"/> for details.
+     <filename>configuration.xml</filename>. See <xref linkend="sec.description.repository"/> for details.
     </para>
    </step>
    <step>
@@ -214,5 +206,5 @@
     change the configuration and re-run the prepare step as described above.
    </para>
   </note>
- </sect1>
+ </section>
 </chapter>

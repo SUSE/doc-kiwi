@@ -1,9 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd">
-<chapter id="chap.appliance">
- <title>Creating Appliances</title>
- <abstract>
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="chap.appliance"><title>Creating Appliances</title><info><abstract>
   <para>
    With the traditional model of application delivery, applications such as a
    word processor or an e-mail program are installed by a user or an
@@ -36,8 +33,10 @@
    performance, resources and security, so it best fits the given
    appliance.
   </para>
- </abstract>
- <sect1 id="sec.appliance.kiwi-model">
+ </abstract></info>
+ 
+ 
+ <section xml:id="sec.appliance.kiwi-model">
   <title>The KIWI Model</title>
   <para>
    KIWI supports building appliances. When building appliances with KIWI the
@@ -45,7 +44,7 @@
    recommendation only and can be adapted to special needs and environments.
   </para>
 
-  <procedure id="proc.appliance.general-building">
+  <procedure xml:id="proc.appliance.general-building">
    <step>
     <para>
      Choose an appropriate image description from the KIWI example templates.
@@ -167,10 +166,10 @@
     <screen>rpm -qa | sort &gt; /tmp/appliancePackages
 diff -u /tmp/deployPackages /tmp/appliancePackages</screen>
     <para>
-     Add all packages labeled with <literal>(&plus;)</literal> to the
-     <sgmltag class="starttag">packages type="image"</sgmltag> section of
+     Add all packages labeled with <literal>(+)</literal> to the
+     <tag class="starttag">packages type="image"</tag> section of
      your config.xml file and remove packages labeled with
-     <literal>(&minus;)</literal>.
+     <literal>(−)</literal>.
     </para>
     <para>
      In case you want to keep packages that have been automatically removed
@@ -243,5 +242,5 @@ diff -u /tmp/deployPackages /tmp/appliancePackages</screen>
     install packages for the specified architecture.
    </para>
   </note>
- </sect1>
+ </section>
 </chapter>

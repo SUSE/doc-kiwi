@@ -1,13 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
-                         "http://www.docbook.org/xml/4.5/docbookx.dtd"
-[
-  <!ENTITY % entities SYSTEM "entity-decl.ent">
-  %entities;
-]>
-<chapter id="chap.docker">
- <title>Docker images</title>
- <abstract>
+<!-- Converted by suse-upgrade version 1.1 -->
+
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="chap.docker"><title>Docker images</title><info><abstract>
   <para>
    Docker is a shipping container system for code that can run virtually
    everywhere. It is an extension of LXC's capabilities. Since
@@ -21,13 +14,27 @@
    machines. It also includes versioning capabilities for tracking different
    versions of a container, it allows re-using containers as a base for other
    specialized components, and much more. Find more information about Docker
-   on its home page at <ulink url="http://www.docker.io"/>.
+   on its home page at <link xlink:href="http://www.docker.io"/>.
   </para>
- </abstract>
+ </abstract></info>
+ 
+ 
 
- &jeos_tip;
+ <tip>
+  <title>Just Enough Operating System (JeOS) Templates</title>
+  <para>
+   The package <package>kiwi-templates</package> contains ready-to-use JeOS
+   templates. They are installed to <filename class="directory">/usr/share/kiwi/image/*-JeOS/</filename>. These
+   templates can be used without any modification to build images containing
+   a minimal operating system. The template directory is in KIWI's search
+   path, therefore it is sufficient to only specify the name of the
+   <filename>*-JeOS</filename> directory on the KIWI command line. Get a list
+   of available templates with the following command:
+  </para>
+  <screen>(cd /usr/share/kiwi/image/ &amp;&amp; ls -d1 *-JeOS)</screen>
+ </tip>
 
- <sect1 id="sec.docker.building">
+ <section xml:id="sec.docker.building">
   <title>Building Docker Images</title>
 
   <para>
@@ -42,8 +49,7 @@
    <filename>/tmp/my-container/LimeJeOS-SLE12-docker.x86_64-1.13.1.tar.xz</filename>
    in this example. To use this image with Docker it must be imported via the
    <command>docker</command> command. The package <package>docker</package>
-   needs to be installed and the daemon <systemitem
-   class="daemon">dockerd</systemitem> needs to run:
+   needs to be installed and the daemon <systemitem class="daemon">dockerd</systemitem> needs to run:
   </para>
   <screen>cat /tmp/my-container/LimeJeOS-SLE12-docker.x86_64-1.13.1.tar.xz |\
 docker import - sle12-jeos:new</screen>
@@ -62,9 +68,9 @@ docker import - sle12-jeos:new</screen>
     <command>docker</command> command as described above to import the image.
    </para>
   </warning>
- </sect1>
+ </section>
 
- <sect1 id="sec.docker.details">
+ <section xml:id="sec.docker.details">
   <title>Image Configuration Details</title>
 
   <para>
@@ -77,10 +83,9 @@ docker import - sle12-jeos:new</screen>
   </para>
 
   <para>
-   to configure the network for the container use the <sgmltag
-   class="element">vmnic</sgmltag> in the
+   to configure the network for the container use the <tag class="element">vmnic</tag> in the
    <filename>config.xml</filename> file as shown below. The
-   <sgmltag class="attribute">mode</sgmltag> attribute configures the network
+   <tag class="attribute">mode</tag> attribute configures the network
    mode, with <emphasis>veth</emphasis> being the default.
    <remark condition="clarity">
     2015-07-29 - fs: which other modes are valid?
@@ -118,5 +123,5 @@ docker import - sle12-jeos:new</screen>
    The device access permissions may be modified by editing the
    <filename>config</filename> file for the container.
   </para>
- </sect1>
+ </section>
 </chapter>
